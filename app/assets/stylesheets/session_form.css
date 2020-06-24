@@ -123,3 +123,10 @@ header h3 {
   margin-top: 12px;
   font-size: 14px;
 }
+
+.errors {
+  font-size: 12px; 
+  color: red;
+  margin-bottom: 6px;
+  font-weight: lighter;
+}
