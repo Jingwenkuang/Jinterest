@@ -3,21 +3,22 @@
 # Table name: users
 #
 #  id              :bigint           not null, primary key
-#  username        :string           not null
-#  first_name      :string           not null
-#  last_name       :string           not null
-#  location        :string           not null
 #  email           :string           not null
 #  description     :text
 #  session_token   :string           not null
 #  password_digest :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  first_name      :string
+#  last_name       :string
+#  location        :string
+#  username        :string
+#  age             :string
 #
 class User < ApplicationRecord
 
-  validates :username, :password_digest, :session_token, presence: true
-  validates :username, :session_token, :email, uniqueness: true
+  validates :password_digest, :session_token, :age, :email, presence: true
+  validates :session_token, :email, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true 
 
   attr_reader :password
