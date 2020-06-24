@@ -31,10 +31,11 @@ class SignupForm extends React.Component {
   render() {
  
     return (
+    <div className='form-container'>
       <div className="to-login-button">
-        <Link to='/login'><button className='login-side-button'>Log in</button></Link>
+        <Link to='/login'><button className='form-side-button'>Log in</button></Link>
 
-        <form className='signup-form'>
+        <form className='form'>
           <header>
             <img src={window.logo} alt='Jinterest Logo' className='signup-form-logo'/>
             <h1>Welcome to Jinterest</h1>
@@ -43,6 +44,7 @@ class SignupForm extends React.Component {
 
 
             <input
+              className='input'
               required 
               type="text"
               placeholder="Email"
@@ -51,6 +53,7 @@ class SignupForm extends React.Component {
             />
       
             <input
+             className='input'
               required 
               minLength='6'
               type="password"
@@ -60,6 +63,7 @@ class SignupForm extends React.Component {
             />
 
             <input
+              className='input'
               required
               type="text"
               placeholder='Age'
@@ -68,11 +72,12 @@ class SignupForm extends React.Component {
             />
 
           
-            <button className="signup-form" onClick={this.handleSubmit}>Sign up</button>
+            <button className="form-button" onClick={this.handleSubmit}>Sign up</button>
         <Link to="/login"><div className="to-other-form">Already a member? Log in</div></Link>
 
         </form>
       </div>
+    </div>
     );
   }
 }
