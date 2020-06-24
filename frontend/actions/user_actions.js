@@ -26,7 +26,7 @@ export const fetchAllUsers = () => dispatch => (
     error => dispatch(receiveUserErrors(error.responseJson)))
 )
 
-export const fetchUser = (userId) => (dispatch) =>
+export const fetchUser = (userId) => (dispatch) => (
   UsersAPIUtil.fetchUser(userId)
     .then((user) =>
       dispatch(receiveUser(user)),

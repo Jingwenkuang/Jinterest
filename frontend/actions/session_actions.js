@@ -27,21 +27,21 @@ export const clearErrors = () => ({
 export const signup = (user) => (dispatch) => (
   SessionAPIUtil.signup(user)
     .then(
-      (user) => dispatch(receiveCurrentUser(user),
-      (error) => dispatch(receiveSessionErrors(error.responseJSON))
-      )
-    ));
+      (user) => dispatch(receiveCurrentUser(user))
+  ).fail((error) => dispatch(receiveSessionErrors(error.responseJSON))));
 
 export const login = (user) => (dispatch) => (
   SessionAPIUtil.login(user)
-  .then(
-    (user) => {
-      dispatch(receiveCurrentUser(user));
-    },
-    (errors) => dispatch(receiveSessionErrors(errors.responseJSON))
-  ));
+    .then(
+      (user) => dispatch(receiveCurrentUser(user))
+    ).fail((error) => dispatch(receiveSessionErrors(error.responseJSON))));
 
 export const logout = () => (dispatch) => (
   SessionAPIUtil.logout()
     .then(() => dispatch(logoutCurrentUser())
     ));
+
+
+
+
+
