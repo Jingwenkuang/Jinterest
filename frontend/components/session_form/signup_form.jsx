@@ -7,7 +7,7 @@ class SignupForm extends React.Component {
     this.state = {
       email: "",
       password: "",
-      username: "",
+      age: "",
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,31 +31,47 @@ class SignupForm extends React.Component {
   render() {
  
     return (
-      <div className="signup-form">
-        <h2>Sign Up!</h2>
-        {this.props.errors}
-        <form>
-          <label>
-            Email:
+      <div className="to-login-button">
+        <Link to='/login'><button className='login-side-button'>Log in</button></Link>
+
+        <form className='signup-form'>
+          <header>
+            <img src={window.logo} alt='Jinterest Logo' className='signup-form-logo'/>
+            <h1>Welcome to Jinterest</h1>
+            <h3>Find new ideas to try</h3>
+          </header>
+
+
             <input
+              required 
               type="text"
               placeholder="Email"
               value={this.state.email}
               onChange={this.handleInput("email")}
             />
-          </label>
-          <label>
-            Password:
+      
             <input
+              required 
+              minLength='6'
               type="password"
               placeholder='Password'
               value={this.state.password}
               onChange={this.handleInput("password")}
             />
-            <button className="signup-form" onClick={this.handleSubmit}>Sign Up!</button>
-          </label>
+
+            <input
+              required
+              type="text"
+              placeholder='Age'
+              value={this.state.age}
+              onChange={this.handleInput("age")}
+            />
+
+          
+            <button className="signup-form" onClick={this.handleSubmit}>Sign up</button>
+        <Link to="/login"><div className="to-other-form">Already a member? Log in</div></Link>
+
         </form>
-        <Link to="/login">Login</Link>
       </div>
     );
   }

@@ -6,7 +6,7 @@ import { Route } from "react-router-dom";
 const App = () => (
   <div>
     <header>
-      <h1>Welcome to Jinterest</h1>
+      {/* <h1>Welcome to Jinterest</h1> */}
     </header>
 
     <Route path="/login" component={loginFormContainer}/>
