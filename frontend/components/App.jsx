@@ -1,7 +1,8 @@
 import React from 'react';
 import signupFormContainer from './session_form/signup_form_container';
 import loginFormContainer from './session_form/login_form_container';
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import { AuthRoute, ProtectedRoute} from '../util/route_util';
 
 const App = () => (
   <div>
@@ -9,9 +10,12 @@ const App = () => (
       {/* <h1>Welcome to Jinterest</h1> */}
     </header>
 
-    <Route path="/login" component={loginFormContainer}/>
-    <Route path="/signup" component={signupFormContainer}/>
+    <Switch>
+      <AuthRoute exact path="/login" component={loginFormContainer}/>
+      <AuthRoute exact path="/signup" component={signupFormContainer}/>
+      <Route path='/' component={loginFormContainer} />
+    </Switch>
   </div>
 );
 
-export default App; 
+export default App;

@@ -53,6 +53,7 @@ form {
   width: 300px;
 }
 
+
 header h1 {
   font-size: 35px;
   font-weight: 500;
@@ -103,7 +104,7 @@ header h3 {
   outline: none;
   cursor: pointer;
   margin-top: 10px;
-  background-color: rgb(236, 113, 113);
+  background-color: rgb(245, 115, 143);
   color: white;
   width: 95%;
 }
