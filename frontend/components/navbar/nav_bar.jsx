@@ -13,7 +13,7 @@ class NavBar extends React.Component{
         <nav className="navbar-box">
           <div className="navbar-logo">
             {/* <Link to="/"><img src={window.logo} alt="Jinterest Logo" className="logo"/> */}
-            </Link>
+            {/* </Link> */}
           </div>
 
           <div className="home">
