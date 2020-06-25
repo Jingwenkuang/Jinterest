@@ -44,8 +44,7 @@ class NavBar extends React.Component{
             </div>
 
             <div className="logout-icon" id="options">
-              <i className="fa fa-chevron-down" aria-hidden="true" 
-                  onClick={e=>{console.log(e)}}></i>
+              <i className="fa fa-chevron-down" aria-hidden="true" ></i>
               <div className="drop-down">
                 <Link to="/" className="logout-tab" onClick={logout}>Log out</Link>
               </div>
