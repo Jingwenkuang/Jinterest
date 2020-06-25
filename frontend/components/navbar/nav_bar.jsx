@@ -30,12 +30,10 @@ class NavBar extends React.Component{
             </a>
 
             <div className="logout-icon" id="options">
-              <Link to="/" className="logout-tab" onClick={logout}>
-                <div>
-
                   <i className="fa fa-chevron-down" aria-hidden="true"></i>
+                <div className="drop-down">
+              <Link to="/" className="logout-tab" onClick={logout}>Log out</Link>
                 </div>
-              </Link>
             </div>
          
             

@@ -1,0 +1,13 @@
+.logout-icon {
+  position: relative;
+}
+
+.drop-down {
+  position: absolute;
+  display: none; 
+  background-color: lightcoral;
+}
+
+.logout-icon:hover .drop-down {
+  display: block;
+}
