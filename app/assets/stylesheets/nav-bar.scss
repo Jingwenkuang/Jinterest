@@ -30,6 +30,8 @@
   color:	rgb(255,20,147);
 }
 
+
+
 .navbar-box {
     display: flex;
     justify-content: space-between;
@@ -47,12 +49,24 @@
     box-sizing: border-box;
 }
 
-.navbar-box > div, .navbar-box > a, .fa.fa-chevron-down {
+.nav-left {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.nav-right {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+}
 
+.home {
+  padding: 20px;
+}
+
+.linkedin, .github, .nav-demouser, .logout-icon {
+  padding: 10px;
 }
 .fa.fa-chevron-down{
   size: 12px;
