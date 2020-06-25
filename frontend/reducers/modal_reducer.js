@@ -11,4 +11,3 @@ export default function modalReducer(state = null, action) {
   }
 }
 
-export default modalReducer; 

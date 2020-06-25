@@ -43,9 +43,9 @@ class LoginForm extends React.Component {
   render() {
    
     return (
-      <div className='modal-background'>
+    
 
-   <div className='modal-child'>
+
     <div className='form-container'>
       <div className="to-signup-button">
         <Link to='/signup'><button className='form-side-button'>Sign up</button></Link>
@@ -85,9 +85,8 @@ class LoginForm extends React.Component {
         </div>
       </div>
     </div>
-    
-        </div>
-      </div>
+
+  
     );
   }
 }
