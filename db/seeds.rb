@@ -8,22 +8,24 @@
 
 User.destroy_all 
 
-user1 = User.create(
+user1 = User.create!(
   email: 'land@gmail.com',
   username: 'land',
   first_name: 'la',
   last_name: 'nd',
   age: '17',
   description: 'green land',
-  location: 'Montana'
+  location: 'Montana',
+  password: '123456',
 )
 
-user2 = User.create(
+user2 = User.create!(
   email: 'daylight@gmail.com',
   username: 'daylight',
   first_name: 'day',
   last_name: 'light',
   age: '18',
   description: 'Sunny day',
-  location: 'California'
+  location: 'California',
+  password: '123456'
 )
