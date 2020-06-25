@@ -26,7 +26,8 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.login(user);
+    this.props.login(user)
+      .then(this.props.closeModal);
   }
 
   handleDemoUser(e) {
@@ -35,12 +36,16 @@ class LoginForm extends React.Component {
       'email': 'land@gmail.com',
       'password': '123456'
     }
-    this.props.login(user);
+    this.props.login(user)
+      .then(this.props.closeModal);
   }
 
   render() {
    
     return (
+      <div className='modal-background'>
+
+   <div className='modal-child'>
     <div className='form-container'>
       <div className="to-signup-button">
         <Link to='/signup'><button className='form-side-button'>Sign up</button></Link>
@@ -80,6 +85,9 @@ class LoginForm extends React.Component {
         </div>
       </div>
     </div>
+    
+        </div>
+      </div>
     );
   }
 }
