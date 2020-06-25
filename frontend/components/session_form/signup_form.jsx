@@ -84,7 +84,7 @@ class SignupForm extends React.Component {
 
         <form className='form'>
           <header>
-            <img src='Jinterest-Logo' alt='Jinterest Logo' className='signup-form-logo'/>
+            {/* <img src='Jinterest-Logo' alt='Jinterest Logo' className='signup-form-logo'/> */}
             <h1>Welcome to Jinterest</h1>
             <h3>Find new ideas to try</h3>
           </header>

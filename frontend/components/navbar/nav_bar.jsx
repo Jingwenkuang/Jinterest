@@ -12,7 +12,7 @@ class NavBar extends React.Component{
       <div className="navbar-container">
         <nav className="navbar-box">
           <div className="navbar-logo">
-            <Link to="/"><img src={window.logo} alt="Jinterest Logo" className="logo"/>
+            {/* <Link to="/"><img src={window.logo} alt="Jinterest Logo" className="logo"/> */}
             </Link>
           </div>
 
