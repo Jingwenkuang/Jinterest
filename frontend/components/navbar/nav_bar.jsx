@@ -13,10 +13,11 @@ class NavBar extends React.Component{
         <nav className="navbar-box">
 
         <div className='nav-left'>
-          <NavLink to='/' className='nav-logo'>
-            <i className="fa fa-pinterest fa-2x" aria-hidden="true"></i>
-          </NavLink>
-
+          <div className='nav-left-logo'>
+            <NavLink to='/' className='nav-logo'>
+              <i className="fa fa-pinterest fa-2x" aria-hidden="true"></i>
+            </NavLink>
+          </div>
             <div className="home">
               <Link to='/'>Home</Link>
             </div>
