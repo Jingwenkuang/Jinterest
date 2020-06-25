@@ -84,7 +84,10 @@ class SignupForm extends React.Component {
 
         <form className='form'>
           <header>
-            {/* <img src='Jinterest-Logo' alt='Jinterest Logo' className='signup-form-logo'/> */}
+              <div className='app-logo'>
+                <i className="fa fa-pinterest fa-4x" aria-hidden="true"></i>
+              </div>
+
             <h1>Welcome to Jinterest</h1>
             <h3>Find new ideas to try</h3>
           </header>

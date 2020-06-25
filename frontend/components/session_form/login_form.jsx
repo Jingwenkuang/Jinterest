@@ -47,8 +47,10 @@ class LoginForm extends React.Component {
         
         <div className='form-box'>
         <form className="form">
-          <header>
-            {/* <img src={window.logo} alt='Jinterest Logo' className='login-form-logo'/> */}
+         <header>
+                <div className='app-logo'>
+                  <i className="fa fa-pinterest fa-4x" aria-hidden="true"></i>
+                </div>
               <h1>Welcome to Jinterest</h1>
           </header>
 

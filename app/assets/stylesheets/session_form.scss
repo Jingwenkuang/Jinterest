@@ -53,6 +53,13 @@ form {
   width: 300px;
 }
 
+// div .window-logo {
+//   size: 25px;
+//   height: 45px;
+//   margin: 5px auto;
+//   width: 45px;
+//   color: palevioletred;
+// }
 
 header h1 {
   font-size: 35px;
@@ -104,18 +111,18 @@ header h3 {
   outline: none;
   cursor: pointer;
   margin-top: 10px;
-  background-color: rgb(245, 115, 143);
+  background-color:	rgb(255,20,147);
   color: white;
   width: 95%;
 }
 
 .demo-login {
-   background-color: rgb(243, 171, 175);
+   background-color: rgb(255,105,180);
 }
 
 .form-button:hover,
 .demo-login:hover {
-  filter: brightness(95%);
+  filter: brightness(80%);
 }
 
 .to-other-form {
@@ -130,3 +137,8 @@ header h3 {
   margin-bottom: 6px;
   font-weight: lighter;
 }
+
+
+
+
+
