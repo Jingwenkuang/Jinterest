@@ -53,9 +53,6 @@ class LoginForm extends React.Component {
     let error = [];
     if (this.props.errors.includes("Invalid email or password")) {
       error.push("Invalid email or password");
-
-    // } else if (this.props.errors.includes("Invalid email or password")) {
-    //   error.push("The password you entered is incorrect.");
     }
     this.setState({ errors: error })
   }
@@ -67,14 +64,6 @@ class LoginForm extends React.Component {
       return "";
     }
   }
-
-  // passwordErrors() {
-  //   if ((this.state.errors[0]) === ("The password you entered is incorrect.")) {
-  //     return this.state.errors;
-  //   } else {
-  //     return "";
-  //   }
-  // }
 
   render() {
    
@@ -105,7 +94,7 @@ class LoginForm extends React.Component {
               value={this.state.email}
               onChange={this.handleInput("email")}
             />
-                {/* <div className='errors'>{this.emailErrors()}</div> */}
+          
             <input
               className='input'
               required
