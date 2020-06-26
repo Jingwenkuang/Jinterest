@@ -24,6 +24,10 @@
   background-color: lightpink;
 }
 
+.logout-tab {
+  display: block;
+}
+
 .hidden {
   display: none;
 }
@@ -135,12 +139,9 @@ box-sizing: border-box;
   font-size: 26px;
 }
 
-.form-link {
-  text-decoration: underline;
-}
-
 .form-link:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 // homepage
