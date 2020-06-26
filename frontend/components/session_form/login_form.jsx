@@ -52,16 +52,20 @@ class LoginForm extends React.Component {
     return (
     
     <div className='form-container'>
-      <div className="to-signup-button">
+
         <button className='form-side-button' onClick={this.handleToggle}>Sign up</button>
+
+      <div className="to-signup-button">
         
+        <div className='form-pops'>
         <div className='form-box'>
         <form className="form">
          <header>
                 <div className='app-logo'>
                   <i className="fa fa-pinterest fa-4x" aria-hidden="true"></i>
                 </div>
-              <h1>Welcome to Jinterest</h1>
+
+                <div className='form-header'><h1>Welcome to Jinterest</h1></div>  
           </header>
 
             <input
@@ -87,6 +91,8 @@ class LoginForm extends React.Component {
             <Link to='/signup'><div className='to-other-form'>Not on Jinterest yet? Sign up</div></Link>
         </div>
         </form>
+        </div>
+
         </div>
       </div>
     </div>

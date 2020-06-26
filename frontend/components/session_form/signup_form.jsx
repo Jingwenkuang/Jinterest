@@ -87,14 +87,18 @@ class SignupForm extends React.Component {
     <div className='form-container'>
       <div className="to-login-button">
        <button className='form-side-button' onClick={this.handleToggle}>Log in</button>
+        
+       <div className='form-pops'>
         <form className='form'>
           <header>
               <div className='app-logo'>
                 <i className="fa fa-pinterest fa-4x" aria-hidden="true"></i>
               </div>
 
-            <h1>Welcome to Jinterest</h1>
-            <h3>Find new ideas to try</h3>
+              <div className='form-header'>
+                <h1>Welcome to Jinterest</h1>
+                <h3>Find new ideas to try</h3>
+              </div>
           </header>
 
 
@@ -134,6 +138,7 @@ class SignupForm extends React.Component {
         <Link to="/login"><div className="to-other-form">Already a member? Log in</div></Link>
 
         </form>
+        </div> 
       </div>
     </div>
     );

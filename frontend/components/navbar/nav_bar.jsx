@@ -15,7 +15,7 @@ class NavBar extends React.Component{
         <div className='nav-left'>
           <div className='nav-left-logo'>
             <NavLink to='/' className='nav-logo'>
-              <i className="fa fa-pinterest fa-2x" aria-hidden="true"></i>
+              <i className="fa fa-pinterest" id="navbar-logo" aria-hidden="true"></i>
             </NavLink>
           </div>
             <div className="home">
@@ -28,19 +28,19 @@ class NavBar extends React.Component{
           <div className='nav-right'>
             <div className='linkedin'>
               <a href="https://www.linkedin.com/in/jingwen-wendy-kuang-169a1b52/" className="links" target="_blank">
-                <i className="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                <i className="fa fa-linkedin-square" id="linked-icon" aria-hidden="true"></i>
               </a>
             </div>
 
             <div className='github'>
               <a href="https://github.com/Jingwenkuang/Jinterest" className="links" target="_blank">
-                <i className="fa fa-github fa-2x" aria-hidden="true"></i>
+                <i className="fa fa-github" id="github-icon" aria-hidden="true"></i>
               </a>
             </div>
 
             <div className="nav-demouser">
               <Link to='/'>
-                <i className="fa fa-user-o fa-2x" aria-hidden="true"></i>
+                <i className="fa fa-user-o" id="user-icon" aria-hidden="true"></i>
               </Link>
             </div>
 
