@@ -118,8 +118,10 @@ class LoginForm extends React.Component {
 
             <button className='form-button' onClick={this.handleSubmit}>Log in</button>
             <button className='demo-login' onClick={this.handleDemoUser} >Demo Login</button>
-        <div className="signup-link">
-            <Link to='/signup'><div className='to-other-form'>Not on Jinterest yet? Sign up</div></Link>
+
+        <div className="form-link" onClick={() => this.props.openModal('signup')}>
+
+           <div className='to-other-form'>Not on Jinterest yet? Sign up</div>
         </div>
         </form>
         </div>

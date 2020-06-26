@@ -4,14 +4,20 @@ import {Link, NavLink} from 'react-router-dom';
 class NavBar extends React.Component{
   constructor(props) {
     super(props);
+    this.state = {
+      dropDownHidden: true
+    }
+    this.handleDropDown = this.handleDropDown.bind(this);
   }
 
-  myDropDown() {
-    document.getElementById("dropDown").classList.toggle("showDropDown")
+  handleDropDown(e) {
+    e.preventDefault();
+    this.setState({dropDownHidden: !this.state.dropDownHidden})
   }
 
   render() {
     const { currentUserId, logout } = this.props;
+    const dropDownHidden = this.state.dropDownHidden ? "hidden" : "" ;
     return (
 
         <nav className="navbar-box">
@@ -48,21 +54,12 @@ class NavBar extends React.Component{
               </Link>
             </div>
 
-            <div className="logout-icon" id="options">
+            <div className="logout-icon" id="options" onClick={this.handleDropDown}>
               <i className="fa fa-chevron-down" aria-hidden="true" ></i>
-              <div className="drop-down">
+              <div className={`drop-down ${dropDownHidden}`}>
                 <Link to="/" className="logout-tab" onClick={logout}>Log out</Link>
               </div>
             </div>
-
-            {/* <div className='logout-icon' id="options">
-            <div onClick={this.myDropDown} className="button">
-              <i className="fa fa-chevron-down" aria-hidden="true" />
-            </div>
-            <div className="drop-down" onClick={ e => e.stopPropagation()}>
-              <Link to="/" className="logout-tab" onClick={logout}>Log out</Link>
-            </div>
-            </div> */}
 
           </div>
        

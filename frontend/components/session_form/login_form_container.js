@@ -5,6 +5,7 @@ import { openModal, closeModal, toggleSessionModal } from '../../actions/modal_a
 
 const mapStateToProps = state => ({
   errors: state.errors.session,
+  
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -16,7 +17,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   //   </button>
   // ),
   // closeModal: () => dispatch(closeModal()),
-  toggleSessionModal: () => dispatch(toggleSessionModal())
+  toggleSessionModal: () => dispatch(toggleSessionModal()),
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

@@ -10,13 +10,8 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   signup: (user) => dispatch(signup(user)).then(ownProps.closeModal),
   clearErrors: () => dispatch(clearErrors()),
-  // otherFrom:(
-  //   <button onClick={() => dispatch(openModal('login'))}>
-  //     Login
-  //   </button>
-  // ),
-  // closeModal: () => dispatch(closeModal()),
-  toggleSessionModal: () => dispatch(toggleSessionModal())
+  toggleSessionModal: () => dispatch(toggleSessionModal()),
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);

@@ -44,7 +44,7 @@ class SignupForm extends React.Component {
       if (this.props.errors.includes("Email is invalid")) {
         error.push("Hmm...that doesn't look like an email address");
         
-    } else if (this.props.errors.includes("Email has already been taken")) {
+      } else if (this.props.errors.includes("Email has already been taken")) {
       error.push("Please use a different email.");
      
       } else if (this.props.errors.includes("Password is too short (minimum is 6 characters)")) {
@@ -59,6 +59,8 @@ class SignupForm extends React.Component {
 
   emailErrors() {
     if ((this.state.errors[0]) === ("Hmm...that doesn't look like an email address")) {
+      return this.state.errors;
+    } else if ((this.state.errors[0]) === ("Please use a different email.")) {
       return this.state.errors;
     } else {
       return "";
@@ -135,8 +137,10 @@ class SignupForm extends React.Component {
 
           
             <button className="form-button" onClick={this.handleSubmit}>Sign up</button>
-        <Link to="/login"><div className="to-other-form">Already a member? Log in</div></Link>
 
+            <div className="form-link" onClick={() => this.props.openModal("login")}>
+              <div className="to-other-form">Already a member? Log in</div>
+            </div>
         </form>
         </div> 
       </div>

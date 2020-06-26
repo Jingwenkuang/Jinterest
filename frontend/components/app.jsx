@@ -5,7 +5,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { AuthRoute, ProtectedRoute} from '../util/route_util';
 import NavBarContainer from './navbar/nav_bar_container';
 import Modal from './modal/modal';
-
+import HomeComponent from './home/home'
 const App = () => (
   <div>
     <Modal/>
@@ -18,6 +18,7 @@ const App = () => (
      {/* <AuthRoute exact path="/login" component={loginFormContainer}/> 
       <AuthRoute exact path="/signup" component={signupFormContainer}/>  */}
     {/* <Route path="/" component={loginFormContainer} />  */}
+     <Route exact path='/' component={HomeComponent} />
      <Redirect to='/'/>
     </Switch>
      
