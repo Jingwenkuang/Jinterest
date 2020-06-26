@@ -30,7 +30,7 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.signup(this.state).then(null, error => {
-      this.setState(this.renderErrors())
+      this.setState(this.errorsFunction())
     })
   }
 
@@ -39,7 +39,7 @@ class SignupForm extends React.Component {
     this.props.toggleSessionModal()
   }
 
-  renderErrors() {
+  errorsFunction() {
     let error = [];
       if (this.props.errors.includes("Email is invalid")) {
         error.push("Hmm...that doesn't look like an email address");

@@ -8,6 +8,7 @@ class LoginForm extends React.Component {
     this.state = {
       email: "",
       password: "",
+      errors: this.props.errors
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,7 +30,8 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.login(user)
-      .then(this.props.closeModal);
+      .then(null, (error) => {this.setState(this.errorsFunction())})
+      // .then(this.props.closeModal);
   }
 
   handleDemoUser(e) {
@@ -46,6 +48,33 @@ class LoginForm extends React.Component {
     e.preventDefault();
     this.props.toggleSessionModal()
   }
+
+  errorsFunction() {
+    let error = [];
+    if (this.props.errors.includes("Invalid email or password")) {
+      error.push("Invalid email or password");
+
+    // } else if (this.props.errors.includes("Invalid email or password")) {
+    //   error.push("The password you entered is incorrect.");
+    }
+    this.setState({ errors: error })
+  }
+
+  emailErrors() {
+    if ((this.state.errors[0]) === ("Invalid email or password")) {
+      return this.state.errors;
+    } else {
+      return "";
+    }
+  }
+
+  // passwordErrors() {
+  //   if ((this.state.errors[0]) === ("The password you entered is incorrect.")) {
+  //     return this.state.errors;
+  //   } else {
+  //     return "";
+  //   }
+  // }
 
   render() {
    
@@ -76,7 +105,7 @@ class LoginForm extends React.Component {
               value={this.state.email}
               onChange={this.handleInput("email")}
             />
-
+                {/* <div className='errors'>{this.emailErrors()}</div> */}
             <input
               className='input'
               required
@@ -85,6 +114,8 @@ class LoginForm extends React.Component {
               value={this.state.password}
               onChange={this.handleInput("password")}
             />
+              <div className='errors'>{this.emailErrors()}</div>
+
             <button className='form-button' onClick={this.handleSubmit}>Log in</button>
             <button className='demo-login' onClick={this.handleDemoUser} >Demo Login</button>
         <div className="signup-link">
