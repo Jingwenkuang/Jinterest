@@ -14,6 +14,7 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   componentWillUnmount() {
@@ -31,6 +32,11 @@ class SignupForm extends React.Component {
     this.props.signup(this.state).then(null, error => {
       this.setState(this.renderErrors())
     })
+  }
+
+  handleToggle(e) {
+    e.preventDefault();
+    this.props.toggleSessionModal()
   }
 
   renderErrors() {
@@ -80,8 +86,7 @@ class SignupForm extends React.Component {
     return (
     <div className='form-container'>
       <div className="to-login-button">
-        <Link to='/login'><button className='form-side-button'>Log in</button></Link>
-
+       <button className='form-side-button' onClick={this.handleToggle}>Log in</button>
         <form className='form'>
           <header>
               <div className='app-logo'>

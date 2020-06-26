@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 
+
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -11,6 +12,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   componentWillUnmount() {
@@ -40,15 +42,18 @@ class LoginForm extends React.Component {
       .then(this.props.closeModal);
   }
 
+  handleToggle(e) {
+    e.preventDefault();
+    this.props.toggleSessionModal()
+  }
+
   render() {
    
     return (
     
-
-
     <div className='form-container'>
       <div className="to-signup-button">
-        <Link to='/signup'><button className='form-side-button'>Sign up</button></Link>
+        <button className='form-side-button' onClick={this.handleToggle}>Sign up</button>
         
         <div className='form-box'>
         <form className="form">

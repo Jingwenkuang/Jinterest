@@ -15,8 +15,8 @@ const App = () => (
     </header>
 
     <Switch>
-      <AuthRoute exact path="/login" component={loginFormContainer}/>
-      <AuthRoute exact path="/signup" component={signupFormContainer}/>
+      {/* <AuthRoute exact path="/login" component={loginFormContainer}/>
+      <AuthRoute exact path="/signup" component={signupFormContainer}/> */}
       {/* <Route path="/" component={loginFormContainer} /> */}
      <Redirect to='/'/>
     </Switch>
