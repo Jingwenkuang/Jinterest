@@ -7,15 +7,15 @@ const mapStateToProps = (state, ownProps) => ({
   errors: state.errors.session 
 })
 
-const mapDispatchToProps = (dispatch) => ({
-  signup: (user) => dispatch(signup(user)),
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  signup: (user) => dispatch(signup(user)).then(ownProps.closeModal),
   clearErrors: () => dispatch(clearErrors()),
   // otherFrom:(
   //   <button onClick={() => dispatch(openModal('login'))}>
   //     Login
   //   </button>
   // ),
-  closeModal: () => dispatch(closeModal()),
+  // closeModal: () => dispatch(closeModal()),
   toggleSessionModal: () => dispatch(toggleSessionModal())
 });
 
