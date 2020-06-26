@@ -6,6 +6,10 @@ class NavBar extends React.Component{
     super(props);
   }
 
+  myDropDown() {
+    document.getElementById("dropDown").classList.toggle("showDropDown")
+  }
+
   render() {
     const { currentUserId, logout } = this.props;
     return (
@@ -50,6 +54,16 @@ class NavBar extends React.Component{
                 <Link to="/" className="logout-tab" onClick={logout}>Log out</Link>
               </div>
             </div>
+
+            {/* <div className='logout-icon' id="options">
+            <div onClick={this.myDropDown} className="button">
+              <i className="fa fa-chevron-down" aria-hidden="true" />
+            </div>
+            <div className="drop-down" onClick={ e => e.stopPropagation()}>
+              <Link to="/" className="logout-tab" onClick={logout}>Log out</Link>
+            </div>
+            </div> */}
+
           </div>
        
         </nav>
