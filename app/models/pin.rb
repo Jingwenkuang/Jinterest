@@ -13,5 +13,6 @@ class Pin < ApplicationRecord
 
   validates :title, :user_id, presence: true, uniqueness: true 
 
-  
+  has_one_attached :photo
+
 end

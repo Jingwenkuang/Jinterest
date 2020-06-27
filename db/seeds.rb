@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all 
+Pin.destroy_all 
 
 user1 = User.create!(
   email: 'land@gmail.com',
@@ -29,3 +30,5 @@ user2 = User.create!(
   location: 'California',
   password: '123456'
 )
+
+
