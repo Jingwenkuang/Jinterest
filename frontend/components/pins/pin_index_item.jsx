@@ -18,3 +18,5 @@ const PinIndexItem = ({ pin }) => {
     </div>
   )
 }
+
+export default PinIndexItem;
