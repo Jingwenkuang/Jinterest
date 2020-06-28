@@ -94,7 +94,7 @@ class SignupForm extends React.Component {
         <form className='form'>
           <header>
               <div className='app-logo'>
-                <i className="fa fa-pinterest fa-4x" aria-hidden="true"></i>
+                <img src={window.jinterestURL} className='jinterest-logo'/>
               </div>
 
               <div className='form-header'>

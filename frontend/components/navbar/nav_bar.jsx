@@ -25,9 +25,10 @@ class NavBar extends React.Component{
         <div className='nav-left'>
           <div className='nav-left-logo'>
             <NavLink to='/' className='nav-logo'>
-              <i className="fa fa-pinterest" id="navbar-logo" aria-hidden="true"></i>
+              <img src={window.jinterestURL} className='nav-left-logo' />
             </NavLink>
           </div>
+          {/* <div className="block">text</div> */}
             <div className="home">
               <Link to='/'>Home</Link>
             </div>

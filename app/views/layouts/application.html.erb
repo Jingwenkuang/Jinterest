@@ -4,18 +4,23 @@
     <title>Jinterest</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+   
+  <script type="text/javascript">
+    window.jinterestURL = "<%= image_url('jinterest.png') %>";
+  </script>
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <%= favicon_link_tag asset_path('logo.png') %>
+    <%= favicon_link_tag asset_path('jinterest.png') %>
   
   
   </head>
 
   <body>
+  <!--<img src="/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7643da1da489ac7247192bd925326763b6cb8e75/castel.jpg" className="castle"/>-->
     <%= yield %>
   </body>
 </html>

@@ -52,13 +52,9 @@
  cursor: pointer;
 }
 
-#navbar-logo:hover {
+.navbar-logo:hover {
  background-color: lightpink;
  border-radius: 30px;
-}
-
-.fa.fa-pinterest {
-  color:	rgb(255,20,147);
 }
 
 .navbar-box {
@@ -80,9 +76,10 @@ box-sizing: border-box;
 
 .nav-left {
   display: flex; 
-  justify-content: flex-end;
   align-items: center;
+  justify-content: space-between;
 }
+
 
 .nav-right {
   display: flex; 
@@ -101,15 +98,32 @@ box-sizing: border-box;
 }
 
 .home a{
-    cursor: pointer;
+    display: flex;
     color: white;
     font-size: 16px;
     padding: 16px;
     background-color: grey;
     border-radius: 35px;
-    filter: brightness(100%);;
+    filter: brightness(100%);
 }
 
+.home a:hover, .navbar-logo:hover {
+ color: lightpink;
+}
+
+// .navbar-logo:hover {
+//   cursor: pointer;
+//   padding: 10px;
+//   border-radius: 25px;
+//   border: 10px;
+// }
+
+.nav-left-logo {
+  width: 24px;
+  min-height: 24px;
+  border: 16px;
+  margin-right: 16px;
+}
 .nav-mid{
   background-color: rgb(250, 217, 222);
   padding:16px 220px 16px 220px;
@@ -122,17 +136,8 @@ box-sizing: border-box;
  background-color: lightpink ;
 }
 
-.home a:hover {
-  color: lightpink ;
-}
-
 .links > a, .links > i {
   color: rgb(116, 116, 116);
-}
-
-#navbar-logo {
-  font-size: 30px;
-  padding: 10px;
 }
 
 #linked-icon, #github-icon, #user-icon {
@@ -143,6 +148,8 @@ box-sizing: border-box;
   cursor: pointer;
   text-decoration: underline;
 }
+
+
 
 // homepage
 .homepage {
