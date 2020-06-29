@@ -56,6 +56,9 @@ class PinCreateForm extends React.Component {
   render() {
     const { currentUser } = this.props;
     const { title, description, photoUrl } = this.state;
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl}/> : null ;
+    const previewClass = this.state.photoUrl ? "show" : "";
+
     return (
       <div className="pin-create-container">
         <div className="pin-box">
@@ -63,19 +66,19 @@ class PinCreateForm extends React.Component {
           <div className="pin-content">
             <div className="create-pin-image">
               <input type="file" className="image-uploade" onChange={this.handleFile}/>
-              <div className="pin-image">
+              <div className={`pin-image ${previewClass}`}>{preview}</div>
                  <div className="pin-image-context">
                     <i className="fas fa-arrow-alt-circle-up"></i>
                     <p>Click to upload</p>
                   </div>
 
                   <div>
-                    <div className="delete-photo" onClick={this.deleteImagePreview}>
+                    <div className={`delete-photo ${previewClass}`} onClick={this.deleteImagePreview}>
                     <i className="fas fa-trash"></i>
                     </div>
                   </div>
                   
-              </div>
+             
             </div>
 
             <div className="create-pin-category">
