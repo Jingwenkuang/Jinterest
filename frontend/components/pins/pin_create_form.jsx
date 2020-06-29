@@ -70,8 +70,11 @@ class PinCreateForm extends React.Component {
                   </div>
 
                   <div>
-                    
+                    <div className="delete-photo" onClick={this.deleteImagePreview}>
+                    <i className="fas fa-trash"></i>
+                    </div>
                   </div>
+                  
               </div>
             </div>
 

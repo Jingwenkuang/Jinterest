@@ -7,6 +7,7 @@ import NavBarContainer from './navbar/nav_bar_container';
 import Modal from './modal/modal';
 import HomeComponent from './home/home'
 import PinIndexContainer from './pins/pin_index_container';
+
 const App = () => (
   <div>
     <Modal/>
@@ -19,7 +20,7 @@ const App = () => (
      {/* <AuthRoute exact path="/login" component={loginFormContainer}/> 
       <AuthRoute exact path="/signup" component={signupFormContainer}/>  */}
     {/* <Route path="/" component={loginFormContainer} />  */}
-    
+
      {/* <Route exact path='/' component={PinIndexContainer} /> */}
      {/* <Route exact path='/' component={HomeComponent} /> */}
      <Redirect to='/'/>

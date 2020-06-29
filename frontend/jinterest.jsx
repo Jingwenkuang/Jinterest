@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from './store/store';
 import Root from './components/root';
-import {fetchAllUsers, fetchUser} from './actions/user_actions'
-
+import {fetchAllUsers, fetchUser} from './actions/user_actions';
 import { signup, login, logout } from "./actions/session_actions";
+import { fetchAllPins, fetchPin, createPin, updatePin, deletePin } from './util/pin_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -33,5 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchAllUsers = fetchAllUsers;
     window.fetchUser = fetchUser;
     // window.currentUser = currentUser;
+    window.fetchAllPins = fetchAllPins;
+    window.fetchPin = fetchPin;
+    window.createPin = createPin;
+    window.updatePin = updatePin;
+    window.deletePin = deletePin;
+    
   ReactDOM.render(<Root store={store}/>, root);
 })
