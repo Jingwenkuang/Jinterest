@@ -6,7 +6,7 @@ import { fetchPin } from '../../util/pin_api_util';
 import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  pin: state.entities.pins[ownProps.match.params.pinId],
+  pin: state.entities.pins[ownProps.match.params.id],
   users: state.entities.users,
   currentUserId: state.session.currentUserId,
 })

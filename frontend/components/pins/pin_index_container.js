@@ -8,9 +8,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchAllPins: pins => dispatch(fetchAllPins(pins)),
+  fetchAllPins: () => dispatch(fetchAllPins()),
   updatePin: pin => dispatch(updatePin(pin)), 
   deletePin: pinId => dispatch(deletePin(pinId)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps(PinIndex));
+export default connect(mapStateToProps, mapDispatchToProps)(PinIndex);

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require 'open-uri'
+require 'open-uri'
 
 User.destroy_all 
 Pin.destroy_all
@@ -55,21 +55,23 @@ user4 = User.create!(
   password: '123456'
 )
 
-# pin1 = Pin.create!(
-#    title: 'brunch',
-#    description: "Enjoy some yummy breakfast",
-#    user_id: user1.id,
-# )
-# file = open("https://jinterest-seeds.s3-us-west-1.amazonaws.com/brunch.jpg")
-# pin1.photo.attach(io: file, filename: 'brunch.jpg')
-# 
-# pin2 = Pin.create!(
-#    title: 'cathedral',
-#    description: "Cathedral in Florence",
-#    user_id: user1.id,
-# )
-# file = open("https://jinterest-seeds.s3-us-west-1.amazonaws.com/cathedral_in_florence.jpg")
-# pin2.photo.attach(io: file, filename: 'cathedral_in_florence.jpg')
+pin1 = Pin.new(
+   title: 'brunch',
+   description: "Enjoy some yummy breakfast",
+   user_id: user1.id,
+)
+file = open("https://jinterest-seeds.s3-us-west-1.amazonaws.com/brunch.jpg")
+pin1.photo.attach(io: file, filename: 'brunch.jpg')
+pin1.save!
+
+pin2 = Pin.new(
+   title: 'cathedral',
+   description: "Cathedral in Florence",
+   user_id: user1.id,
+)
+file = open("https://jinterest-seeds.s3-us-west-1.amazonaws.com/cathedral_in_florence.jpg")
+pin2.photo.attach(io: file, filename: 'cathedral_in_florence.jpg')
+  pin2.save!
 # 
 # pin3 = Pin.create!(
 #    title: 'colosseum',

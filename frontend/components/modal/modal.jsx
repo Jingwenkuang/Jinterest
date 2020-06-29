@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+import PinEditFormContainer from '../pins/pin_edit_form_container'
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -16,6 +17,8 @@ function Modal({ modal, closeModal }) {
     case 'signup':
       component = <SignupFormContainer closeModal={closeModal}/>;
       break;
+    case 'edit-pin':
+      component = <PinEditFormContainer closeModal={closeModal}/>;
     default:
       return null;
   }

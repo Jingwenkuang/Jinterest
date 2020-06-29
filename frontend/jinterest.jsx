@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import {fetchAllUsers, fetchUser} from './actions/user_actions';
 import { signup, login, logout } from "./actions/session_actions";
-import { fetchAllPins, fetchPin, createPin, updatePin, deletePin } from './util/pin_api_util';
+import { fetchAllPins, fetchPin, createPin, updatePin, deletePin } from './actions/pin_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
