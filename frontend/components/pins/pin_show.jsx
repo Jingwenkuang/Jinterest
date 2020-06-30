@@ -39,6 +39,10 @@ class PinShow extends React.Component{
 
             <div className='pin-show-info'>
               <div className='pin-show-title'>{this.props.pin.title}</div>
+                <div className='pin-show-user'>
+                  <i className="fa fa-user-o" id="user-icon" aria-hidden="true"></i>
+                  <p>{this.props.users[this.props.currentUserId].username}</p>
+                </div>
               <div className='pin-show-description'>{this.props.pin.description}</div>
             </div>
           </div>
