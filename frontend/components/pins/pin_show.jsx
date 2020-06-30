@@ -7,7 +7,7 @@ class PinShow extends React.Component{
     super(props)
 
     this.goBack = this.goBack.bind(this);
-    this.update = this.update.bind(this);
+    // this.update = this.update.bind(this);
   }
 
   componentDidMount() {
@@ -33,9 +33,9 @@ class PinShow extends React.Component{
               <img src={this.props.pin.photoUrl} />
             </div>
 
-            <div className='top-right-edit'>
+            {/* <div className='top-right-edit'>
               <div onClick={()=> this.props.openModal('edit-pin')}><i className={`fas fa-pen ${editPin}`}></i></div>
-            </div>
+            </div> */}
 
             <div className='pin-show-info'>
               <div className='pin-show-title'>{this.props.pin.title}</div>
