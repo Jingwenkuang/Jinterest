@@ -30,7 +30,8 @@ const App = () => (
      {/* <Route exact path='/' component={HomeComponent} /> */}
       <ProtectedRoute exect path='/pins/:id' component={PinShowContainer}/>
       <ProtectedRoute exact path='/pin-builder' component={PinCreateFormContainer}/>
-      <ProtectedRoute exact path='/' component={PinIndexContainer}/>
+      <ProtectedRoute exact path='/pins' component={PinIndexContainer}/>
+      <AuthRoute exact path='/' component={HomeComponent}/>
      <Redirect to='/'/>
     </Switch>
      

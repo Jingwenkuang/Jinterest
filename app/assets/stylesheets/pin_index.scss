@@ -1,0 +1,80 @@
+.pins-container {
+  // position: relative;
+  // top: 72px;
+  align-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+  padding-left: 20px;
+  column-count: 4;
+  column-gap: 24px;
+  margin: 100px 28px 28px 28px;
+  z-index: 0; 
+  // text-align: center;
+
+
+//  width: 1200px;
+//  margin: 20px auto;
+//  columns: 4;
+//  column-gap: 40x;
+}
+
+.pins-container .pin-index-item-container {
+  background-color: #eee;
+  display: inline-block;
+  margin: 0 0 1em; 
+  width: 100%;
+  // width: 100px;
+  // margin: 0 0 20px;
+  // padding: 10px;
+  // background: #eee;
+  // overflow: hidden;
+  // break-inside: avoid;
+}
+
+// .pin-index-item-container {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+.pin-index-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 24px;
+
+}
+.pin-container .pin-index-item-container .pin-index-photo {
+  max-width: 100%;
+}
+
+.pin-index-title {
+  padding-top: 2px;
+  padding-left: 8px;
+}
+
+@media (max-width: 1200px) {
+  .pin-container {
+    columns: 3;
+    width: calc(100% - 40%);
+    box-sizing: border-box;
+    padding: 20px 20px 20px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .pin-container {
+    columns: 2;
+    width: calc(100% - 40%);
+    box-sizing: border-box;
+    padding: 20px 20px 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .pin-container {
+    columns: 1;
+    width: calc(100% - 40%);
+    box-sizing: border-box;
+    padding: 20px 20px 20px 0;
+  }
+}

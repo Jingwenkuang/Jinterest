@@ -4,7 +4,9 @@ const Home = () => {
 
 
     return (
-      <h1 className='homepage'>Home Page</h1>
+      <div className='homepage'>
+        <img src={window.homepagePhoto} className='homepage-photo' />
+      </div>
     )
   }
 

@@ -72,6 +72,7 @@ width: 100%;
 height: 80px;
 background-color: white;
 box-sizing: border-box;
+
 }
 
 .nav-left {
@@ -152,6 +153,6 @@ box-sizing: border-box;
 
 
 // homepage
-.homepage {
-  margin-top: 200px;
+.homepage-photo {
+  object-fit: cover;
 }

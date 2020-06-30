@@ -16,7 +16,10 @@ class NavBar extends React.Component{
   }
 
   render() {
+
     const { currentUserId, logout } = this.props;
+    if (!currentUserId) return null;
+    
     const dropDownHidden = this.state.dropDownHidden ? "hidden" : "" ;
     return (
 

@@ -15,6 +15,7 @@ class PinIndex extends React.Component {
     const { pins } = this.props;
 
     return (
+    
       <div className='pins-container'>
         {
           pins.map(pin => {
@@ -27,6 +28,7 @@ class PinIndex extends React.Component {
           })
         }
       </div>
+  
     )
   }
 }
