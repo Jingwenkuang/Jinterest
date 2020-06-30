@@ -1,5 +1,6 @@
 import React from 'react';
-import EditPinForm from './pin_edit_form'
+import EditPinForm from './pin_edit_form';
+import PinIndex from './pin_index';
 
 class PinShow extends React.Component{
   constructor(props) {
@@ -21,7 +22,7 @@ class PinShow extends React.Component{
   render() {
 
     return(
-      <div>
+      <div className='pin-show-container'>
         <div className='pin-goback' onClick={this.goBack}>
           <i id='show-pin-arrow' className="fas fa-arrow-left"></i>
         </div>
@@ -48,4 +49,4 @@ class PinShow extends React.Component{
   }
 }
 
-export default EditPinForm;
+export default PinShow;

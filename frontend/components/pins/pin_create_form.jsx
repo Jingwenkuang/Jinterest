@@ -61,12 +61,12 @@ class PinCreateForm extends React.Component {
 
     return (
       <div className="pin-create-container">
-        <div className="pin-box">
+        <div className="pin-create-box">
 
-          <div className="pin-content">
+          <div className="pin-create-content">
             <div className="create-pin-image">
               <input type="file" className="image-uploade" onChange={this.handleFile}/>
-              <div className={`pin-image ${previewClass}`}>{preview}</div>
+              <div className={`pin-image ${previewClass}`} id='upload-pin-photo'>{preview}</div>
                  <div className="pin-image-context">
                     <i className="fas fa-arrow-alt-circle-up"></i>
                     <p>Click to upload</p>

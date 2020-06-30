@@ -1,0 +1,94 @@
+.pin-create-container{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.pin-create-box{
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: 40px;
+  width: 840px;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: 1px 1px 10px #e0e0e0;
+}
+
+.pin-create-content {
+  display: flex;
+  justify-content: center;
+}
+
+.pin-create-content .create-pin-image{
+  width: 50%;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.pin-image-context {
+  background-color: rgb(231, 230, 230);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 340px;
+  height: 454px;
+}
+
+.create-pin-category{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.create-pin-input{
+  display: 30px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+.pin-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center ;
+}
+
+.pin-title {
+  height: 50px;
+  padding: 10px;
+  font-size: 36px;
+}
+
+.pin-description textarea{
+  // width: 600px;
+  // text-decoration: underline;
+  // text-underline-position: under;
+  // font-size: 18px;
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    resize: none;
+    // border-radius: 16px;
+    // border: 2px solid #dadada;
+    width: 330px;
+    font-family: Arial, Helvetica, sans-serif;
+    // font-weight: 60;
+    font-size: 16px;
+    // display:inline-block;
+    border-bottom:2px solid gray;
+    // padding-bottom:6px;
+}
+
+.pin-description textarea:hover {
+  // border: 2px solid #dadada;
+  border-color: rgb(212, 250, 212);
+  border-radius: 20px;
+}
