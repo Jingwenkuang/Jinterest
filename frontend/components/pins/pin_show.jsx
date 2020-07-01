@@ -22,12 +22,12 @@ class PinShow extends React.Component{
   render() {
 
     return(
-      <div className='pin-show-outside-container'>
+      <div className='pin-show-outside-container' onClick={this.goBack}>
         <div className='pin-goback' onClick={this.goBack}>
           <i id='show-pin-arrow' className="fa fa-arrow-left"></i>
         </div>
 
-        <div className='pin-show-container'>
+        <div className='pin-show-container' onClick={e => e.stopPropagation()}>
           <div className='pin-show-box-left'>
             <div className='pin-show-photo'>
               <img src={this.props.pin.photoUrl} className='pin-show-item-photo'/>
