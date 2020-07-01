@@ -1,6 +1,15 @@
+
 .pin-show-container{
   margin-top: 100px;
-  
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  height: 80%;
+  width: 78%;
+  border-radius: 4%;
+  margin: auto;
+  margin-top: 10%;
 }
 
 .pin-show-item-photo{
@@ -24,9 +33,9 @@
   position: relative;
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 20px;
+  // padding: 20px;
   overflow: hidden;
 }
 
@@ -38,6 +47,7 @@
   justify-content: space-between;
   flex-direction: column;
   overflow: hidden;
+  margin-right: 15%;
 }
 
 .pin-show-title{
