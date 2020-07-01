@@ -22,30 +22,36 @@ class PinShow extends React.Component{
   render() {
 
     return(
-      <div className='pin-show-container'>
+      <div className='pin-show-outside-container'>
         <div className='pin-goback' onClick={this.goBack}>
-          <i id='show-pin-arrow' className="fas fa-arrow-left"></i>
+          <i id='show-pin-arrow' className="fa fa-arrow-left"></i>
         </div>
 
         <div className='pin-show-container'>
-          <div className='pin-show-box'>
+          <div className='pin-show-box-left'>
             <div className='pin-show-photo'>
-              <img src={this.props.pin.photoUrl} />
+              <img src={this.props.pin.photoUrl} className='pin-show-item-photo'/>
             </div>
+          </div>
 
             {/* <div className='top-right-edit'>
               <div onClick={()=> this.props.openModal('edit-pin')}><i className={`fas fa-pen ${editPin}`}></i></div>
             </div> */}
 
-            <div className='pin-show-info'>
-              <div className='pin-show-title'>{this.props.pin.title}</div>
+            <div className='pin-show-box-right'>
+                <div className='pin-show-title'>{this.props.pin.title}</div>
+              
                 <div className='pin-show-user'>
                   <i className="fa fa-user-o" id="user-icon" aria-hidden="true"></i>
-                  <p>{this.props.users[this.props.currentUserId].username}</p>
+                  <p className='pin-show-username'>{this.props.users[this.props.currentUserId].username}</p>
                 </div>
-              <div className='pin-show-description'>{this.props.pin.description}</div>
-            </div>
-          </div>
+            
+                <footer className='pin-show-footer'>
+                  <div className='pin-show-description'>{this.props.pin.description}</div>
+               </footer>
+              </div>
+         
+          
 
         </div>
       </div>

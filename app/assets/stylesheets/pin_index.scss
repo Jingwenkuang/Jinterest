@@ -1,52 +1,10 @@
-// .pins-container {
-//   padding: 20px;
-//   margin: 100px 28px 28px 28px;
-//   display: flex;
-//   flex-wrap: wrap;
-//   flex-direction: row;
-//   // flex-direction: column;
-//   // column-count: 4;
-//   justify-content: flex-start;
-//   // align-items: center;
-//   align-items: flex-start;
-// }
-
-// .pin-link {
-//   margin: 5px;
-//   padding: 10px;
-//   border: 0;
-//   width: 300px;
-//   // height: 366px;
-// }
-// .pin-index-photo {
-//   max-width: 100%;
-//   height: auto;
-//   vertical-align: top;
-//   border-radius: 24px;   
-//   object-fit: cover;
-// }
-
-// .pin-index-title{
-//   visibility: hidden;
-// }
-
-// .pin-index-photo:hover {
-//   cursor: zoom-in;
-//   filter: brightness(95%);
-// 
-
-// .pin-index-main {
-//   padding: 20px;
-//   display: flex;
-//   justify-content: center;
-// }
 .pin-container {
   margin-top: 200px;
   padding: 20px;
   display: flex;
   // justify-content: center;
 }
-//////////////@extend
+
 .pin-index.container {
   padding: 20px;
   display: flex;
@@ -102,8 +60,6 @@
   grid-template-columns: repeat(auto-fill, minmax(252px,1fr));
   grid-row-gap: 11px;
   grid-auto-rows: 2px;
-  // justify-items: center;
-  // justify-content: center;
   justify-items: center;
   justify-content: flex-start;
 }
@@ -139,17 +95,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  // background-color: rgba(0,0,0,0.03);
   pointer-events: none;
 }
-
-// .pin-index-item.pin-show-link {
-//   cursor: zoom-in;
-//   box-sizing: border-box;
-//   &:hover + .links {
-//     visibility: visible;
-//   }
-// }
 
 .pin-index-item.masonry-photo {
   width: 100%;
@@ -161,10 +108,6 @@
 .pin-index-item.masonry-photo:hover{
   cursor: zoom-in;
 }
-
-// .space {
-//   height: 65px;
-// }
 
 .pin-index-title {
   visibility: hidden;

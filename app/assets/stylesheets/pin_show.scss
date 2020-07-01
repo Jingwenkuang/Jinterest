@@ -1,0 +1,81 @@
+.pin-show-container{
+  margin-top: 100px;
+  
+}
+
+.pin-show-item-photo{
+  width: 378px;
+  height: 480px;
+  border-radius: 16px;
+}
+
+.pin-show-container{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+.pin-show-box-left{
+  width: 490px;
+  max-height: 750px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.pin-show-box-right{
+  width: 350px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pin-show-title{
+ box-sizing: border-box;
+ margin-top: 66px;
+ font-size: 36px;
+ font-weight: 700;
+ text-align: left;
+ hyphens: auto;
+ overflow-wrap: break-word;
+ letter-spacing: -0.4px;
+}
+
+.pin-show-user{
+ margin-top: 100px;
+}
+
+.pin-show-username{
+  font-size: 20px;
+}
+
+.pin-show-description{
+ margin-top: 175px;
+ font-size: 18px;
+ font-weight: 400;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ text-align: left;
+ hyphens: auto;
+ overflow-wrap: break-word;
+ letter-spacing: -0.4px;
+ -webkit-font-smoothing: antialiased;
+ color: rgb(51, 51, 51); 
+}
+
+.pin-goback {
+  color: #333333;
+  position: absolute;
+  top: 120px;
+  left: 50px;
+  font-size: 24px;
+}
