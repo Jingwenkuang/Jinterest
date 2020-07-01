@@ -9,7 +9,7 @@ import HomeComponent from './home/home';
 import PinIndexContainer from './pins/pin_index_container';
 import PinCreateFormContainer from './pins/pin_create_form_container';
 import PinShowContainer from './pins/pin_show_container';
-// import ProfileContainer from './profile/profile_container';
+import ProfileContainer from './profile/profile_container';
 
 
 
@@ -29,7 +29,8 @@ const App = () => (
 
      {/* <Route exact path='/' component={PinIndexContainer} /> */}
      {/* <Route exact path='/' component={HomeComponent} /> */}
-      {/* <ProtectedRoute exact path='/users/:userId' component={ProfileContainer}/> */}
+     <ProtectedRoute exact path='/users/:userId/pins' component={PinIndexContainer}/>
+      <ProtectedRoute exact path='/users/:userId' component={ProfileContainer}/>
       <ProtectedRoute exact path='/pins/:pinId' component={PinShowContainer}/>
       <ProtectedRoute exact path='/pin-builder' component={PinCreateFormContainer}/>
       <ProtectedRoute exact path='/pins' component={PinIndexContainer}/>

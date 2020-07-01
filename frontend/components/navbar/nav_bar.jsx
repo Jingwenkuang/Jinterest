@@ -53,7 +53,7 @@ class NavBar extends React.Component{
             </div>
 
             <div className="nav-demouser">
-              <Link to='/'>
+            <Link to={`/users/${this.props.currentUserId}`}>
                 <i className="fa fa-user-o" id="user-icon" aria-hidden="true"></i>
               </Link>
             </div>

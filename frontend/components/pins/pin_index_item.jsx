@@ -13,6 +13,7 @@ class PinIndexItem extends React.Component {
     let grid = document.getElementById('grid');
     let item = document.getElementById(this.state.id);
 
+    if (!grid) return;
     let rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
     let rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
     let itemImg = item.querySelector(".masonry-photo");
