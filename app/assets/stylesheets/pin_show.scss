@@ -1,3 +1,10 @@
+.pin-show-outside-container:hover {
+  cursor: zoom-out;
+}
+
+.pin-show-container:hover {
+  cursor: default;
+}
 
 .pin-show-container{
   margin-top: 100px;
@@ -16,15 +23,6 @@
   width: 378px;
   height: 480px;
   border-radius: 16px;
-}
-
-.pin-show-container{
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  height: 100%;
-  width: 100%;
 }
 
 .pin-show-box-left{
@@ -47,7 +45,7 @@
   justify-content: space-between;
   flex-direction: column;
   overflow: hidden;
-  margin-right: 15%;
+//   margin-right: 15%;
 }
 
 .pin-show-title{
