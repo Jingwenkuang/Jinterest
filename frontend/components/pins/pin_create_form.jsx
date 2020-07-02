@@ -64,6 +64,7 @@ class PinCreateForm extends React.Component {
         <div className="pin-create-box">
 
           <div className="pin-create-content">
+            <div className='pin-create-dash'>
             <div className="create-pin-image">
               <input type="file" className="image-uploade" onChange={this.handleFile}/>
               <div className={`pin-image ${previewClass}`} id='upload-pin-photo'>{preview}</div>
@@ -76,11 +77,10 @@ class PinCreateForm extends React.Component {
                     <div className={`delete-photo ${previewClass}`} onClick={this.deleteImagePreview}>
                     <i className="fas fa-trash"></i>
                     </div>
-                  </div>
-                  
+                  </div>   
              
             </div>
-
+            </div>
             <div className="create-pin-category">
               <div className="create-pin-input">
                 <div className="pin-info">
