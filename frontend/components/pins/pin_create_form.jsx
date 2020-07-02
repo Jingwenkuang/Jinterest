@@ -64,23 +64,32 @@ class PinCreateForm extends React.Component {
         <div className="pin-create-box">
 
           <div className="pin-create-content">
-            <div className='pin-create-dash'>
-            <div className="create-pin-image">
-              <input type="file" className="image-uploade" onChange={this.handleFile}/>
-              <div className={`pin-image ${previewClass}`} id='upload-pin-photo'>{preview}</div>
-                 <div className="pin-image-context">
-                    <i className="fas fa-arrow-alt-circle-up"></i>
-                    <p>Click to upload</p>
-                  </div>
 
-                  <div>
-                    <div className={`delete-photo ${previewClass}`} onClick={this.deleteImagePreview}>
-                    <i className="fas fa-trash"></i>
+            <div className='pin-create-dash'>
+                <div className="create-pin-image">
+                  
+                    <div className="pin-image-context">
+                    
+                    <div className='pin-upload'>
+                      <label htmlFor="pin-image-upload">
+                      <i className="fa fa-arrow-circle-up" aria-hidden="true" id="pin-upload-arrow">
+                        <div className='pin-upload-text'>Click to upload</div>
+                  <div className={`pin-image ${previewClass}`} id='upload-pin-photo'>{preview}</div>
+                      </i>
+                    </label>
+                    <input type="file" id="pin-image-upload" className="image-upload" onChange={this.handleFile} />
+                     
+                  </div>
                     </div>
-                  </div>   
-             
+
+                    <div>
+                      <div className={`delete-photo ${previewClass}`} onClick={this.deleteImagePreview}>
+                        <i className="fa fa-trash-o" aria-hidden="true" id='pin-trash'></i>
+                      </div>
+                    </div>   
+                </div>
             </div>
-            </div>
+
             <div className="create-pin-category">
               <div className="create-pin-input">
                 <div className="pin-info">
