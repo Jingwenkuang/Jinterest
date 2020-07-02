@@ -1,0 +1,123 @@
+
+.cat-photo{
+  max-width: 54%;
+  cursor: pointer;
+  border-radius: 100%;
+}
+.profile-container{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile-container .profile-box{
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-box .profile-icon{
+  margin-top: 26px;
+  display: flex;
+  height: 50px;
+  width: 100%;
+}
+
+.profile-box .profile-info-box{
+  display: flex;
+  width: 100%;
+}
+
+.profile-info-box .profile-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+}
+
+.profile-name{
+  font-size: 36px;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica;
+}
+
+.profile-description {
+  padding-top: 5px;
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica;
+}
+
+.profile-nav-button{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 24px;
+  margin-left: 10%;
+}
+
+.profile-nav-button .button{
+  text-decoration: none;
+  font-size: 18px;
+  padding: 14px;
+  margin: 10px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  width: auto;
+}
+
+.profile-nav-button .button:hover{
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
+
+.fa.fa-plus{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  font-size: 25px;
+  color: ligth gray;
+  border-radius: 50%;
+  font-weight: lighter;
+}
+
+.fa.fa-plus:hover{
+  cursor: pointer;
+  background-color: light pink;
+  border-radius: 50%;
+}
+///
+.create-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.drop-down {
+  position: absolute;
+  display: block; 
+  cursor: pointer;
+  text-align: left;
+  background-color: white;
+  border-radius: 7px;
+  font-size: 18px;
+  left: -86px;
+  top: 40px;
+  width: 200px;
+  min-width: 180px;
+  max-width: 360px;
+  padding: 12px 12px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.drop-down:hover {
+  background-color: lightpink;
+}
+
+.create-pin-tab {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

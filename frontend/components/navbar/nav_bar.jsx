@@ -54,8 +54,11 @@ class NavBar extends React.Component{
 
             <div className="nav-demouser">
             <Link to={`/users/${this.props.currentUserId}`}>
-                <i className="fa fa-user-o" id="user-icon" aria-hidden="true"></i>
-              </Link>
+                {/* <i className="fa fa-user-o" id="user-icon" aria-hidden="true"></i> */}
+              <div className='nav-cat-photo'>
+                <img src={window.catURL} className='nav-cat-photo' />
+              </div>
+            </Link>
             </div>
 
             <div className="logout-icon" id="options" onClick={this.handleDropDown}>

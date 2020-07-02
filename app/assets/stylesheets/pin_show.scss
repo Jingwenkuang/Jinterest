@@ -20,32 +20,32 @@
 }
 
 .pin-show-item-photo{
-  width: 378px;
-  height: 480px;
+  width: 100%;
+  height: 450px;
   border-radius: 16px;
 }
 
 .pin-show-box-left{
-  width: 490px;
+  width: 885px;
   max-height: 750px;
   position: relative;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  // padding: 20px;
   overflow: hidden;
 }
 
 .pin-show-box-right{
-  width: 350px;
+
+  width: 100%;
   height: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   overflow: hidden;
-//   margin-right: 15%;
+  padding-left: 5%;
 }
 
 .pin-show-title{
@@ -86,6 +86,7 @@
   top: 120px;
   left: 50px;
   font-size: 24px;
+  padding: 12px;
 }
 
 .fa.fa-arrow-left:hover {

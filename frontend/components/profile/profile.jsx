@@ -35,6 +35,7 @@ class Profile extends React.Component{
     // })
   
     return(
+      
       <div className='profile-container'>
         <div className='profile-box'>
 
@@ -48,23 +49,24 @@ class Profile extends React.Component{
           </div>
 
           <div className='profile-info-box'>
-            <div className='profil-info'>
+            <div className='profile-info'>
               <div className='profile-name'>{user.email.slice(0, user.email.indexOf('@'))}</div>
               <div className='profile-description'>{user.description}</div>
             </div>
-             <div className='profile-image'>
-              {/* <img className='profile-picture' src=''></img> */}
-             </div>
+              <div className='profile-cat-photo'>
+                <img src={window.catURL} className='cat-photo' />
+              </div>
           </div>
-
+       
           <div className='profile-nav-button'>
+            <NavLink className="button" to={`/users/${this.props.currentUserId}/pins`}>Boards</NavLink>
             <NavLink className="button" to={`/users/${this.props.currentUserId}/pins`}>Pins</NavLink>
           </div>
-        </div>
 
-        {/* <div className='profile-pin-index'>
-          {userPinIndex}
-        </div> */}
+          {/* <div className='profile-pin-index'>
+            {userPinIndex}
+          </div> */}
+        </div>
       </div>
     )
   }

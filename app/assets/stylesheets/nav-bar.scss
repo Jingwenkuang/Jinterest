@@ -40,12 +40,8 @@
   height: 30px;
 }
 
-.fa.fa-user-o {
-  color: gray;
-}
-
 .github:hover, .linkedin:hover,
-.nav-demouser:hover, .fa.fa-chevron-down:hover,
+.nav-demouser:hover, .fa.fa-chevron-down:hover, 
 .home:hover{
  background-color: lightpink;
  border-radius: 24px;
@@ -99,25 +95,18 @@ z-index: 1;
 }
 
 .home a{
-    display: flex;
-    color: white;
-    font-size: 16px;
-    padding: 16px;
-    background-color: grey;
-    border-radius: 35px;
-    filter: brightness(100%);
+  display: flex;
+  color: white;
+  font-size: 16px;
+  padding: 16px;
+  background-color: grey;
+  border-radius: 35px;
+  filter: brightness(100%);
 }
 
 .home a:hover, .navbar-logo:hover {
  color: lightpink;
 }
-
-// .navbar-logo:hover {
-//   cursor: pointer;
-//   padding: 10px;
-//   border-radius: 25px;
-//   border: 10px;
-// }
 
 .nav-left-logo {
   width: 24px;
@@ -150,6 +139,11 @@ z-index: 1;
   text-decoration: underline;
 }
 
+.nav-cat-photo{
+  max-width: 24px;
+  cursor: pointer;
+  border-radius: 100%;
+}
 
 
 // homepage

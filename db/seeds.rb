@@ -17,7 +17,7 @@ user1 = User.create!(
   first_name: 'la',
   last_name: 'nd',
   age: '17',
-  description: 'green land',
+  description: "Your limitation, it's only your imagination",
   location: 'Montana',
   password: '123456',
 )
