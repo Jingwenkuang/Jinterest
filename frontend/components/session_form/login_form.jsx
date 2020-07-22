@@ -31,7 +31,6 @@ class LoginForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.login(user)
       .then(null, (error) => {this.setState(this.errorsFunction())})
-   
   }
 
   handleDemoUser(e) {

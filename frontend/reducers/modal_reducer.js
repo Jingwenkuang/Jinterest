@@ -15,4 +15,3 @@ export default function modalReducer(state = "login", action) {
       return state;
   }
 }
-
