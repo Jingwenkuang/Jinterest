@@ -23,7 +23,18 @@ Jinterest, a Pinterest clone, is a social media application allow users to pin n
 ### User Authentication 
 User can create account and login. Using BCrypt gem and SecureRandom module to create user authentication, and validator for input validation.
 
-<img style="max-width: 100%;" height="500" src="https://jinterest-seeds.s3-us-west-1.amazonaws.com/session.png">
+<img style="max-width: 100%;" height="460" src="https://jinterest-seeds.s3-us-west-1.amazonaws.com/session.png">
+
+### Discover feed 
+Image grid layout
+
+<img style="max-width: 100%;" height="460" src="https://jinterest-seeds.s3-us-west-1.amazonaws.com/home.png">
 
 
+<img style="max-width: 100%;" height="460" src="https://restaurant-roulette-seeds.s3-us-west-1.amazonaws.com/accept-reroll.png">
+
+
+<img style="max-width: 100%;" height="460" src="https://restaurant-roulette-seeds.s3-us-west-1.amazonaws.com/history.png">
+
+<img style="max-width: 100%;" height="460" src="https://restaurant-roulette-seeds.s3-us-west-1.amazonaws.com/selection.png">
 
