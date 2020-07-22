@@ -30,11 +30,7 @@ Image grid layout
 
 <img style="max-width: 100%;" height="460" src="https://jinterest-seeds.s3-us-west-1.amazonaws.com/home.png">
 
-
-<img style="max-width: 100%;" height="460" src="https://restaurant-roulette-seeds.s3-us-west-1.amazonaws.com/accept-reroll.png">
-
-
-<img style="max-width: 100%;" height="460" src="https://restaurant-roulette-seeds.s3-us-west-1.amazonaws.com/history.png">
-
-<img style="max-width: 100%;" height="460" src="https://restaurant-roulette-seeds.s3-us-west-1.amazonaws.com/selection.png">
+## Coming Soon 
+* Profile 
+* Boards index page
 
