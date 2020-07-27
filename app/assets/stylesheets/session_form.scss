@@ -129,10 +129,11 @@ header h3 {
 }
 
 .errors {
-  font-size: 12px; 
+  font-size: 11px; 
   color: red;
-  margin-bottom: 6px;
+  // margin-bottom: 6px;
   font-weight: lighter;
+  min-height: 1.3em;
 }
 
 .jinterest-logo {
