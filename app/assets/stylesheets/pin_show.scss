@@ -87,11 +87,14 @@
   left: 50px;
   font-size: 24px;
   padding: 12px;
+  min-height: 44px;
+  min-width: 44px;
 }
+
 
 .fa.fa-arrow-left:hover {
  background-color: lightpink;
- border-radius: 24px;
+ border-radius: 50%;
  cursor: pointer;
  padding: 12px;
 }
