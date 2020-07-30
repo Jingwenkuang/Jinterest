@@ -80,21 +80,17 @@
  color: rgb(51, 51, 51); 
 }
 
-.pin-goback {
+#show-pin-arrow {
   color: #333333;
   position: absolute;
+  padding: 10px;
   top: 120px;
   left: 50px;
   font-size: 24px;
-  padding: 12px;
-  min-height: 44px;
-  min-width: 44px;
 }
-
 
 .fa.fa-arrow-left:hover {
  background-color: lightpink;
  border-radius: 50%;
  cursor: pointer;
- padding: 12px;
 }
