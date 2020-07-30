@@ -4,7 +4,8 @@
     <title>Jinterest</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-   
+
+  
   <script type="text/javascript">
     window.jinterestURL = "<%= image_url('jinterest.png') %>";
     window.homepagePhoto = "<%= image_url('local_food_in_rome.jpg')%>";
@@ -16,8 +17,9 @@
     
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <%= favicon_link_tag asset_path('logo.png') %>
-  
+    <link rel='icon' href="<%= image_url('logo.png') %>" type='image/x-icon'/>
+
+
   
   </head>
 
