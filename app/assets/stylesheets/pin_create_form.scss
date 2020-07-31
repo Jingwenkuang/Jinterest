@@ -67,15 +67,6 @@
   display: none;
   width: 0.1px;
 	height: 10.1px;
-	// opacity: 0;
-	// overflow: hidden;
-	// position: absolute;
-	// z-index: -1;
-}
-.pin-image.show{
-  width: 340px;
-  height: 372px;
-  border-radius: 12px;
 }
 
 .pin-image-context{
@@ -123,27 +114,44 @@
 }
 
 .pin-description textarea{
-  // width: 600px;
-  // text-decoration: underline;
-  // text-underline-position: under;
-  // font-size: 18px;
-    box-sizing: border-box;
-    margin: 10px;
-    padding: 10px;
-    resize: none;
-    // border-radius: 16px;
-    // border: 2px solid #dadada;
-    width: 330px;
-    font-family: Arial, Helvetica, sans-serif;
-    // font-weight: 60;
-    font-size: 16px;
-    // display:inline-block;
-    border-bottom:2px solid gray;
-    // padding-bottom:6px;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 10px;
+  resize: none;
+  width: 330px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  border-bottom:2px solid gray;
 }
 
 .pin-description textarea:hover {
-  // border: 2px solid #dadada;
   border-color: rgb(212, 250, 212);
   border-radius: 20px;
+}
+
+.pin-image.show > img{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 340px;
+  height: 450px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#pin-background {
+  text-align: center;
+}
+
+.fa-trash-o:before {
+  content: "\f014";
+  display: block;
+  padding-top: 76%;
+  font-size: 22px;
+}
+
+.fa-trash-o:hover {
+  cursor: pointer;
 }
