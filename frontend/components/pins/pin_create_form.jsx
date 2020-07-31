@@ -98,17 +98,16 @@ class PinCreateForm extends React.Component {
               <div className="create-pin-input">
                 <div className="pin-info">
                   <div className="pin-title">
-                    <input 
-                      type="text"
+                    <textarea
                       value={title} 
                       onChange={this.update("title")}
-                      placeholder="Add your title" 
-                      />
+                      placeholder="Add your title">
+                    </textarea>
                   </div>
 
                   <div className="pin-demo-user">
                     <i className="fa fa-user-o" id="pin-demouser"></i>
-                    <p>{currentUser.username}</p>
+                    <p className="demo-name">{currentUser.username}</p>
                   </div>
 
                   <div className="pin-description">

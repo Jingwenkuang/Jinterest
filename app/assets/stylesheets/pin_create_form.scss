@@ -11,7 +11,7 @@
   border-radius: 20px;
   padding: 20px;
   padding-bottom: 40px;
-  width: 840px;
+  width: 870px;
   margin-left: 20px;
   margin-right: 20px;
   box-shadow: 1px 1px 10px #e0e0e0;
@@ -40,10 +40,10 @@
   height: 454px;
 }
 
-.create-pin-category{
-  padding-left: 20px;
-  padding-right: 20px;
-}
+// .create-pin-category{
+//   padding-left: 20px;
+//   padding-right: 20px;
+// }
 .pin-upload{
   display: flex;
   align-items: center;
@@ -107,23 +107,70 @@
   align-items: center ;
 }
 
-.pin-title {
-  height: 50px;
-  padding: 10px;
+.pin-title textarea{
+  height: 43px;
+  white-space: pre-wrap;
   font-size: 36px;
-}
-
-.pin-description textarea{
+  font-weight: 700;
+  appearance: none;
+  background-color: transparent;
+  border: none;
   box-sizing: border-box;
-  margin: 10px;
-  padding: 10px;
+  overflow: auto;
+  word-wrap: break-word;
+  padding: 0;
   resize: none;
-  width: 330px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  border-bottom:2px solid gray;
+  width: 100%;
+  box-shadow: rgba(142, 142, 142, 0.5) 0px 1px 0px 0px;
+  border-style: none;
+  border-color: transparent;
+  caret-color: darkgray;
 }
 
+// .pin-description textarea{
+//   vertical-align: top;
+//   height: 21px;
+//   white-space: pre-wrap;
+//   font-size: 18px;
+//   appearance: none;
+//   background-color: transparent;
+//   border: none;
+//   box-sizing: border-box;
+//   overflow: auto;
+//   // word-wrap: break-word;
+//   padding: 0;
+//   resize: none;
+//   width: 100%;
+//   height: 100%;
+//   box-shadow: rgba(142, 142, 142, 0.5) 0px 1px 0px 0px;
+//   border-style: none;
+//   border-color: transparent;
+// }
+  .pin-description {
+    align-items: center;
+    min-height: 40px;
+    margin-top: 24px;
+    width: 100%;
+   
+
+    textarea {
+      cursor: text;
+      overflow: auto;
+      vertical-align: top;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      caret-color: darkgray;
+      color: gray;
+      font-size: 18px;
+      font-weight: lighter;
+      max-height: 250px;
+      resize: vertical;
+      width: 420px;
+      display: inline-block;
+      box-shadow: rgba(142, 142, 142, 0.5) 0px 1px 0px 0px;
+      box-sizing: border-box;
+    }
+  }
 .pin-description textarea:hover {
   border-color: rgb(212, 250, 212);
   border-radius: 20px;
@@ -154,4 +201,17 @@
 
 .fa-trash-o:hover {
   cursor: pointer;
+}
+
+.pin-demo-user {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 30px 0px;
+  font-size: 26px;
+}
+
+.demo-name {
+  font-size: 24px;
+  padding-left: 8px;
 }
