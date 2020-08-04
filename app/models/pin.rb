@@ -15,9 +15,16 @@ class Pin < ApplicationRecord
  validate :ensure_photo
 
   belongs_to :user,
-  foreign_key: :user_id,
-  class_name: :User
 
+  has_many :boards_pins, 
+  class_name: :BoardsPins, 
+  foreign_key: :pin_id, 
+  dependent: :destroy 
+
+  has_many :boards, 
+  through: :boards_pins,
+  source: :board 
+  
   has_one_attached :photo
 
   def ensure_photo 
