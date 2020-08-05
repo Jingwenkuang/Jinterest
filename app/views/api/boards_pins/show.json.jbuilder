@@ -1,0 +1,1 @@
+json.partial! "/api/boards_pins/boards_pin", boards_pin: @boards_pin
