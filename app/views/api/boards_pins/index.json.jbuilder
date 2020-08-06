@@ -1,5 +1,5 @@
-@boards_pins.each do |boards_pin|
-  json.set! boards_pin.id do 
-    json.partial "/api/boards_pins/boards_pin", boards_pin: boards_pin
+@boardsPins.each do |boardPin|
+  json.set! boardPin.id do 
+    json.partial "/api/boards_pins/board_pin", boardPin: boardPin
   end
 end

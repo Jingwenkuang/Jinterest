@@ -17,6 +17,8 @@ class PinIndex extends React.Component {
       <PinIndexItem
         pin = {pin}
         key = {pin.id}
+        // userId={currentUserId}
+        // user={user}
       />
     ))
     return (

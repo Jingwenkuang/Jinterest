@@ -14,12 +14,12 @@ class Pin < ApplicationRecord
  validates :title, :user_id, presence: true
  validate :ensure_photo
 
-  belongs_to :user,
+  belongs_to :user
 
-  has_many :boards_pins, 
-  class_name: :BoardsPins, 
-  foreign_key: :pin_id, 
-  dependent: :destroy 
+  has_many :boards_pins,
+    class_name: :BoardsPin,
+    foreign_key: :pin_id,
+    dependent: :destroy
 
   has_many :boards, 
   through: :boards_pins,
