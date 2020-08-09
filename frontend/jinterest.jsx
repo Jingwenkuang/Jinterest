@@ -5,6 +5,7 @@ import Root from './components/root';
 import {fetchAllUsers, fetchUser} from './actions/user_actions';
 import { signup, login, logout } from "./actions/session_actions";
 import { fetchAllPins, fetchPin, createPin, updatePin, deletePin } from './actions/pin_actions';
+import { fetchBoards, fetchBoard } from './actions/board_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -38,6 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.createPin = createPin;
     window.updatePin = updatePin;
     window.deletePin = deletePin;
+    window.fetchBoards = fetchBoards;
+    window.fetchBoard = fetchBoard;
     
   ReactDOM.render(<Root store={store}/>, root);
 })

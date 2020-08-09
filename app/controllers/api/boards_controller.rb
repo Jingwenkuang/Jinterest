@@ -27,7 +27,7 @@ class Api::BoardsController < ApplicationController
   end
 
   def update 
-    @board = Board.find_by(id:, params[:id])
+    @board = Board.find_by(id: params[:id])
     if @board && @board.user_id == current_user.id 
       if @board.update(board_params)
         render "/api/boards/show"

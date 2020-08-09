@@ -7,7 +7,7 @@ import { clearErrors } from '../../actions/session_actions';
 const mapStateToProps = (state, ownProps) => ({
   currentUserId: state.session.currentUserId,
   user: state.entities.users[state.session.currentUserId],
-  // pins: Object.values(state.entities.pins),
+  pins: Object.values(state.entities.pins),
 })
 
 const mapDispatchToProps = dispatch => ({

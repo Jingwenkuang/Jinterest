@@ -1,8 +1,5 @@
 import React from "react";
-
 import { Link, withRouter } from "react-router-dom";
-// import LinesEllipsis from "react-lines-ellipsis";
-
 
 
 const BoardIndexItem = ({ board, pins, currentUser, user, openEditBoard }) => {
@@ -14,12 +11,12 @@ const BoardIndexItem = ({ board, pins, currentUser, user, openEditBoard }) => {
   const pinE = (pins[4]) ? <img src={`${pins[4].photo}`}></img> : null;
   const pinF = (pins[5]) ? <img src={`${pins[5].photo}`}></img> : null;
 
-  const secretIcon = (board.secret) ? (
-    <div className="board-index-item visibility">
-      <i className="fas fa-lock board-index-item" id="lock-icon"></i>
-    </div>
-  ) : null;
-  const klass = (currentUser.username === user.username) ? 'show' : 'hide';
+  // const secretIcon = (board.secret) ? (
+  //   <div className="board-index-item visibility">
+  //     <i className="fas fa-lock board-index-item" id="lock-icon"></i>
+  //   </div>
+  // ) : null;
+  const name = (currentUser.username === user.username) ? 'show' : 'hide';
 
   return (
     <div className="board-index-item container">
@@ -50,15 +47,15 @@ const BoardIndexItem = ({ board, pins, currentUser, user, openEditBoard }) => {
                 <div className="board-index-item title">
                   {board.title}
                 </div>
-                <div className="board-index-item additional">
-                  {secretIcon}
+                {/* <div className="board-index-item additional"> */}
+                  {/* {secretIcon} */}
                   <div className="board-index-item pin-count">
                     {numPins} Pins
                   </div>
-                </div>
+                {/* </div> */}
               </div>
               <button
-                className={`board-index-item edit-button ${klass}`}
+                className={`board-index-item edit-button ${name}`}
                 onClick={(e, boardId) => openEditBoard(e, board.id)}
               >
                 <i className="fas fa-pencil-alt board-index-item" id="edit-icon"></i>

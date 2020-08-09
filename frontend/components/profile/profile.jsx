@@ -16,24 +16,39 @@ class Profile extends React.Component{
     this.setState({ dropDownHidden: !this.state.dropDownHidden })
   }
 
-  componentDidMount(){
-    this.props.fetchUser(this.props.currentUserId)
+  // componentDidMount(){
+  //   this.props.fetchUser(this.props.currentUserId)
+  // }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.currentUserId !== this.props.currentUserId) {
+      this.props.fetchUser(this.props.match.params.currentUserId)
+    }
   }
 
   render() {
     const dropDownHidden = this.state.dropDownHidden ? "hidden" : "";
 
-    const { user } = this.props
+    const { user } = this.props;
  
-    if (!user) return <div></div>
+    if (!user) return <div></div>;
 
+    // const userPins = this.props.pins.filter(pin => pin.user_id === this.props.currentUserId);
     // const userPinsIndex = user.pins.map((pin) => {
     //   return <PinIndexItem 
     //           key={pin.id}
     //           pin={Object.values(pin)[0]}
     //           />
     // })
-  
+   
+    //  const userPinsIndex = <PinIndexItem pins={userPins} />
+    // const userPinsIndex = userPins.map((pin) => {
+    //   return <PinIndexItem 
+    //           key={pin.id}
+    //           pin={Object.values(pin)[0]}
+    //           />
+    // })
+
     return(
       
       <div className='profile-container'>
@@ -59,12 +74,12 @@ class Profile extends React.Component{
           </div>
        
           <div className='profile-nav-button'>
-            <NavLink className="button" to={`/users/${this.props.currentUserId}/pins`}>Boards</NavLink>
-            <NavLink className="button" to={`/users/${this.props.currentUserId}/pins`}>Pins</NavLink>
+            <NavLink className="button" to={`/${this.props.user.username}/boards`}>Boards</NavLink>
+            <NavLink className="button" to={`/${this.props.user.username}/pins`}>Pins</NavLink>
           </div>
 
           {/* <div className='profile-pin-index'>
-            {userPinIndex}
+            {userPinsIndex}
           </div> */}
         </div>
       </div>

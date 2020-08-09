@@ -10,11 +10,13 @@ import { clearErrors } from "../../actions/session_actions";
 const mapStateToProps = (state, ownProps) => ({
   
     currentUser: state.entities.users[state.session.currentUserId],
-    boards: ownProps.boards,
+    userId: state.session.currentUserId,
+    // boards: ownProps.boards,
+    boards: Object.values(state.entities.boards),
     boardsPins: state.entities.boardsPins,
     pins: state.entities.pins,
     user: ownProps.user,
-    errors: state.errors.boards
+    errors: state.errors.boards,
 });
  
 const mapDispatchToProps = dispatch => ({
