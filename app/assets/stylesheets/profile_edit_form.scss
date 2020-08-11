@@ -3,7 +3,7 @@
     background-color: whitesmoke;
     padding: 48px;
     border-radius: 20px;
-    width: 180%;
+    width: 100%;
 }
 
 .form-header-edit h1{
@@ -55,7 +55,9 @@ input.profile-input:hover {
   border: 2px solid #ddd;
   width: 55%; 
   margin-bottom: 12px;
-  margin-top: 6px;  
+  margin-top: 6px; 
+  font-size: 15px;
+  font-weight: 500; 
 }
 
 .profile-textarea:hover {
@@ -101,4 +103,32 @@ input.profile-input.profile-text-name {
   background: lightgray;
   border-radius: 15px;
   color: gray;
+}
+
+.profile-edit-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.save-or-cancel {
+  display: flex;
+  justify-content: center;
+  margin: 10px 50px;
+}
+
+.profile-cancle{
+  margin: 5px;
+}
+
+.profile-save{
+  margin: 5px;
+}
+
+.profile-message {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  word-wrap: word;
 }

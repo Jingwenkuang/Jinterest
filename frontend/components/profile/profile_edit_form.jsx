@@ -33,16 +33,17 @@ class ProfileEditForm extends React.Component {
         <div className="form-edit-box">
           <div className="form-header-edit">
             <h1>Edit Profile</h1>
-            <p>
-              <h3>People on Jinterest will get to know you</h3>
-              <h3>with the info below</h3>
-            </p>
+            <div className='profile-edit-header'>
+            <div>
+              <div className='profile-message'>People on Jinterest will get to know you with the info below</div>
+            </div>
               <div className="bottom-options">
                 <div className="save-or-cancel">
-                  <button className="cancel-edit" onClick={this.props.closeModal}>Cancel</button>
-                  <button className="save-edit" onClick={this.handleSubmit}>Save</button>
+                  <div className='profile-cancle'><button className="cancel-edit" onClick={this.props.closeModal}>Cancel</button></div>
+                  <div className='profile-save'><button className="save-edit" onClick={this.handleSubmit}>Save</button></div>
                 </div>
               </div>
+            </div>
             <div className="user-edit-form-box">
               <div className="user-edit-details">
                 <div className="content">
