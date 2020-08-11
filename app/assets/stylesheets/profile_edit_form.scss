@@ -132,3 +132,26 @@ input.profile-input.profile-text-name {
   font-weight: 500;
   word-wrap: word;
 }
+
+.profile-goback{
+  color: white;
+  position: absolute;
+  padding: 10px;
+  top: 6%;
+  left: -10%;
+  font-size: 24px;
+} 
+
+.profile-goback:hover {
+  background-color: lightpink;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.edit-icon {
+  margin: 10px;
+}
+
+.create-icon {
+  margin: 10px;
+}
