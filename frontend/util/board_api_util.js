@@ -34,3 +34,4 @@ export const deleteBoard = (boardId) => {
     method: "DELETE"
   })
 };
+``

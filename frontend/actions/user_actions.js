@@ -1,5 +1,5 @@
 import * as UsersAPIUtil from '../util/user_api_util';
-
+import { receiveCurrentUser } from './session_actions';
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
@@ -24,11 +24,18 @@ export const fetchAllUsers = () => dispatch => (
   UsersAPIUtil.fetchAllUsers()
     .then(users => dispatch(receiveAllUsers(users)),
     error => dispatch(receiveUserErrors(error.responseJson)))
-)
+);
 
 export const fetchUser = (userId) => (dispatch) => (
   UsersAPIUtil.fetchUser(userId)
     .then((user) =>
       dispatch(receiveUser(user)),
       error => dispatch(receiveUserErrors(error.responseJson)))
-  );
+);
+
+export const updateUser = user => dispatch => (
+  UsersAPIUtil.updateUser(user)
+    .then(updateUser => dispatch(receiveCurrentUser(updateUser)),
+    error => dispatch(receiveUserErrors(error.responseJson)))
+);
+

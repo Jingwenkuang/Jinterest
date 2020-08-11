@@ -1,4 +1,6 @@
 json.partial! "api/users/user", user: @user 
+
+
 # json.users do
 #   json.set! @user.id do
 #     json.partial! "api/users/user", user: @user
@@ -23,10 +25,10 @@ json.partial! "api/users/user", user: @user
 #   end
 # end
 
-# json.pins do
-#   @user.pins.each do |pin|
-#     json.set! pin.id do
-#       json.partial! "api/pins/pin", pin: pin
-#     end
-#   end
-# end
+ json.pins do
+   @user.pins.each do |pin|
+     json.set! pin.id do
+       json.partial! "api/pins/pin", pin: pin
+     end
+   end
+ end

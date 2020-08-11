@@ -25,7 +25,7 @@ class ProfileContent extends React.Component {
     const userPins = pins.filter(pin => pin.user_id === user.id);
   // console.log(pins)
   // console.log(userPins)
-  console.log(boards)
+    console.log(boards)
     const contentTabs = [
       <BoardIndexContainer user={user} boards={userBoards} />,
       <PinIndexContainer pins={userPins}/>

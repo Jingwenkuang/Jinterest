@@ -27,6 +27,9 @@ export const receiveBoardErrors = errors => ({
 });
 
 //thunk action creators 
+
+
+
 export const fetchBoards = () => dispatch => {
   return BoardAPIUtil.fetchBoards()
   .then(boards => dispatch(receiveBoards(boards)),

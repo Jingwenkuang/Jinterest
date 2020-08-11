@@ -4,7 +4,7 @@ class Api::BoardsController < ApplicationController
 
   def index 
     @boards = Board.all.where(user_id: params[:user_id])
-    render "/api/boards/index"
+    render '/api/boards/index'
   end
 
   def show 

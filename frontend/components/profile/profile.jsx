@@ -61,6 +61,9 @@ class Profile extends React.Component{
                <Link to="/pin-builder" className="create-pin-tab">Create Pin</Link>
               </div>
              </div>
+            <div className='edit-icon' onClick={() => this.props.openModal('edit-profile')}>
+              <i className="fa fa-pencil"></i>
+             </div>
           </div>
 
           <div className='profile-info-box'>

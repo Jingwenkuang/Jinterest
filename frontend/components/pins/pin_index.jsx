@@ -9,13 +9,13 @@ class PinIndex extends React.Component {
   }
   componentDidMount() {
     this.props.fetchAllPins().then(); //iterate pin, filter pin userid 
-   
     //remind pin set state 
   }
 
   render() { //based on state
    
     const { pins, user, currentUserId } = this.props;
+   
     const pinIndexItems = pins.map(pin => (
       <PinIndexItem
         pin = {pin}

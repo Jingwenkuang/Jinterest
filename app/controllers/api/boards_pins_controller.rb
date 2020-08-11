@@ -4,13 +4,13 @@ class Api::BoardsPinsController < ApplicationController
 
   def index 
     @boardsPins = BoardsPins.all 
-    render "/api/boards_pins/index"
+    render '/api/boards_pins/index'
   end
 
   def create 
    @boardPin = BoardsPins.new(boardPin_params)
     if @boardPin.save 
-      render "/api/boards_pins/show"
+      render '/api/boards_pins/show'
     else
       render json:@boardPin.errors.full_messages, status: 422
     end
@@ -20,7 +20,7 @@ class Api::BoardsPinsController < ApplicationController
    @boardPin = current_user.boards_pins.find(params[:id])
     if @boardPin 
       @boardPin.destroy
-      render "/api/boards_pins/show"
+      render '/api/boards_pins/show'
     else 
       render json:@boardPin.errors.full_messages, status: 401
     end

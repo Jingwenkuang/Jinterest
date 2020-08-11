@@ -10,8 +10,10 @@ import PinIndexContainer from './pins/pin_index_container';
 import PinCreateFormContainer from './pins/pin_create_form_container';
 import PinShowContainer from './pins/pin_show_container';
 import ProfileContainer from './profile/profile_container';
-import ProfileShowContainer from './profile/profile_show_container'
+import ProfileShowContainer from './profile/profile_show_container';
+import ProfileEditContainer from './profile/profile_edit_form_container';
 import BoardIndexContainer from './boards/board_index_container';
+import BoardShowContainer from './boards/board_show_container';
 
 
 
@@ -33,10 +35,12 @@ const App = () => (
      {/* <Route exact path='/' component={HomeComponent} /> */}
       <ProtectedRoute exact path='/:username/pins' component={ProfileShowContainer}/>
       <ProtectedRoute exact path='/users/:userId' component={ProfileContainer}/>
-      <ProtectedRoute exact path='/:username/boards' component={ProfileShowContainer} />
       <ProtectedRoute exact path='/pins/:pinId' component={PinShowContainer}/>
       <ProtectedRoute exact path='/pin-builder' component={PinCreateFormContainer}/>
       <ProtectedRoute exact path='/pins' component={PinIndexContainer}/>
+      <ProtectedRoute exact path='/settings' component={ProfileEditContainer} />
+      <ProtectedRoute exact path='/:username/boards' component={ProfileShowContainer} />
+      <ProtectedRoute exact path="/:username/:boardName" component={BoardShowContainer} />
       <AuthRoute exact path='/' component={HomeComponent}/>
      <Redirect to='/'/>
     </Switch>

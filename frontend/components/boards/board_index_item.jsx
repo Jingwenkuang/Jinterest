@@ -22,7 +22,7 @@ const BoardIndexItem = ({ board, pins, currentUser, user, openEditBoard }) => {
     <div className="board-index-item container">
       <Link
         to={{
-          pathname: `/${user.username}/${board.title}`,
+          pathname: `/${user.username}/${board.name}`,
           state: {
             fromProfile: true
           }
@@ -45,7 +45,7 @@ const BoardIndexItem = ({ board, pins, currentUser, user, openEditBoard }) => {
             <div className="board-index-item info">
               <div className="board-index-item info-details">
                 <div className="board-index-item title">
-                  {board.title}
+                  {board.name}
                 </div>
                 {/* <div className="board-index-item additional"> */}
                   {/* {secretIcon} */}
@@ -69,3 +69,4 @@ const BoardIndexItem = ({ board, pins, currentUser, user, openEditBoard }) => {
 };
 
 export default withRouter(BoardIndexItem);
+

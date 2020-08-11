@@ -9,74 +9,11 @@ class BoardIndex extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchBoards();
+    this.props.fetchBoards().then(res => console.log(res));
     this.props.fetchUser(this.props.userId)
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevProps.userId !== this.props.userId) {
-  //     this.props.fetchUser(this.props.match.params.userId)
-  //   }
-
-  //   if (Object.values(prevProps.boards).length !== Object.values(this.props.boards).length) {
-  //     this.props.fetchBoards();
-  //   }
-  // }
-
-
-  // render() {
-  //   const { user, allBoards } = this.props;
-
-  //   if (!user) return <div></div>;
-  //   if (!allBoards) return <div></div>;
-
-  //   let userBoardsArray = Object.values(allBoards).filter(board => {
-  //     return board.creator_id === user.id
-  //   })
-
-  //   const userBoards = userBoardsArray.map((board, idx) => {
-  //     return <BoardIndexItem key={idx} board={board} />
-  //   })
-
-  //   return (
-  //     <div className='profile-container'>
-
-  //       <div className="profile-edit-header-bar"></div>
-
-  //       <div className='profile-create-header'>
-  //         <div className="profile-create-pin-board-dropdown">
-  //           <button className='profile-create-pin-board-btn'><i className="fas fa-plus"></i></button>
-  //           <div className='profile-create-pin-board-content'>
-  //             <div onClick={() => this.props.openModal('create-board')}>Create Board</div>
-  //             <Link to='/pin-builder'><div>Create Pin</div></Link>
-  //           </div>
-  //           <div className='profile-create-hover'></div>
-  //         </div>
-  //       </div>
-
-  //       <div className='profile-info-header'>
-  //         <div className='profile-info-name'>{user.email.slice(0, user.email.indexOf('@'))}</div>
-  //         {/* <div className='profile-follow-container'>
-  //           <div># followers</div>
-  //           <div>/</div>
-  //           <div># following</div>
-  //         </div> */}
-  //       </div>
-
-  //       <div className='profile-boards-pins-header'>
-  //         {/* <Link to='/users/3'>user3</Link> */}
-  //         <Link to={`/${this.props.user.username}/boards`}><button className="profile-button-boards">Boards</button></Link>
-  //         <Link to={`/users/${user.id}/pins`}><button className="profile-button-pins">Pins</button></Link>
-  //       </div>
-
-  //       <div className='profile-board-index-container'>
-  //         {userBoards}
-  //       </div>
-  //     </div>
-  //   )
-  // }
-
-  /////
+  
   openEditBoard(e, boardId) {
     e.preventDefault();
     this.props.openEditBoard(boardId);
@@ -85,17 +22,14 @@ class BoardIndex extends Component {
 
   render() {
     const { boards, pins, currentUser, user, newBoard } = this.props;
+    console.log("check")
+    console.log(pins)
     const boardIndexItems = (boards.length > 0) ? (
       boards.map(board => {
-        const prevPinIds = (board.pinIds) ? (
-          board.pinIds.slice(0, 6)
-          ) : (
-            board.pinIds
-            );
-            const previewPins = prevPinIds.map((pinId) => {
-              return pins[pinId];
-            });
-       
+        const prevPinIds = (board.pinIds) ? ( board.pinIds.slice(0, 6) ) : ( board.pinIds );
+        const previewPins = prevPinIds.map((pinId) => {
+          return pins[pinId];
+        });
         return (
           <BoardIndexItem
             key={board.id}
@@ -133,3 +67,5 @@ class BoardIndex extends Component {
 
 
 export default BoardIndex;
+
+
