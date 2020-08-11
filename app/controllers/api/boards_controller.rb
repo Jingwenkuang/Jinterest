@@ -3,7 +3,7 @@ class Api::BoardsController < ApplicationController
   before_action :require_login 
 
   def index 
-    @boards = Board.all.where(user_id: params[:user_id])
+    @boards = Board.all.includes(:pins)
     render '/api/boards/index'
   end
 
@@ -54,6 +54,6 @@ class Api::BoardsController < ApplicationController
 
   private 
   def board_params
-    params.require(:board).permit(:name, :description, :date_start, :date_end)
+    params.require(:board).permit(:user_id, :name, :description, :date_start, :date_end)
   end
 end

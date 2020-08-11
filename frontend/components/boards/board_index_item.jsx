@@ -4,6 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 
 const BoardIndexItem = ({ board, pins, currentUser, user, openEditBoard }) => {
   const numPins = board.pinIds.length;
+
   const pinA = (pins[0]) ? <img src={`${pins[0].photo}`}></img> : null;
   const pinB = (pins[1]) ? <img src={`${pins[1].photo}`}></img> : null;
   const pinC = (pins[2]) ? <img src={`${pins[2].photo}`}></img> : null;

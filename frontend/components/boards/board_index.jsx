@@ -22,11 +22,15 @@ class BoardIndex extends Component {
 
   render() {
     const { boards, pins, currentUser, user, newBoard } = this.props;
-    console.log("check")
     console.log(pins)
+
     const boardIndexItems = (boards.length > 0) ? (
       boards.map(board => {
-        const prevPinIds = (board.pinIds) ? ( board.pinIds.slice(0, 6) ) : ( board.pinIds );
+        const prevPinIds = (board.pinIds) ? (
+          board.pinIds.slice(0, 6)
+        ) : (
+            board.pinIds
+          );
         const previewPins = prevPinIds.map((pinId) => {
           return pins[pinId];
         });
@@ -37,12 +41,12 @@ class BoardIndex extends Component {
             pins={previewPins}
             currentUser={currentUser}
             user={user}
-            // openEditBoard={this.openEditBoard}
+            openEditBoard={this.openEditBoard}
           />
         )
       })
     ) : (
-        null 
+        null // swap with add button using newBoard
       );
 
     return (
@@ -67,5 +71,4 @@ class BoardIndex extends Component {
 
 
 export default BoardIndex;
-
 

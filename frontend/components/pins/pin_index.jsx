@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 class PinIndex extends React.Component {
   constructor(props) {
     super(props);
+   
   }
+ 
   componentDidMount() {
-    this.props.fetchAllPins(); //iterate pin, filter pin userid 
-    //remind pin set state 
+    this.props.fetchAllPins(); 
   }
 
-  render() { //based on state
-   
+  render() { 
     const { pins, user, currentUserId } = this.props;
    
     const pinIndexItems = pins.map(pin => (
