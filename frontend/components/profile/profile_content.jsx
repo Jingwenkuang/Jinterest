@@ -23,9 +23,7 @@ class ProfileContent extends React.Component {
     const { currentUser, user, boards, pins, openModal, closeModal } = this.props;
     const userBoards = boards.filter(board => board.user_id === user.id);
     const userPins = pins.filter(pin => pin.user_id === user.id);
-  // console.log(pins)
-  // console.log(userPins)
-    console.log(boards)
+ 
     const contentTabs = [
       <BoardIndexContainer user={user} boards={userBoards} />,
       <PinIndexContainer pins={userPins}/>
@@ -60,10 +58,10 @@ class ProfileContent extends React.Component {
 
 export default ProfileContent;
 
-ProfileContent.defaultProps = {
-  user: {
-    username: '',
-    firstName: '',
-    lastName: ''
-  }
-}
+// ProfileContent.defaultProps = {
+//   user: {
+//     username: '',
+//     firstName: '',
+//     lastName: ''
+//   }
+// }

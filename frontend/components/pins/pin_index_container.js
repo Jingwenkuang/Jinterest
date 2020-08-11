@@ -4,7 +4,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import PinIndex from './pin_index';
 
 const mapStateToProps = (state, ownProps)  => ({
-  pins: Object.values(state.entities.pins),
+  // pins: Object.values(state.entities.pins),
   user: state.entities.users[state.session.currentUserId],
   currentUserId: state.session.currentUserId
 })

@@ -8,7 +8,7 @@ class PinIndex extends React.Component {
     super(props);
   }
   componentDidMount() {
-    this.props.fetchAllPins().then(); //iterate pin, filter pin userid 
+    this.props.fetchAllPins(); //iterate pin, filter pin userid 
     //remind pin set state 
   }
 

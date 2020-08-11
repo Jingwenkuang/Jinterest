@@ -1,5 +1,5 @@
 @boards.each do |board|
-  json.set! board.id. do 
+  json.set! board.id do 
     json.partial! "api/boards/board", board: board
 
 #        if board.pins.length > 0

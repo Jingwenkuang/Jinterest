@@ -1,6 +1,6 @@
-export const fetchBoards = () => {
+export const fetchBoards = (userId) => {
   return $.ajax({
-    url: `/api/boards`,
+    url: `/api/users/${userId}/boards`,
     method: "GET"
   })
 }
@@ -34,4 +34,3 @@ export const deleteBoard = (boardId) => {
     method: "DELETE"
   })
 };
-``
