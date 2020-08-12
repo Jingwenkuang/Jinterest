@@ -81,24 +81,13 @@ input.profile-input.profile-text-name {
   min-width: 116%;
 }
 
-.cancel-edit{
+.cancel-edit, 
+.save-edit {
   box-sizing: border-box;
   padding: 12px;
   outline: none;
   border: 0;
   font:inherit;
-  display: block;
-  background: lightgray;
-  border-radius: 15px;
-  color: gray;
-}
-
-.save-edit{
-  font:inherit;
-  box-sizing: border-box;
-  padding: 12px;
-  outline: none;
-  border: 0;
   display: block;
   background: lightgray;
   border-radius: 15px;

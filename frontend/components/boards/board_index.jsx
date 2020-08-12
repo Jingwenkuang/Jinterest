@@ -22,8 +22,9 @@ class BoardIndex extends Component {
 
   render() {
     const { boards, pins, currentUser, user, newBoard } = this.props;
-    console.log(pins)
-
+   
+    console.log(boards)
+    console.log('check')
     const boardIndexItems = (boards.length > 0) ? (
       boards.map(board => {
         const prevPinIds = (board.pinIds) ? (

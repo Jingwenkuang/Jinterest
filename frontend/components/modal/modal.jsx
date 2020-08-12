@@ -5,9 +5,10 @@ import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import PinEditFormContainer from '../pins/pin_edit_form_container';
 import ProfileEditFormContainer from '../profile/profile_edit_form_container';
+import BoardCreateFormContainer from '../boards/board_create_form_container';
 
 import PinDeleteFormContainer from '../pins/pin_delete_form_container';
-import BoardCreateFormContainer from '../boards/board_create_form_container'
+
 function Modal({ modal, closeModal }) {
   if (!modal) {
     return null;
