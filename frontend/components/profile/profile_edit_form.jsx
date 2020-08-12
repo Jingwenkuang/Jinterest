@@ -13,6 +13,7 @@ class ProfileEditForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+
   }
 
   update(field) {
@@ -30,7 +31,7 @@ class ProfileEditForm extends React.Component {
     const { username, first_name, last_name, description } = this.state;
     return (
       <div className='pin-show-outside-container' >
-        <div className='profile-goback' >
+        <div className='profile-goback' onClick={this.props.closeModal}>
           <i id='show-profile-arrow' className="fa fa-arrow-left"></i>
         </div>
       <div className='form-edit'>

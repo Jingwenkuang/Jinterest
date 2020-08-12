@@ -3,7 +3,7 @@
   cursor: pointer;
 }
 
-.drop-down {
+.drop-down-tab {
   position: absolute;
   display: block; 
   cursor: pointer;
@@ -11,8 +11,8 @@
   background-color: white;
   border-radius: 7px;
   font-size: 18px;
-  left: 20%;
-  top: 40%;
+  right: 2%;
+  top: 70%;
   width: 200px;
   min-width: 180px;
   max-width: 360px;
@@ -21,7 +21,7 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.drop-down:hover {
+.drop-down-tab:hover {
   background-color: lightpink;
 }
 

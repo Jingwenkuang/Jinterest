@@ -63,7 +63,7 @@ class NavBar extends React.Component{
 
             <div className="logout-icon" id="options" onClick={this.handleDropDown}>
               <i className="fa fa-chevron-down" aria-hidden="true" ></i>
-              <div className={`drop-down ${dropDownHidden}`}>
+              <div className={`drop-down-tab ${dropDownHidden}`}>
                 <Link to="/" className="logout-tab" onClick={logout}>Log out</Link>
               </div>
             </div>
