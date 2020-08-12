@@ -99,3 +99,16 @@ p.board-create-opt {
   color: gray;
   margin: 5px;
 }
+
+label.start-date,
+label.end-date {
+  font-weight: 500;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.start,
+.end {
+  display: flex;
+}
