@@ -12,11 +12,7 @@ const BoardIndexItem = ({ board, pins, currentUser, user, openEditBoard }) => {
   const pinE = (pins[4]) ? <img src={`${pins[4].photo}`}></img> : null;
   const pinF = (pins[5]) ? <img src={`${pins[5].photo}`}></img> : null;
 
-  // const secretIcon = (board.secret) ? (
-  //   <div className="board-index-item visibility">
-  //     <i className="fas fa-lock board-index-item" id="lock-icon"></i>
-  //   </div>
-  // ) : null;
+ 
   const name = (currentUser.username === user.username) ? 'show' : 'hide';
 
   return (
@@ -48,12 +44,11 @@ const BoardIndexItem = ({ board, pins, currentUser, user, openEditBoard }) => {
                 <div className="board-index-item title">
                   {board.name}
                 </div>
-                {/* <div className="board-index-item additional"> */}
-                  {/* {secretIcon} */}
+          
                   <div className="board-index-item pin-count">
                     {numPins} Pins
                   </div>
-                {/* </div> */}
+              
               </div>
               <button
                 className={`board-index-item edit-button ${name}`}

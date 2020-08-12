@@ -37,7 +37,7 @@ input.profile-input:hover {
   border: 4px solid rgb(183, 238, 233);
 }
 
-.profile-textarea {
+textarea.profile-textarea {
   line-height: 1.5;
   padding: 8px 16px;
   resize: none;
@@ -63,6 +63,10 @@ input.profile-input:hover {
 .profile-textarea:hover {
   appearance: none;
   border: 4px solid rgb(183, 238, 233);
+}
+
+textarea.profile-textarea:focus {
+  outline: none;
 }
 
 .profile-edit-name {

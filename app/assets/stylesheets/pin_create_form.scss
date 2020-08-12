@@ -114,66 +114,51 @@
   font-weight: 700;
   appearance: none;
   background-color: transparent;
-  border: none;
-  box-sizing: border-box;
   overflow: auto;
-  word-wrap: break-word;
-  padding: 0;
   resize: none;
   width: 100%;
-  box-shadow: rgba(142, 142, 142, 0.5) 0px 1px 0px 0px;
   border-style: none;
   border-color: transparent;
   caret-color: darkgray;
+  border-bottom: 1px solid lightgray;
 }
 
-// .pin-description textarea{
-//   vertical-align: top;
-//   height: 21px;
-//   white-space: pre-wrap;
-//   font-size: 18px;
-//   appearance: none;
-//   background-color: transparent;
-//   border: none;
-//   box-sizing: border-box;
-//   overflow: auto;
-//   // word-wrap: break-word;
-//   padding: 0;
-//   resize: none;
-//   width: 100%;
-//   height: 100%;
-//   box-shadow: rgba(142, 142, 142, 0.5) 0px 1px 0px 0px;
-//   border-style: none;
-//   border-color: transparent;
-// }
-  .pin-description {
-    align-items: center;
-    min-height: 40px;
-    margin-top: 24px;
-    width: 100%;
-   
+textarea.pin-title-update:focus {
+  outline: none;
+  border-bottom: 1.5px solid rgb(158, 220, 199);
+}
 
-    textarea {
-      cursor: text;
-      overflow: auto;
-      vertical-align: top;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      caret-color: darkgray;
-      color: gray;
-      font-size: 18px;
-      font-weight: lighter;
-      max-height: 250px;
-      // resize: vertical;
-      width: 420px;
-      display: inline-block;
-      box-shadow: rgba(142, 142, 142, 0.5) 0px 1px 0px 0px;
-      box-sizing: border-box;
-    }
-  }
-.pin-description textarea:hover {
-  border-color: rgb(212, 250, 212);
-  border-radius: 20px;
+.pin-description {
+  align-items: center;
+  min-height: 40px;
+  margin-top: 24px;
+  width: 100%;
+}
+
+textarea.pin-details {
+  line-height: 1.5;
+  padding: 8px 6px;
+  resize: none;
+  appearance: none;
+  border-width: 2px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 12px;
+  margin-top: 6px;
+  font-size: 17px;
+  font-weight: 500;
+  border-bottom: 1px solid lightgray ;
+}
+
+textarea.pin-details:focus {
+  outline: none;
+  border-bottom: 1.5px solid rgb(158, 220, 199);
+  appearance: none;
 }
 
 .pin-image.show > img{

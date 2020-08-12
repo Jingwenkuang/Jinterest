@@ -10,6 +10,8 @@ class BoardIndex extends Component {
 
   componentDidMount() {
     this.props.fetchBoards();
+    this.props.fetchAllPins();
+    this.props.fetchAllBoardsPins();
     this.props.fetchUser(this.props.userId)
   }
 
@@ -23,8 +25,10 @@ class BoardIndex extends Component {
   render() {
     const { boards, pins, currentUser, user, newBoard } = this.props;
    
-    console.log(boards)
-    console.log('check')
+  console.log('check')
+  console.log(pins)
+  console.log(boards)
+  
     const boardIndexItems = (boards.length > 0) ? (
       boards.map(board => {
         const prevPinIds = (board.pinIds) ? (
@@ -32,9 +36,11 @@ class BoardIndex extends Component {
         ) : (
             board.pinIds
           );
-        const previewPins = prevPinIds.map((pinId) => {
-          return pins[pinId];
-        });
+     
+          const previewPins = prevPinIds.map((pinId) => {
+            return pins[pinId];
+          });
+       
         return (
           <BoardIndexItem
             key={board.id}
@@ -47,7 +53,7 @@ class BoardIndex extends Component {
         )
       })
     ) : (
-        null // swap with add button using newBoard
+        null 
       );
 
     return (
@@ -68,6 +74,8 @@ class BoardIndex extends Component {
       </div>
     )
   }
+
+
 }
 
 

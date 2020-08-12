@@ -3,12 +3,12 @@ class Api::BoardsPinsController < ApplicationController
   before_action :require_login 
 
   def index 
-    @boardsPins = BoardsPins.all 
+    @boardsPins = BoardsPin.all 
     render '/api/boards_pins/index'
   end
 
   def create 
-   @boardPin = BoardsPins.new(boardPin_params)
+   @boardPin = BoardsPin.new(boardPin_params)
     if @boardPin.save 
       render '/api/boards_pins/show'
     else

@@ -65,11 +65,6 @@ class Profile extends React.Component{
               </div>
             </div>
               
-
-              {/* <div className={`drop-down ${dropDownHidden}`} onClick={() => this.props.openModal('new-board')}>
-                <div>Create Board</div>
-              </div> */}
-             {/* </div> */}
             <div className='edit-icon' onClick={() => this.props.openModal('edit-profile')}>
               <i className="fa fa-pencil"></i>
              </div>
