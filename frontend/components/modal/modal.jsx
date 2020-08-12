@@ -13,7 +13,7 @@ function Modal({ modal, closeModal }) {
   if (!modal) {
     return null;
   }
-  let component;
+  let component, clickBackground;
   switch (modal) {
     case 'login':
       component = <LoginFormContainer closeModal={closeModal}/>;
@@ -26,18 +26,20 @@ function Modal({ modal, closeModal }) {
       break;
     case 'edit-profile':
       component = <ProfileEditFormContainer closeModal={closeModal}/>;
+      clickBackground = closeModal;
       break;
     case 'delete-pin':
       component = <PinDeleteFormContainer closeModal={closeModal} />;
       break;
     case 'new-board':
       component = <BoardCreateFormContainer closeModal={closeModal} />;
+      clickBackground = closeModal;
       break;
     default:
       return null;
   }
   return (
-    <div className="modal-background" /*onClick={closeModal}*/>
+    <div className="modal-background" onClick={clickBackground}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
         {component}
       </div>

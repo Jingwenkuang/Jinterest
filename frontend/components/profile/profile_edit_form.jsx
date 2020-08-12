@@ -29,8 +29,8 @@ class ProfileEditForm extends React.Component {
   render() {
     const { username, first_name, last_name, description } = this.state;
     return (
-      <div className='pin-show-outside-container' onClick={this.props.closeModal}>
-        <div className='profile-goback' onClick={this.props.closeModal}>
+      <div className='pin-show-outside-container' >
+        <div className='profile-goback' >
           <i id='show-profile-arrow' className="fa fa-arrow-left"></i>
         </div>
       <div className='form-edit'>
