@@ -58,10 +58,3 @@ class ProfileContent extends React.Component {
 
 export default ProfileContent;
 
-// ProfileContent.defaultProps = {
-//   user: {
-//     username: '',
-//     firstName: '',
-//     lastName: ''
-//   }
-// }

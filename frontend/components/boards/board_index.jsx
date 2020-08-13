@@ -25,10 +25,6 @@
 //   render() {
 //     const { boards, pins, currentUser, user, newBoard } = this.props;
    
-//   console.log('check')
-//   console.log(pins)
-//   console.log(boards)
-  
 //     const boardIndexItems = (boards.length > 0) ? (
 //       boards.map(board => {
 //         const prevPinIds = (board.pinIds) ? (
@@ -112,6 +108,7 @@ class BoardIndex extends React.Component {
       return null;
     }
     let userBoards = this.filterBoards();
+
     const boardIndexItems = userBoards.map(board => {
       return <BoardIndexItem key={board.id} board={board} boardId={board.id} />
     });
@@ -119,9 +116,9 @@ class BoardIndex extends React.Component {
     return (
       <div className="boards-index">
 
-        <div className="sub-nav">
+        {/* <div className="sub-nav">
           <button className="board-button">Boards</button>
-        </div>
+        </div> */}
 
         <div className="boards-container">
           <ul className="board-tab">
@@ -134,3 +131,4 @@ class BoardIndex extends React.Component {
 }
 
 export default BoardIndex;
+
