@@ -111,7 +111,7 @@ class BoardIndexItem extends React.Component {
     if (!this.props.pins) {
       return null;
     }
-    let title = this.props.board.title
+    let title = this.props.board.name
     let cover = this.filterPins()
     let photo;
     if (cover.length) photo = cover[0].photoUrl
