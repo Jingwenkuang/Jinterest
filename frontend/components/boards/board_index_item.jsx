@@ -104,7 +104,6 @@ class BoardIndexItem extends React.Component {
     let pins = Object.values(this.props.pins);
    
     return pins.filter(pin => pin.boardId === boardId);
-console.log(pins)
   }
 
   render() {
@@ -112,12 +111,11 @@ console.log(pins)
       return null;
     }
     let name = this.props.board.name
-    let cover = this.filterPins()
-    // console.log(cover)
+    let selectedPins = this.filterPins()
+  
     let photo;
-    if (cover.length) photo = cover[0].photoUrl
+    if (selectedPins.length) photo = selectedPins[0].photoUrl
     return (
-      <>
         <div className='board-index'>
           <div className="board-container" onClick={this.redirect}>
             
@@ -126,10 +124,9 @@ console.log(pins)
             </div>
 
             <div className="board-title">{name}</div>
-            <div className="pins-amount">{cover.length} pins</div>
+            <div className="pins-amount">{selectedPins.length} pins</div>
           </div>
         </div>
-      </>
     )
   }
 }
