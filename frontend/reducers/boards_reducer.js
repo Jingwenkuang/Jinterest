@@ -6,8 +6,9 @@ const boardsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_BOARDS:
       return action.boards;
+      // return Object.assign({}, state, { [action.board.id]: action.board });
     case RECEIVE_BOARD:
-      return Object.assign({}, state, { [action.board.id]: action.board });
+      return Object.assign({}, state, {[action.board.id]: action.board});
     case REMOVE_BOARD:
       let newState = Object.assign({}, state);
       delete newState[action.boardId];

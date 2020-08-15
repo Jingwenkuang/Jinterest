@@ -1,12 +1,12 @@
-#  json.partial! "api/users/user", user: @user 
+ json.partial! "api/users/user", user: @user 
 
 
-json.users do
-  json.set! @user.id do
-    json.partial! "api/users/user", user: @user
-    json.boardIds @user.boards.pluck(:id)
-  end
-end
+# json.users do
+#   json.set! @user.id do
+#     json.partial! "api/users/user", user: @user
+#     json.boardIds @user.boards.pluck(:id)
+#   end
+# end
 
  json.boards do
    @user.boards.each do |board|

@@ -20,7 +20,7 @@ class PinShow extends React.Component{
   }
 
   render() {
-
+  
     return(
       <div className='pin-show-outside-container' onClick={this.goBack}>
         <div className='pin-goback' onClick={this.goBack}>

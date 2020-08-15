@@ -4,17 +4,26 @@ class Api::BoardsController < ApplicationController
 
   def index 
     @boards = Board.all.includes(:pins)
+    # @boards = Board.all
     render '/api/boards/index'
   end
 
-  def show 
+  # def show 
+  #   # @board = Board.find_by(id: params[:id])
+  #   @board = Board.find_by(id: params[:board][:id])
+   
+  #   if @board 
+  #     render "/api/boards/show"
+  #   else
+  #     render json: @board.errors.full_messages, status: 422 
+  #   end
+  # end
+    def show
+    # @board = Board.includes(:pins).find(params[:id])
     @board = Board.find_by(id: params[:id])
-    if @board 
-      render "/api/boards/show"
-    else
-      render json: @board.errors.full_messages, status: 422 
+   
+    render "api/boards/show"
     end
-  end
 
   def create 
     @board = Board.new(board_params)

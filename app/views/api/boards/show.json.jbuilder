@@ -1,11 +1,11 @@
 # json.partial! "board", board: @board
 
-json.boards do 
+# json.boards do 
   json.set! @board.id do 
     json.partial! "/api/boards/board", board: @board
     json.pinIds @board.pins.pluck(:id)
   end
-end
+# end
 
 json.pins do 
   @board.pins.each do |pin|
