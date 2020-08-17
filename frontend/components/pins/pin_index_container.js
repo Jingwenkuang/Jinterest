@@ -4,14 +4,12 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import PinIndex from './pin_index';
 
 const mapStateToProps = (state, ownProps)  => {
-  let pins = Object.values(state.entities.pins);
+  let pickedPins = Object.values(state.entities.pins);
   if (ownProps.selectedPins) {
-    pins = ownProps.selectedPins
+    pickedPins = ownProps.selectedPins
   }
   return {  
-    // pins: Object.values(state.entities.pins),
-  // pins: ownProps.pins,
-    pins: pins,
+    pins: pickedPins,
     user: state.entities.users[state.session.currentUserId],
     currentUserId: state.session.currentUserId,
   } 

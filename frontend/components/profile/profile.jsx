@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, NavLink} from 'react-router-dom';
-import PinIndexItem from '../pins/pin_index_item';
 
 class Profile extends React.Component{
   constructor(props) {
@@ -32,23 +31,6 @@ class Profile extends React.Component{
     const { user } = this.props;
  
     if (!user) return <div></div>;
-
-    // const userPins = this.props.pins.filter(pin => pin.user_id === this.props.currentUserId);
-    // const userPinsIndex = user.pins.map((pin) => {
-    //   return <PinIndexItem 
-    //           key={pin.id}
-    //           pin={Object.values(pin)[0]}
-    //           />
-    // })
-   
-    //  const userPinsIndex = <PinIndexItem pins={userPins} />
-    // const userPinsIndex = userPins.map((pin) => {
-    //   return <PinIndexItem 
-    //           key={pin.id}
-    //           pin={Object.values(pin)[0]}
-    //           />
-    // })
-
     return(
       
       <div className='profile-container'>
@@ -80,13 +62,9 @@ class Profile extends React.Component{
               </div>
           </div>
        
-          <div className='profile-nav-button'>
+          {/* <div className='profile-nav-button'>
             <NavLink className="button" to={`/${this.props.user.username}/boards`}>Boards</NavLink>
             <NavLink className="button" to={`/${this.props.user.username}/pins`}>Pins</NavLink>
-          </div>
-
-          {/* <div className='profile-pin-index'>
-            {userPinsIndex}
           </div> */}
         </div>
       </div>

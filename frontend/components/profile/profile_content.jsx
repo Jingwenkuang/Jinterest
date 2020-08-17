@@ -1,6 +1,4 @@
 import React from "react";
-import { Route, Link, NavLink } from "react-router-dom";
-
 import ProfileSwitches from "./profile_switches";
 import BoardIndexContainer from "../boards/board_index_container";
 import PinIndexContainer from "../pins/pin_index_container";
@@ -29,13 +27,13 @@ class ProfileContent extends React.Component {
       <PinIndexContainer selectedPins={userPins}/>
     ];
     const selectedTab = contentTabs[this.state.selectedSwitch];
-    const pinCount = (this.state.selectedSwitch === 1) ? (
-      <div className="profile-show pin-count-container">
-        <div className="profile-show pin-count">
-          <span className="profile-show number">{userPins.length} </span>Pins
-        </div>
-      </div>
-    ) : null;
+    // const pinCount = (this.state.selectedSwitch === 1) ? (
+    //   <div className="profile-show pin-count-container">
+    //     <div className="profile-show pin-count">
+    //       <span className="profile-show number">{userPins.length} </span>Pins
+    //     </div>
+    //   </div>
+    // ) : null;
 
     return (
       <div id="profile-content">
@@ -46,7 +44,7 @@ class ProfileContent extends React.Component {
             onSwitchClick={this.selectSwitch}
             tabs={contentTabs}
           />
-          {pinCount}
+          {/* {pinCount} */}
         </div>
         <div id="profile-tab-wrapper">
           {selectedTab}

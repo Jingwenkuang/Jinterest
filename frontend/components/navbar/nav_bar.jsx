@@ -31,7 +31,7 @@ class NavBar extends React.Component{
               <img src={window.jinterestURL} className='nav-left-logo' />
             </NavLink>
           </div>
-          {/* <div className="block">text</div> */}
+      
             <div className="home">
               <Link to='/'>Home</Link>
             </div>
@@ -53,7 +53,7 @@ class NavBar extends React.Component{
             </div>
 
             <div className="nav-demouser">
-            <Link to={`/users/${this.props.currentUserId}`}>
+            <Link to={`/${this.props.user.username}/boards`}>
                 {/* <i className="fa fa-user-o" id="user-icon" aria-hidden="true"></i> */}
               <div className='nav-cat-photo'>
                 <img src={window.catURL} className='nav-cat-photo' />

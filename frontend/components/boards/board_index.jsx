@@ -13,13 +13,9 @@ class BoardIndex extends React.Component {
   }
 
   filterBoards() {
-
     let userId = this.props.currentUser.id;
-
     const { boards } = this.props;
-
     return boards.filter(board => board.user_id === userId);
-
   }
 
 
@@ -36,11 +32,6 @@ class BoardIndex extends React.Component {
 
     return (
       <div className="boards-index">
-
-        {/* <div className="sub-nav">
-          <button className="board-button">Boards</button>
-        </div> */}
-
         <div className="boards-container">
           <ul className="board-tab">
             {boardIndexItems}

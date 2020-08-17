@@ -10,26 +10,18 @@ class BoardShow extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchBoards()
-    // this.props.fetchBoard(this.props.match.id)
-    // this.props.fetchUser(this.props.currentUser.id)
     this.props.fetchBoard(this.props.boardId)
     this.props.fetchAllPins()
   }
 
   filterPins() {
     const { okb, pins} = this.props
-    // debugger
+
     return pins.filter(pin => pin.boardId === okb.id)
   }
 
   render() {
-    console.log('test')
     let selectPins = this.filterPins(); 
-    console.log(selectPins)
-    // const pinIndex = selectPins.map(pin => {
-    //   return <PinIndexContainer key={pin.id} pin={pin.photoUrl} pinId={pin.id} />
-    // })
     const pinIndex = <PinIndexContainer selectedPins={selectPins}/>
 
     return (

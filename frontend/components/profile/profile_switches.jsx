@@ -1,7 +1,7 @@
 import React from "react";
-import { Route, Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const ProfileSwitches = ({ user, selectedSwitch, onSwitchClick, tabs }) => {
+const ProfileSwitches = ({ user, onSwitchClick, tabs }) => {
   const switches = tabs.map((tab, idx) => {
     const label = (idx === 0) ? "Boards" : "Pins";
 
@@ -9,11 +9,6 @@ const ProfileSwitches = ({ user, selectedSwitch, onSwitchClick, tabs }) => {
       <NavLink
         key={idx}
         to={`/${user.username}/${label.toLowerCase()}`}
-        // isActive={() => {
-        //   if (!location.hash.includes("/pins")) {
-        //     return true;
-        //   }
-        // }}
         className={`profile-switch-link`}
         onClick={() => onSwitchClick(idx)}
       >
