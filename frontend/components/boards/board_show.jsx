@@ -1,11 +1,16 @@
 import React from 'react';
 import PinIndexContainer from '../pins/pin_index_Container';
+import { Link, NavLink } from "react-router-dom";
+
 
 
 class BoardShow extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      dropDownHidden: true
+    }
+    this.handleDropDown = this.handleDropDown.bind(this);
     this.filterPins = this.filterPins.bind(this);
   }
 
@@ -14,19 +19,41 @@ class BoardShow extends React.Component {
     this.props.fetchAllPins()
   }
 
-  filterPins() {
-    const { okb, pins} = this.props
+  handleDropDown(e) {
+    e.preventDefault();
+    this.setState({ dropDownHidden: !this.state.dropDownHidden })
+  }
 
-    return pins.filter(pin => pin.boardId === okb.id)
+  filterPins() {
+    const { selectedBoard, pins} = this.props
+console.log(selectedBoard)
+    return pins.filter(pin => pin.boardId === selectedBoard.id)
   }
 
   render() {
+    const dropDownHidden = this.state.dropDownHidden ? "hidden" : "";
     let selectPins = this.filterPins(); 
     const pinIndex = <PinIndexContainer selectedPins={selectPins}/>
 
     return (
       <div className="board-show">
-        <div>
+        <div className="board-show-icon">
+          <div className="create-icon" id="options" onClick={this.handleDropDown}>
+            <i className="fa fa-plus"></i>
+            <div className={`drop-down ${dropDownHidden}`}>
+              <div><Link to="/pin-builder" className="create-pin-tab">Create Pin</Link></div>
+              <div onClick={() => this.props.openModal('new-board')}>
+                <div className='create-board-tab'>Create Board</div>
+              </div>
+            </div>
+          </div>
+
+          <div className='edit-icon' onClick={() => this.props.openModal('edit-profile')}>
+            <i className="fa fa-pencil"></i>
+          </div>
+        </div>
+        <div className="board-show-title">
+          {/* {this.props.selectedBoard.name} */}
         </div>
         <div className="pin-index">
           <div className="pin-image">
