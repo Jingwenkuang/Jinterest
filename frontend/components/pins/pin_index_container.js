@@ -3,12 +3,19 @@ import { fetchAllPins, updatePin, deletePin } from '../../actions/pin_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import PinIndex from './pin_index';
 
-const mapStateToProps = (state, ownProps)  => ({
-  pins: Object.values(state.entities.pins),
+const mapStateToProps = (state, ownProps)  => {
+  let pins = Object.values(state.entities.pins);
+  if (ownProps.selectedPins) {
+    pins = ownProps.selectedPins
+  }
+  return {  
+    // pins: Object.values(state.entities.pins),
   // pins: ownProps.pins,
-  user: state.entities.users[state.session.currentUserId],
-  currentUserId: state.session.currentUserId
-})
+    pins: pins,
+    user: state.entities.users[state.session.currentUserId],
+    currentUserId: state.session.currentUserId,
+  } 
+}
 
 const mapDispatchToProps = dispatch => ({
   fetchAllPins: () => dispatch(fetchAllPins()),

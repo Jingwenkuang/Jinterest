@@ -26,7 +26,7 @@ class ProfileContent extends React.Component {
  
     const contentTabs = [
       <BoardIndexContainer user={user} boards={userBoards}/>,
-      <PinIndexContainer pins={userPins}/>
+      <PinIndexContainer selectedPins={userPins}/>
     ];
     const selectedTab = contentTabs[this.state.selectedSwitch];
     const pinCount = (this.state.selectedSwitch === 1) ? (

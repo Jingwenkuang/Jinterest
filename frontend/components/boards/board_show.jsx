@@ -1,5 +1,5 @@
 import React from 'react';
-import PinIndexContainer from '../pins/pin_index_container';
+import PinIndexContainer from '../pins/pin_index_Container';
 
 
 class BoardShow extends React.Component {
@@ -14,19 +14,23 @@ class BoardShow extends React.Component {
     // this.props.fetchBoard(this.props.match.id)
     // this.props.fetchUser(this.props.currentUser.id)
     this.props.fetchBoard(this.props.boardId)
-    // this.props.fetchAllPins()
+    this.props.fetchAllPins()
   }
 
   filterPins() {
     const { okb, pins} = this.props
+    // debugger
     return pins.filter(pin => pin.boardId === okb.id)
   }
 
   render() {
+    console.log('test')
     let selectPins = this.filterPins(); 
-    const pinIndex = selectPins.map(pin => {
-      return <PinIndexContainer key={pin.id} pin={pin.photoUrl} pinId={pin.id} />
-    })
+    console.log(selectPins)
+    // const pinIndex = selectPins.map(pin => {
+    //   return <PinIndexContainer key={pin.id} pin={pin.photoUrl} pinId={pin.id} />
+    // })
+    const pinIndex = <PinIndexContainer selectedPins={selectPins}/>
 
     return (
       <div className="board-show">
