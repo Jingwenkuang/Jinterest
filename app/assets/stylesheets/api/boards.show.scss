@@ -22,3 +22,31 @@
   justify-content: center;
 }
 
+a.board-create-pin-tab {
+  display: block;
+  margin: 5px;
+  padding: 8px;
+}
+
+a.board-create-pin-tab:hover {
+  background-color: rgb(193, 192, 192);
+  border-radius: 12px;
+}
+
+.drop-down-create-pin {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  text-align: left;
+  background-color: white;
+  border-radius: 7px;
+  font-size: 18px;
+  left: 9px;
+  top: 30px;
+  width: 200px;
+  min-width: 180px;
+  max-width: 360px;
+  padding: 4px 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+}

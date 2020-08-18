@@ -7,7 +7,7 @@ class BoardShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dropDownHidden: true
+      pindropDownHidden: true
     }
     this.handleDropDown = this.handleDropDown.bind(this);
     this.filterPins = this.filterPins.bind(this);
@@ -21,17 +21,17 @@ class BoardShow extends React.Component {
 
   handleDropDown(e) {
     e.preventDefault();
-    this.setState({ dropDownHidden: !this.state.dropDownHidden })
+    this.setState({ pindropDownHidden: !this.state.pindropDownHidden })
   }
 
   filterPins() {
     const { selectedBoard, pins } = this.props
-console.log(selectedBoard.id)
+// console.log(selectedBoard.id)
     return pins.filter(pin => pin.boardId === selectedBoard.id)
   }
 
   render() {
-    const dropDownHidden = this.state.dropDownHidden ? "hidden" : "";
+    const pindropDownHidden = this.state.pindropDownHidden ? "hidden" : "";
     let selectPins = this.filterPins(); 
     const pinIndex = <PinIndexContainer selectedPins={selectPins}/>
 
@@ -40,11 +40,8 @@ console.log(selectedBoard.id)
         <div className="board-show-icon">
           <div className="create-icon" id="options" onClick={this.handleDropDown}>
             <i className="fa fa-plus"></i>
-            <div className={`drop-down ${dropDownHidden}`}>
-              <div><Link to="/pin-builder" className="create-pin-tab">Create Pin</Link></div>
-              <div onClick={() => this.props.openModal('new-board')}>
-                <div className='create-board-tab'>Create Board</div>
-              </div>
+            <div className={`drop-down-create-pin ${pindropDownHidden}`}>
+              <div><Link to="/pin-builder" className="board-create-pin-tab">Create Pin</Link></div>
             </div>
           </div>
 
