@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => ({
 
   boardId: ownProps.match.params.boardId, 
   pins: Object.values(state.entities.pins),
+  boards: state.entities.boards,
   selectedBoard: state.entities.boards[ownProps.match.params.boardId],
   
 })

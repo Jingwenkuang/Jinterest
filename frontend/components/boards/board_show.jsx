@@ -25,8 +25,10 @@ class BoardShow extends React.Component {
   }
 
   filterPins() {
-    const { selectedBoard, pins} = this.props
+    const { selectedBoard, pins, boards} = this.props
 console.log(selectedBoard)
+console.log(this.props.match.params.boardId)
+console.log(boards[this.props.match.params])
     return pins.filter(pin => pin.boardId === selectedBoard.id)
   }
 
@@ -48,7 +50,7 @@ console.log(selectedBoard)
             </div>
           </div>
 
-          <div className='edit-icon' onClick={() => this.props.openModal('edit-profile')}>
+          <div className='edit-icon' onClick={() => this.props.openModal('edit-board')}>
             <i className="fa fa-pencil"></i>
           </div>
         </div>

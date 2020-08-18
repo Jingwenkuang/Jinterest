@@ -6,7 +6,7 @@ import SignupFormContainer from '../session_form/signup_form_container';
 import PinEditFormContainer from '../pins/pin_edit_form_container';
 import ProfileEditFormContainer from '../profile/profile_edit_form_container';
 import BoardCreateFormContainer from '../boards/board_create_form_container';
-
+import BoardEditFormContainer from '../boards/board_edit_form_container';
 import PinDeleteFormContainer from '../pins/pin_delete_form_container';
 
 function Modal({ modal, closeModal }) {
@@ -33,6 +33,10 @@ function Modal({ modal, closeModal }) {
       break;
     case 'new-board':
       component = <BoardCreateFormContainer closeModal={closeModal} />;
+      clickBackground = closeModal;
+      break;
+    case 'edit-board':
+      component = <BoardEditFormContainer closeModal={closeModal} />;
       clickBackground = closeModal;
       break;
     default:
