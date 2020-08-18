@@ -3,7 +3,6 @@ import PinIndexContainer from '../pins/pin_index_Container';
 import { Link, NavLink } from "react-router-dom";
 
 
-
 class BoardShow extends React.Component {
   constructor(props) {
     super(props);
@@ -53,12 +52,12 @@ console.log(selectedBoard.id)
             <i className="fa fa-pencil"></i>
           </div>
         </div>
-        <div className="board-show-title">
+        {/* <div className="board-show-title">
           {this.props.selectedBoard.name}
         </div>
         <div className="board-show-description">
           {this.props.selectedBoard.description}
-        </div>
+        </div> */}
         <div className="pin-index">
           <div className="pin-image">
             {pinIndex}
