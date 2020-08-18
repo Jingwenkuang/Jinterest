@@ -17,6 +17,7 @@ class BoardShow extends React.Component {
   componentDidMount() {
     this.props.fetchBoard(this.props.boardId)
     this.props.fetchAllPins()
+    // this.props.clearErrors();
   }
 
   handleDropDown(e) {
@@ -25,10 +26,8 @@ class BoardShow extends React.Component {
   }
 
   filterPins() {
-    const { selectedBoard, pins, boards} = this.props
-console.log(selectedBoard)
-console.log(this.props.match.params.boardId)
-console.log(boards[this.props.match.params])
+    const { selectedBoard, pins } = this.props
+console.log(selectedBoard.id)
     return pins.filter(pin => pin.boardId === selectedBoard.id)
   }
 
@@ -55,7 +54,10 @@ console.log(boards[this.props.match.params])
           </div>
         </div>
         <div className="board-show-title">
-          {/* {this.props.selectedBoard.name} */}
+          {this.props.selectedBoard.name}
+        </div>
+        <div className="board-show-description">
+          {this.props.selectedBoard.description}
         </div>
         <div className="pin-index">
           <div className="pin-image">

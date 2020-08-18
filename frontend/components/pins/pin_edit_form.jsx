@@ -33,6 +33,7 @@ class PinEditForm extends React.Component {
   render() {
 
     return(
+      
       <div className='pin-editform-container'>
         <div className='pin-editform-box'>
           <header className='editform-header'>

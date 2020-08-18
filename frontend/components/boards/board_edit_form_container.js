@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => ({
   deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
   clearErrors: () => dispatch(clearErrors()),
   closeModal: () => dispatch(closeModal()),
-  openModal: modal => dispatch(openModal(modal)),
+  // openModal: modal => dispatch(openModal(modal)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BoardEditForm);

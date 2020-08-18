@@ -42,6 +42,7 @@ textarea.profile-textarea {
   padding: 8px 16px;
   resize: none;
   box-sizing: border-box;
+  min-height: 120px;
   appearance: none;
   border-radius: 16px;
   border-style: solid;
@@ -82,7 +83,9 @@ textarea.profile-textarea:focus {
 
 input.profile-input.profile-text-name {
   width: 116%;
-  min-width: 116%;
+  box-sizing: border-box;
+  min-width: 115px;
+  min-height: 48px;
 }
 
 .cancel-edit, 

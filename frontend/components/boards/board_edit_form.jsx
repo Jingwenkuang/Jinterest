@@ -42,12 +42,7 @@ class BoardEditForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateBoard(this.state)
-    // const { createBoard, closeModal } = this.props;
-    // const { name } = this.state;
-    // let newBoard = { name };
-    // closeBoardForm();
-    // createBoard(newBoard)
+    this.props.updateBoard(this.state).then(this.props.closeModal)
   }
 
   render() {
@@ -55,6 +50,7 @@ class BoardEditForm extends React.Component {
     console.log(this.props.board)
 
     return (
+    
       <div className="board-create-container" onClick={closeModal}>
         <div className="board-create-box" onClick={e => e.stopPropagation()}>
           <div className="board-form-box">
@@ -106,7 +102,7 @@ class BoardEditForm extends React.Component {
             <div className="bottom-options">
               <div className="save-or-cancel">
                 <button className="create-cancle" onClick={closeModal}>Cancel</button>
-                <button id="save-board" className="create-save" onClick={this.handleSubmit}>Create</button>
+                <button id="save-board" className="create-save" onClick={this.handleSubmit}>Save</button>
                 {this.toggleButtonLock()}
               </div>
             </div>
