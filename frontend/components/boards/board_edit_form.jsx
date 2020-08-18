@@ -47,7 +47,7 @@ class BoardEditForm extends React.Component {
 
   render() {
     const { closeModal } = this.props;
-    console.log(this.props.board)
+    // console.log(this.props.board)
 
     return (
     
@@ -61,7 +61,7 @@ class BoardEditForm extends React.Component {
                 <input type="text"
                   placeholder='Edit your name'
                   value={this.state.name}
-                  onChange={this.update("name")}
+                  onChange={this.update("name")} 
                   className='board-update-name' />
               </div>
               <div className='board-edit-description'>

@@ -8,7 +8,7 @@ const boardsReducer = (state = {}, action) => {
       return action.boards;
       // return Object.assign({}, state, { [action.board.id]: action.board });
     case RECEIVE_BOARD:
-      // debugger
+
       let selectId = Object.keys(action.board)[0];
       return Object.assign({}, state, {[selectId]: action.board[selectId]});
     case REMOVE_BOARD:
