@@ -55,13 +55,17 @@ class BoardIndexItem extends React.Component {
               <img className="board-cover" src={photo} />
             </div>
 
-            <div className="board-title">{name}</div>
-            <div className="pins-amount">{selectedPins.length} pins</div>
-            <div className='edit-icon' onClick={() => this.props.openModal('edit-board')}>
-              <i className="fa fa-pencil"></i>
-            </div>
+            
+            
+                <div className="board-title">{name}</div>
+                <div className="pins-amount">{selectedPins.length} pins</div>
+             
+             
+              
+         
           </div>
         </div>
+       
     )
   }
 }

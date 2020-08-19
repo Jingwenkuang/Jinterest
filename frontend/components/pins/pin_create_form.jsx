@@ -17,7 +17,12 @@ class PinCreateForm extends React.Component {
     this.handleFile = this.handleFile.bind(this);
     this.update = this.update.bind(this);
     this.deleteImagePreview = this.deleteImagePreview.bind(this);
+    this.goBack = this.goBack.bind(this);
+  }
 
+  goBack(e) {
+    e.stopPropagation();
+    this.props.history.goBack();
   }
 
   update(field){
@@ -65,6 +70,9 @@ class PinCreateForm extends React.Component {
 
     return (
       <div className="pin-create-container">
+          <div className='pin-goback' onClick={this.goBack}>
+            <i id='show-pin-arrow' className="fa fa-arrow-left"></i>
+          </div>
         <div className="pin-create-box">
 
           <div className="pin-create-content">
