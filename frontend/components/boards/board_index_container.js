@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import BoardIndex from "./board_index";
 import { fetchBoards, fetchBoard, createBoard, updateBoard, deleteBoard } from "../../actions/board_actions";
 import { fetchAllPins, updatePin, deletePin } from '../../actions/pin_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   boards: Object.values(state.entities.boards),
@@ -11,7 +12,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchBoards: () => dispatch(fetchBoards()),
-  fetchAllPins: () => dispatch(fetchAllPins())
+  fetchAllPins: () => dispatch(fetchAllPins()),
+  openModal: modal => dispatch(openModal(modal)),
   //  createBoard: (board) => dispatch(createBoard(board)),
 });
 

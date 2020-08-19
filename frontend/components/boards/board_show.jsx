@@ -1,5 +1,5 @@
 import React from 'react';
-import PinIndexContainer from '../pins/pin_index_Container';
+import PinIndexContainer from '../pins/pin_index_container';
 import { Link, NavLink } from "react-router-dom";
 
 
