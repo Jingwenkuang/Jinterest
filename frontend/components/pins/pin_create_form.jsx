@@ -10,6 +10,7 @@ class PinCreateForm extends React.Component {
       user_id: this.props.currentUser.id, 
       photoUrl: null, 
       photoFile: null,
+      boardId: "",
       errors: this.props.errors,
     }
 
@@ -37,13 +38,15 @@ class PinCreateForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append("pin[title]", this,state.title);
-    formData.append("pin[description]", this.state.description),
-      formData.append("pin[errors]", this.state.errors);
+    formData.append("pin[description]", this.state.description);
+    formData.append("pin[boardId", this.state.boardId);
+    formData.append("pin[errors]", this.state.errors);
     if(this.state.photoFile) {
       formData.append('pin[photo]', this.state.photoFile);
     }
     this.props.createPin(formData)
-      .then((action) => {this.props.history.push(`/pins/${action.pin.id}`)}
+      .then((action) => {this.props.history.push(`/pins/${action.pin.id}`)},
+      (error) => { this.setState({ errors: this.renderErrors()}) }
       )
   } 
 
