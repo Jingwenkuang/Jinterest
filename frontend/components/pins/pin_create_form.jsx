@@ -20,6 +20,10 @@ class PinCreateForm extends React.Component {
     this.goBack = this.goBack.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchBoards();
+  }
+
   goBack(e) {
     e.stopPropagation();
     this.props.history.goBack();
@@ -69,6 +73,7 @@ class PinCreateForm extends React.Component {
     const previewClass = this.state.photoUrl ? "show" : "";
 
     return (
+      console.log(this.props.boards),
       <div className="pin-create-container">
           <div className='pin-goback' onClick={this.goBack}>
             <i id='show-pin-arrow' className="fa fa-arrow-left"></i>
