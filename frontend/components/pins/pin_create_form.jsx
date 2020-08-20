@@ -63,18 +63,81 @@ class PinCreateForm extends React.Component {
     }
   } 
 
+  boardFromTitle(boardTitle) {
+    let currentUserBoards = this.props.boards;
+    let board = currentUserBoards.filter(board => {
+      return (board).title === boardTitle
+    })
+    return (board[0])[0];
+  }
+
+  handleSelect(e) {
+    e.preventDefault();
+    let selected = document.getElementByClassName('show-pin-select')[0];
+    let boardTitle = e.currentTarget;
+    selected.innerText = boardTitle.innerText;
+    let boardId = this.boardFromTitle(boardTitle.innerText).id;
+    this.setState({boardId: boardId})
+  }
+
   deleteImagePreview() {
     const previewBackground = document.getElementById('pin-background');
     this.setState({photoUrl: null, photoFile: null})
     previewBackground.style.display = null;
   }
+
+  renderErrors() {
+    let error = []
+
+    if (this.props.errors[0].includes("Image An image is required to create a Pin.")) {
+      error.push("An image is required to create a Pin.");
+      return error
+    }
+
+    if (this.props.errors[0].includes("Title can't be blank")) {
+      error.push("Title can't be blank.");
+      return error
+    }
+
+    if (this.props.errors[0].includes("Board must exist")) {
+      error.push("Please select a board.");
+      return error
+    }
+  }
+
+  imageErrors() {
+    if (this.state.errors[0] === "An image is required to create a Pin.") {
+      return this.state.errors;
+    }
+  }
+
+  titleErrors() {
+    if (this.state.errors[0] === "Title can't be blank.") {
+      return this.state.errors;
+    }
+  }
+
+  boardErrors() {
+    if (this.state.errors[0] === "Please select a board.") {
+      return this.state.errors;
+    }
+  }
   
   render() {
-    const { currentUser } = this.props;
+    const { currentUser, boards } = this.props;
     const { title, description, photoUrl } = this.state;
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl}/> : null ;
     const previewClass = this.state.photoUrl ? "show" : "";
 
+    // const boardTitles = boards.map((board, idx) => {
+    //   return <div className="show-pin-title" 
+    //               onClick={this.handleSelect}
+    //               key={Object.values(board)[0].id}
+    //           >
+    //             {Object.values(board)[0].title}
+    //           </div>
+    // })
+    if (!boards) return null;
     return (
       console.log(this.props.boards),
       <div className="pin-create-container">
@@ -82,6 +145,43 @@ class PinCreateForm extends React.Component {
             <i id='show-pin-arrow' className="fa fa-arrow-left"></i>
           </div>
         <div className="pin-create-box">
+
+          {/* <header className='create-pin-header'>
+            <div className='show-pin-board-dropdown'>
+              <button className='show-pin-select'>Select</button>
+              <i className='fa fa-chevron-down select-arrow'></i>
+              <div className='show-pin-select-content'>
+                {boardTitles}
+              </div>
+              <div className='board-error'>
+                {this.boardErrors()}
+              </div>
+              <button className='create-pin-save' onClick={this.handleSubmit}>Save</button>
+            </div>
+          </header> */}
+        <div>
+          <div className='drop-down select-board' id='select-board'>
+            Select
+          </div>
+          <div className='select-box' id='board-names-list'>
+            <ul className='drop-down-menu' onClick={ e => e.stopPropagation()}>
+              {boards.map((board, idx) => {
+                return (
+                  <li key={ idx }
+                      onClick={this.makeBoardSelection}
+                      value={board.id}
+                      className='board-name'>
+                    {board.name}
+                  </li>)
+              })}
+            </ul> 
+          </div>
+          <div className='drop-down-select-board'>
+              <i className='fa fa-chevron-down'></i>
+          </div>
+        </div>
+
+
 
           <div className="pin-create-content">
 
