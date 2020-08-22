@@ -201,6 +201,55 @@ textarea.pin-details:focus {
   padding-left: 8px;
 }
 
+.show-boards-list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.show-boards-box {
+  display: block;
+  height: 42px;
+  width: 212px;
+  border-radius: 11px;
+  background: #e9e9e9;
+}
+
+.show-boards-wrap {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
 div#select-board {
-    margin-top: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+i#chevron-down {
+  padding: 0px;
+}
+
+.handle-board-name {
+  display: block;
+  width: 150px;
+}
+
+.save-to-board {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 0px 11px 11px 0px;
+}
+
+button#pin-save {
+  display: block;
+  border: none;
+  height: 100%;
+  width: 100%;
+  border-radius: 0px 12px 12px 0px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  background: pink;
 }

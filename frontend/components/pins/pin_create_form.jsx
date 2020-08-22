@@ -109,29 +109,27 @@ class PinCreateForm extends React.Component {
     const dropDownHidden = this.state.dropDownHidden ? "hidden" : "";
     if (!boards) return null;
     return (
-    <div>
-        <div className='drop-down select-board' id='select-board' onClick={this.handleDropDown}>
-          <div>Select</div> 
+      <div className='handle-board-name'>
+        <div className='drop-down-menu select-board' id='select-board' onClick={this.handleDropDown}>
+          <div className='select-board'>Select</div> 
           <div className='drop-down-select-board'>
-            <i className='fa fa-chevron-down'></i>
+            <i className='fa fa-chevron-down' id='chevron-down'></i>
           </div>
-      <div className='select-box' id='board-names'>
-        <ul className={`drop-down-list ${dropDownHidden}`} onClick={e => e.stopPropagation()}>
-          {boards.map((board, idx) => {
-            return (
-              <li key={idx}
-                onClick={this.makeBoardSelection}
-                value={board.id}
-                className='board-name'>
-                {board.name}
-              </li>)
-          })}
-        </ul>
-      </div>
-
-
+          <div className='select-box' id='board-names'>
+            <ul className={`drop-down-list ${dropDownHidden}`} onClick={e => e.stopPropagation()}>
+              {boards.map((board, idx) => {
+                return (
+                  <li key={idx}
+                  onClick={this.makeBoardSelection}
+                  value={board.id}
+                  className='board-name'>
+                  {board.name}
+                  </li>)
+              })}
+            </ul>
+          </div>
         </div>
-    </div>
+     </div>
     )
   }
 
@@ -165,10 +163,16 @@ class PinCreateForm extends React.Component {
         <div className="pin-create-box">
 
           <div className='show-boards-list'>
-            <button className='pin-save' id='pin-save' onClick={this.handleSubmit}>
-              Save
-            </button>
-            <div>{this.handleBoardName()}</div>
+            <div className='show-boards-box'>
+              <div className='show-boards-wrap'>
+                <div className='show-board-names'>{this.handleBoardName()}</div>
+                <div className='save-to-board'>
+                  <button className='pin-save-to-board' id='pin-save' onClick={this.handleSubmit}>
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
 
