@@ -253,3 +253,58 @@ button#pin-save {
   font-weight: 700;
   background: pink;
 }
+
+.select-board {
+  margin-left: 4%;
+  color: gray;
+  font-weight: 500;
+}
+
+i#chevron-down {
+  padding: 0px;
+  margin-right: 8px;
+} 
+
+i#chevron-down:hover{
+  background: #e9e9e9;
+}
+.drop-down-select-board {
+  position: relative;
+  cursor: pointer;
+}
+
+ul.drop-down-list {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  text-align: left;
+  background-color: white;
+  border-radius: 8px;
+  font-size: 18px;
+  right: -275%;
+  top: 188%;
+  min-width: 220px;
+  max-width: 360px;
+  padding: 12px 12px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+ul.drop-down-list.hidden {
+  display: none;
+}
+
+li.board-name {
+  display: block;
+  margin: 5px;
+  padding: 8px;
+}
+
+li.board-name:hover {
+  background-color:#e9e9e9;
+  border-radius: 12px;
+}
+
+.board-list-title {
+  font-size: 14px;
+  font-weight: 500;
+}  

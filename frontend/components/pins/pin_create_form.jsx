@@ -110,14 +110,14 @@ class PinCreateForm extends React.Component {
     if (!boards) return null;
     return (
       <div className='handle-board-name'>
-        <div className='drop-down-menu select-board' id='select-board' onClick={this.handleDropDown}>
+        <div className='drop-down-menu select-board' id='select-board' >
           <div className='select-board'>Select</div> 
-          <div className='drop-down-select-board'>
-            <i className='fa fa-chevron-down' id='chevron-down'></i>
-          </div>
-          <div className='select-box' id='board-names'>
-            <ul className={`drop-down-list ${dropDownHidden}`} onClick={e => e.stopPropagation()}>
-              {boards.map((board, idx) => {
+          <div className='drop-down-select-board' onClick={this.handleDropDown}>
+            <i className='fa fa-chevron-down board' id='chevron-down' aria-hidden="true"></i>
+            <div className='select-box' id='board-names' >
+              <ul className={`drop-down-list ${dropDownHidden}`} onClick={e => e.stopPropagation()}>
+              <div className='board-list-title'>All boards</div>
+                {boards.map((board, idx) => {
                 return (
                   <li key={idx}
                   onClick={this.makeBoardSelection}
@@ -126,7 +126,8 @@ class PinCreateForm extends React.Component {
                   {board.name}
                   </li>)
               })}
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
      </div>
