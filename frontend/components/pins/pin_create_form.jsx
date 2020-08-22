@@ -12,6 +12,7 @@ class PinCreateForm extends React.Component {
       photoFile: null,
       boardId: "",
       errors: this.props.errors,
+      dropDownHidden: true,
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,15 +20,26 @@ class PinCreateForm extends React.Component {
     this.update = this.update.bind(this);
     this.deleteImagePreview = this.deleteImagePreview.bind(this);
     this.goBack = this.goBack.bind(this);
+    this.handleBoardName = this.handleBoardName.bind(this);
+    this.makeBoardSelection = this.makeBoardSelection.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
+    this.handleDropDown = this.handleDropDown.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBoards();
+    this.props.clearErrors();
+    window.addEventListener("click", this.toggleMenu);
   }
 
   goBack(e) {
     e.stopPropagation();
     this.props.history.goBack();
+  }
+
+  handleDropDown(e) {
+    e.preventDefault();
+    this.setState({ dropDownHidden: !this.state.dropDownHidden })
   }
 
   update(field){
@@ -71,14 +83,14 @@ class PinCreateForm extends React.Component {
     return (board[0])[0];
   }
 
-  handleSelect(e) {
-    e.preventDefault();
-    let selected = document.getElementByClassName('show-pin-select')[0];
-    let boardTitle = e.currentTarget;
-    selected.innerText = boardTitle.innerText;
-    let boardId = this.boardFromTitle(boardTitle.innerText).id;
-    this.setState({boardId: boardId})
-  }
+  // handleSelect(e) {
+  //   e.preventDefault();
+  //   let selected = document.getElementByClassName('show-pin-select')[0];
+  //   let boardTitle = e.currentTarget;
+  //   selected.innerText = boardTitle.innerText;
+  //   let boardId = this.boardFromTitle(boardTitle.innerText).id;
+  //   this.setState({boardId: boardId})
+  // }
 
   deleteImagePreview() {
     const previewBackground = document.getElementById('pin-background');
@@ -86,58 +98,64 @@ class PinCreateForm extends React.Component {
     previewBackground.style.display = null;
   }
 
-  renderErrors() {
-    let error = []
+  makeBoardSelection(e) {
+    document.getElementById("select-board").innerHTML = e.currentTarget.innerHTML;
+    this.toggleMenu(e);
+    this.update("chosenBoardId")(e);
+  }
 
-    if (this.props.errors[0].includes("Image An image is required to create a Pin.")) {
-      error.push("An image is required to create a Pin.");
-      return error
-    }
+  handleBoardName() {
+    const { boards } = this.props;
+    const dropDownHidden = this.state.dropDownHidden ? "hidden" : "";
+    if (!boards) return null;
+    return (
+    <div>
+        <div className='drop-down select-board' id='select-board' onClick={this.handleDropDown}>
+          <div>Select</div> 
+          <div className='drop-down-select-board'>
+            <i className='fa fa-chevron-down'></i>
+          </div>
+      <div className='select-box' id='board-names'>
+        <ul className={`drop-down-list ${dropDownHidden}`} onClick={e => e.stopPropagation()}>
+          {boards.map((board, idx) => {
+            return (
+              <li key={idx}
+                onClick={this.makeBoardSelection}
+                value={board.id}
+                className='board-name'>
+                {board.name}
+              </li>)
+          })}
+        </ul>
+      </div>
 
-    if (this.props.errors[0].includes("Title can't be blank")) {
-      error.push("Title can't be blank.");
-      return error
-    }
 
-    if (this.props.errors[0].includes("Board must exist")) {
-      error.push("Please select a board.");
-      return error
+        </div>
+    </div>
+    )
+  }
+
+
+
+  toggleMenu(e) {
+    e.stopPropagation();
+    let menuList = document.getElementById('select-board');
+    let list = document.getElementById("board-names");
+    if (!menuList) return null;
+    if (e.target === menuList && !list.classList.contains('show-menu')) {
+      list.classList.add('show-menu')
+    } else {
+      list.classList.remove('show-menu')
     }
   }
 
-  imageErrors() {
-    if (this.state.errors[0] === "An image is required to create a Pin.") {
-      return this.state.errors;
-    }
-  }
-
-  titleErrors() {
-    if (this.state.errors[0] === "Title can't be blank.") {
-      return this.state.errors;
-    }
-  }
-
-  boardErrors() {
-    if (this.state.errors[0] === "Please select a board.") {
-      return this.state.errors;
-    }
-  }
-  
   render() {
     const { currentUser, boards } = this.props;
     const { title, description, photoUrl } = this.state;
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl}/> : null ;
     const previewClass = this.state.photoUrl ? "show" : "";
 
-    // const boardTitles = boards.map((board, idx) => {
-    //   return <div className="show-pin-title" 
-    //               onClick={this.handleSelect}
-    //               key={Object.values(board)[0].id}
-    //           >
-    //             {Object.values(board)[0].title}
-    //           </div>
-    // })
-    if (!boards) return null;
+   
     return (
       console.log(this.props.boards),
       <div className="pin-create-container">
@@ -146,40 +164,12 @@ class PinCreateForm extends React.Component {
           </div>
         <div className="pin-create-box">
 
-          {/* <header className='create-pin-header'>
-            <div className='show-pin-board-dropdown'>
-              <button className='show-pin-select'>Select</button>
-              <i className='fa fa-chevron-down select-arrow'></i>
-              <div className='show-pin-select-content'>
-                {boardTitles}
-              </div>
-              <div className='board-error'>
-                {this.boardErrors()}
-              </div>
-              <button className='create-pin-save' onClick={this.handleSubmit}>Save</button>
-            </div>
-          </header> */}
-        <div>
-          <div className='drop-down select-board' id='select-board'>
-            Select
+          <div className='show-boards-list'>
+            <button className='pin-save' id='pin-save' onClick={this.handleSubmit}>
+              Save
+            </button>
+            <div>{this.handleBoardName()}</div>
           </div>
-          <div className='select-box' id='board-names-list'>
-            <ul className='drop-down-menu' onClick={ e => e.stopPropagation()}>
-              {boards.map((board, idx) => {
-                return (
-                  <li key={ idx }
-                      onClick={this.makeBoardSelection}
-                      value={board.id}
-                      className='board-name'>
-                    {board.name}
-                  </li>)
-              })}
-            </ul> 
-          </div>
-          <div className='drop-down-select-board'>
-              <i className='fa fa-chevron-down'></i>
-          </div>
-        </div>
 
 
 

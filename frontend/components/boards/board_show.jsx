@@ -26,11 +26,12 @@ class BoardShow extends React.Component {
 
   filterPins() {
     const { selectedBoard, pins } = this.props
-// console.log(selectedBoard.id)
     return pins.filter(pin => pin.boardId === selectedBoard.id)
   }
 
   render() {
+    let name = this.props.selectedBoard ? this.props.selectedBoard.name : "";
+    let description = this.props.selectedBoard ? this.props.selectedBoard.description : "";
     const pindropDownHidden = this.state.pindropDownHidden ? "hidden" : "";
     let selectPins = this.filterPins(); 
     const pinIndex = <PinIndexContainer selectedPins={selectPins}/>
@@ -49,12 +50,12 @@ class BoardShow extends React.Component {
             <i className="fa fa-pencil"></i>
           </div>
         </div>
-        {/* <div className="board-show-title">
-          {this.props.selectedBoard.name}
+        <div className="board-show-title">
+          {name}
         </div>
         <div className="board-show-description">
-          {this.props.selectedBoard.description}
-        </div> */}
+          {description}
+        </div>
         <div className="pin-index">
           <div className="pin-image">
             {pinIndex}
