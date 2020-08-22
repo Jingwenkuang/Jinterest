@@ -308,3 +308,24 @@ li.board-name:hover {
   font-size: 14px;
   font-weight: 500;
 }  
+
+li.board-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.first-pin {
+  width: 30px;
+  height: 30px;
+}
+
+img.board-list-first-pin {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+}
+
+.board-title {
+  margin-left: 10%;
+}

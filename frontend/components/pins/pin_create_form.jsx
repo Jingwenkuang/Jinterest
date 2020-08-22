@@ -83,15 +83,6 @@ class PinCreateForm extends React.Component {
     return (board[0])[0];
   }
 
-  // handleSelect(e) {
-  //   e.preventDefault();
-  //   let selected = document.getElementByClassName('show-pin-select')[0];
-  //   let boardTitle = e.currentTarget;
-  //   selected.innerText = boardTitle.innerText;
-  //   let boardId = this.boardFromTitle(boardTitle.innerText).id;
-  //   this.setState({boardId: boardId})
-  // }
-
   deleteImagePreview() {
     const previewBackground = document.getElementById('pin-background');
     this.setState({photoUrl: null, photoFile: null})
@@ -101,11 +92,12 @@ class PinCreateForm extends React.Component {
   makeBoardSelection(e) {
     document.getElementById("select-board").innerHTML = e.currentTarget.innerHTML;
     this.toggleMenu(e);
-    this.update("chosenBoardId")(e);
+    this.update("boardId")(e);
   }
 
   handleBoardName() {
     const { boards } = this.props;
+    
     const dropDownHidden = this.state.dropDownHidden ? "hidden" : "";
     if (!boards) return null;
     return (
@@ -118,13 +110,25 @@ class PinCreateForm extends React.Component {
               <ul className={`drop-down-list ${dropDownHidden}`} onClick={e => e.stopPropagation()}>
               <div className='board-list-title'>All boards</div>
                 {boards.map((board, idx) => {
+                  // console.log(board.firstPin)
+                  const firstPinImage = (board.firstPin !== undefined) ? (
+                    <img src={board.firstPin.photoUrl}
+                         className='board-list-first-pin'
+                    /> 
+                  ) : (
+                    <div className='board-list-first-pin'></div>
+                  );
                 return (
+                  
+                  
                   <li key={idx}
                   onClick={this.makeBoardSelection}
                   value={board.id}
                   className='board-name'>
-                  {board.name}
-                  </li>)
+                    <div className='first-pin'>{firstPinImage}</div>
+                    <div className='board-title'>{board.name}</div> 
+                   </li>
+                  )
               })}
               </ul>
             </div>
