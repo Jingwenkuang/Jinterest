@@ -110,7 +110,7 @@ class PinCreateForm extends React.Component {
               <ul className={`drop-down-list ${dropDownHidden}`} onClick={e => e.stopPropagation()}>
               <div className='board-list-title'>All boards</div>
                 {boards.map((board, idx) => {
-                  // console.log(board.firstPin)
+              
                   const firstPinImage = (board.firstPin !== undefined) ? (
                     <img src={board.firstPin.photoUrl}
                          className='board-list-first-pin'
@@ -119,8 +119,6 @@ class PinCreateForm extends React.Component {
                     <div className='board-list-first-pin'></div>
                   );
                 return (
-                  
-                  
                   <li key={idx}
                   onClick={this.makeBoardSelection}
                   value={board.id}
