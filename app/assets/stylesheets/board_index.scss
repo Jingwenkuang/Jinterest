@@ -37,3 +37,40 @@ ul.board-tab{
 .board-cover:hover {
   cursor: pointer;
 }
+
+.board-index-item.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 4px 0;
+}
+
+.board-index-item {
+  box-sizing: border-box;
+}
+
+.board-index-item.info-details {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  padding: 6px;
+}
+
+.board-index-item.edit-icon-pencil {
+  border: none;
+  margin: 4px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: transparent;
+  opacity: 0;
+}
+
+i#board-edit-icon {
+  font-size: 20px;
+}
