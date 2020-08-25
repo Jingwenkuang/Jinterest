@@ -48,25 +48,23 @@ class BoardIndexItem extends React.Component {
     let photo;
     if (selectedPins.length) photo = selectedPins[0].photoUrl
     return (
-        <div className='board-index'>
-          <div className="board-container" onClick={this.redirect}>
-            
-            <div className='board-box'>
-              <img className="board-cover" src={photo} />
-            </div>
+      <div className="board-index">
+        <div className="board-container" onClick={this.redirect}>
+          <div className="board-box">
+            <img className="board-cover" src={photo} />
+          </div>
 
-            
-            
-                <div className="board-title">{name}</div>
-                <div className="pins-amount">{selectedPins.length} pins</div>
-             
-             
-              
-         
+          <div className="board-title">{name}</div>
+          <div className="pins-amount">{selectedPins.length} pins</div>
+
+          <div className="edit-icon"
+            onClick={() => this.props.openModal("edit-board")}
+          >
+            <i className="fa fa-pencil"></i>
           </div>
         </div>
-       
-    )
+      </div>
+    );
   }
 }
 export default withRouter(connect(msp, mapDispatchToProps)(BoardIndexItem));
