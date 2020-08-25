@@ -13,6 +13,7 @@ const msp = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => {
   return {
+    openModal: (modal) => dispatch(openModal(modal)),
     editBoard: (id) => dispatch(openModal("edit-board", { id })),
     deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
     // openEditBoard: (boardId) => dispatch(openModal("edit-board", boardId)),
@@ -39,15 +40,18 @@ class BoardIndexItem extends React.Component {
   }
 
   render() {
-    console.log('yea')
-    console.log(this.props)
+    
     if (!this.props.pins) {
       return null;
     }
-    console.log(this.props.board)
     let name = this.props.board.name
     let selectedPins = this.filterPins()
-  
+    let boardId = this.props.board.id
+  // console.log('ik')
+  // console.log(name)
+  // console.log(this.props.board.id)
+  // console.log(selectedPins)
+    
     let photo;
     if (selectedPins.length) photo = selectedPins[0].photoUrl
     return (
@@ -66,7 +70,10 @@ class BoardIndexItem extends React.Component {
 
           <div
             className="board-index-item edit-icon-pencil show"
-            onClick={(id) => this.props.editBoard(this.props.board[id])}
+            // onClick={(boardId) =>
+            //   this.props.editBoard(boardId)
+            // }
+            onClick={()=>this.props.openModal('edit-board')}
           >
             <i className="fa fa-pencil" id="board-edit-icon"></i>
           </div>

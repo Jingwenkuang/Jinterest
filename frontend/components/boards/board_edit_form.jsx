@@ -5,9 +5,9 @@ class BoardEditForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      id: this.props.board.id,
-      name: this.props.board.name,
-      description: this.props.board.description,
+      // id: this.props.board.id,
+      // name: this.props.board.name,
+      // description: this.props.board.description,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -47,7 +47,8 @@ class BoardEditForm extends React.Component {
 
   render() {
     const { closeModal } = this.props;
-    // console.log(this.props.board)
+    console.log(this.props.board)
+    console.log('ik')
 
     return (
     
