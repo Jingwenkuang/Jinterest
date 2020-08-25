@@ -10,10 +10,10 @@ const mapStateToProps = (state, ownProps) => ({
 
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchBoards: () => dispatch(fetchBoards()),
   fetchAllPins: () => dispatch(fetchAllPins()),
-  openModal: modal => dispatch(openModal(modal)),
+  // openModal: (boardId) => dispatch(openModal("edit-board", boardId)),
   //  createBoard: (board) => dispatch(createBoard(board)),
 });
 

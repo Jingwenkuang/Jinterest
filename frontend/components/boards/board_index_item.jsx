@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import BoardIndex from "./board_index";
 import { editBoard, deleteBoard } from "../../actions/board_actions";
 import EditBoardFormContainer from './board_edit_form_container';
-
+import { openModal, closeModal } from "../../actions/modal_actions";
 
 const msp = (state, ownProps) => ({
   pins: state.entities.pins
@@ -13,9 +13,10 @@ const msp = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    editBoard: (id) => dispatch(openModal("editBoard", { id })),
-    deleteBoard: boardId => dispatch(deleteBoard(boardId)),
-  }
+    editBoard: (id) => dispatch(openModal("edit-board", { id })),
+    deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
+    // openEditBoard: (boardId) => dispatch(openModal("edit-board", boardId)),
+  };
 };
 
 
@@ -38,9 +39,12 @@ class BoardIndexItem extends React.Component {
   }
 
   render() {
+    console.log('yea')
+    console.log(this.props)
     if (!this.props.pins) {
       return null;
     }
+    console.log(this.props.board)
     let name = this.props.board.name
     let selectedPins = this.filterPins()
   
@@ -62,7 +66,7 @@ class BoardIndexItem extends React.Component {
 
           <div
             className="board-index-item edit-icon-pencil show"
-            onClick={() => this.props.openModal("edit-board")}
+            onClick={(id) => this.props.editBoard(this.props.board[id])}
           >
             <i className="fa fa-pencil" id="board-edit-icon"></i>
           </div>
@@ -71,4 +75,5 @@ class BoardIndexItem extends React.Component {
     );
   }
 }
+
 export default withRouter(connect(msp, mapDispatchToProps)(BoardIndexItem));
