@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
   board: state.entities.boards[id],
   currentUser: state.entities.users[state.session.currentUserId],
   errors: state.errors.pins,
+  okb: state.entities.boards 
   }
 }
 

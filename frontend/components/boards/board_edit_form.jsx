@@ -48,6 +48,8 @@ class BoardEditForm extends React.Component {
   render() {
     const { closeModal } = this.props;
     console.log(this.props.board)
+    console.log(this.props.okb)
+    console.log(this.props.match)
     console.log('ik')
 
     return (
