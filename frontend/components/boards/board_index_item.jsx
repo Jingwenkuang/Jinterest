@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import BoardIndex from "./board_index";
 import { editBoard, deleteBoard } from "../../actions/board_actions";
-import { openModal, closeModal } from "../../actions/modal_actions";
 import EditBoardFormContainer from './board_edit_form_container';
 
 
@@ -34,7 +33,7 @@ class BoardIndexItem extends React.Component {
   filterPins() {
     let boardId = this.props.boardId;
     let pins = Object.values(this.props.pins);
- 
+
     return pins.filter(pin => pin.boardId === boardId);
   }
 
@@ -65,7 +64,7 @@ class BoardIndexItem extends React.Component {
             className="board-index-item edit-icon-pencil show"
             onClick={() => this.props.openModal("edit-board")}
           >
-            <i className="fa fa-pencil" id='board-edit-icon'></i>
+            <i className="fa fa-pencil" id="board-edit-icon"></i>
           </div>
         </div>
       </div>

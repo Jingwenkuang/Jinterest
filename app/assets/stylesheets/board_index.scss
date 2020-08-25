@@ -19,8 +19,8 @@ ul.board-tab{
 }
 
 .board-index {
-  margin: 1.5%;}
-
+  margin: 1.5%;
+}
 
 .pins-amount {
   font-size: 14px;
@@ -71,6 +71,32 @@ ul.board-tab{
   opacity: 0;
 }
 
+.edit-icon-pencil:hover {
+  background-color: white;
+  opacity: 1;
+}
+
+.show {
+  visibility: visible;
+}
+
 i#board-edit-icon {
   font-size: 20px;
 }
+
+.board-index {
+  position: relative;
+  margin: 1.5%;
+  padding: 6px;
+  border-radius: 11px;
+}
+
+.board-index:hover {
+  background-color: #e9e9e9;
+  opacity: 1;
+}
+
+
+
+
+
