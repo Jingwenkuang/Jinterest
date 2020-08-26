@@ -26,11 +26,27 @@ User can create account and login. Using BCrypt gem and SecureRandom module to c
 <img style="max-width: 100%;" height="460" src="https://jinterest-seeds.s3-us-west-1.amazonaws.com/session.png">
 
 ### Discover feed 
-Image grid layout
+Masonry layout
 
 <img style="max-width: 100%;" height="460" src="https://jinterest-seeds.s3-us-west-1.amazonaws.com/home.png">
 
+### Profile 
+User can select board or pin tag.
+```javascript 
+render() {
+  const { currentUser, user, boards, pins, openModal, closeModal } = this.props;
+  const userBoards = boards.filter(board => board.user_id === user.id);
+  const userPins = pins.filter(pin => pin.user_id === user.id);
+
+  const contentTabs = [
+    <BoardIndexContainer user={user} boards={userBoards}/>,
+    <PinIndexContainer selectedPins={userPins}/>
+  ];
+  const selectedTab = contentTabs[this.state.selectedSwitch];
+```
+
 ## Coming Soon 
-* Profile 
-* Boards index page
+* Follower
+* Search bar 
+
 
