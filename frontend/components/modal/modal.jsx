@@ -14,7 +14,7 @@ function Modal({ modal, closeModal }) {
     return null;
   }
   let component, clickBackground;
-  switch (modal) {
+  switch (modal.type) {
     case 'login':
       component = <LoginFormContainer closeModal={closeModal}/>;
       break;

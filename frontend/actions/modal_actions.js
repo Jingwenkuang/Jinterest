@@ -2,10 +2,11 @@ export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const TOGGLE_SESSION = 'TOGGLE_SESSION';
 
-export const openModal = (modal) => {
+export const openModal = (type, modalId) => {
+
   return {
     type: OPEN_MODAL,
-    modal
+    modal: {type, modalId}
   };
 };
 

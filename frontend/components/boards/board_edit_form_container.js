@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import BoardEditForm from './board_edit_form';
 import { clearErrors } from '../../actions/session_actions';
 import { closeModal } from '../../actions/modal_actions';
@@ -7,7 +7,9 @@ import { fetchBoard, fetchBoards, updateBoard, deleteBoard } from '../../actions
 import { fetchAllPins } from "../../actions/pin_actions";
 
 const mapStateToProps = (state, ownProps) => {
-  let id = ownProps.location.pathname.split('/').pop();
+  let id =
+    ownProps.location.pathname.split("/").pop();
+  id = Number(id) ? id : state.ui.modal.modalId
 
   return {
   board: state.entities.boards[id],
