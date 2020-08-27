@@ -23,7 +23,7 @@ Jinterest, a Pinterest clone, is a social media application allow users to pin n
 ### User Authentication 
 User can create account and login. Using BCrypt gem and SecureRandom module to create user authentication, and validator for input validation.
 
-<img style="max-width: 100%;" height="460" src="https://jinterest-seeds.s3-us-west-1.amazonaws.com/session_form.gif">
+<img max-width="650" height="auto" src="https://jinterest-seeds.s3-us-west-1.amazonaws.com/session_form.gif">
 
 ### Discover feed 
 Masonry layout
