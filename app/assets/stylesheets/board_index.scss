@@ -92,11 +92,67 @@ i#board-edit-icon {
 }
 
 .board-index:hover {
+  cursor:pointer;
   background-color: #e9e9e9;
   opacity: 1;
 }
 
+ .board-container {
+  width: 300px;
+  // height: 264px;
+  text-align: left;
+  background-color: white;
+  border-radius: 12px;
+}
 
+.board-container:hover {
+  filter: brightness(90%);
+}
 
+.board-index-item-image {
+  width: 100%;
+  height: 200px;
+  display: flex;
+}
 
+.board-index-item-image div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.board-index-item-image > img,
+.board-index-item-image > div {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px 0 0 12px;
+  margin-right: 2px;
+}
+
+.board-index-item-image div > img,
+.board-index-item-image div > div {
+  width: 100%;
+  height: calc(50% - 1px);
+  object-fit: cover;
+}
+
+.board-index-img-right1,
+.board-index-img-empty-r1 {
+  border-radius: 0 12px 0 0;
+  margin-bottom: 2px;
+}
+
+.board-index-img-right2,
+.board-index-img-empty-r2 {
+  border-radius: 0 0 12px 0;
+}
+
+.board-index-img-empty-l,
+.board-index-img-empty-r1,
+.board-index-img-empty-r2 {
+  background-color: white;
+  filter: brightness(90%);
+  border-color: transparent;
+}

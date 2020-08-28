@@ -60,12 +60,44 @@ class BoardIndexItem extends React.Component {
   console.log(selectedPins)
     
     let photo;
-    if (selectedPins.length) photo = selectedPins[0].photoUrl
+    // if (selectedPins.length) photo = selectedPins[0].photoUrl
+    const photo1 = selectedPins[0] ? (
+      <img className="board-index-img-left" src={selectedPins[0].photoUrl} />
+    ) : (
+      <div className="board-index-img-empty-l"></div>
+    );
+
+        const photo2 = selectedPins[1] ? (
+          <img
+            className="board-index-img-right1"
+            src={selectedPins[1].photoUrl}
+          />
+        ) : (
+          <div className="board-index-img-empty-r1"></div>
+        );
+
+                const photo3 = selectedPins[2] ? (
+                  <img
+                    className="board-index-img-right2"
+                    src={selectedPins[2].photoUrl}
+                  />
+                ) : (
+                  <div className="board-index-img-empty-r2"></div>
+                );
+
+ 
     return (
       <div className="board-index">
         <div className="board-container" onClick={this.redirect}>
-          <div className="board-box">
+          {/* <div className="board-box">
             <img className="board-cover" src={photo} />
+          </div> */}
+          <div className="board-index-item-image">
+            {photo1}
+            <div>
+              {photo2}
+              {photo3}
+            </div>
           </div>
         </div>
 
@@ -77,10 +109,6 @@ class BoardIndexItem extends React.Component {
 
           <div
             className="board-index-item edit-icon-pencil show"
-            // onClick={(boardId) =>
-            //   this.props.editBoard(boardId)
-            // }
-            // onClick={()=>this.props.openModal('edit-board')}
             onClick={this.handleEditBoard(boardId)}
           >
             <i className="fa fa-pencil" id="board-edit-icon"></i>
