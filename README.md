@@ -31,7 +31,7 @@ User can create account and login. Using BCrypt gem and SecureRandom module to c
 Masonry layout
 
 <p align="center">
-  <img style="max-width: 80%;" height="460" src="https://media.giphy.com/media/MBaZlXylxHgx7epfA6/giphy.gif">
+  <img style="max-width: 80%;" height="460" src="https://jinterest-seeds.s3-us-west-1.amazonaws.com/mansory.gif">
 </p>  
 
 ### Profile 
