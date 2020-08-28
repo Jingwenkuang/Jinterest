@@ -30,7 +30,9 @@ User can create account and login. Using BCrypt gem and SecureRandom module to c
 ### Discover feed 
 Masonry layout
 
-<img style="max-width: 100%;" height="460" src="https://jinterest-seeds.s3-us-west-1.amazonaws.com/home.png">
+<p align="center">
+  <img style="max-width: 80%;" height="460" src="https://media.giphy.com/media/MBaZlXylxHgx7epfA6/giphy.gif">
+</p>  
 
 ### Profile 
 User can select board or pin tag.
