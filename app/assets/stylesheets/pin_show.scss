@@ -46,6 +46,8 @@
   flex-direction: column;
   overflow: hidden;
   padding-left: 5%;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .pin-show-title{
@@ -93,4 +95,8 @@
  background-color: lightpink;
  border-radius: 50%;
  cursor: pointer;
+}
+
+.top-right-edit {
+  display: flex;
 }

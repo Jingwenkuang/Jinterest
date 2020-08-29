@@ -1,14 +1,24 @@
 import { connect } from 'react-redux';
 import { fetchPin, updatePin, deletePin } from '../../actions/pin_actions';
+import { withRouter } from 'react-router';
 import { closeModal } from '../../actions/modal_actions';
 import PinEditForm from './pin_edit_form';
 import { clearErrors } from '../../actions/session_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-  pin: state.entities.pins[ownProps.match.params.pin.id],
-  currentUser: state.entities.users[state.session.currentUserId],
-  errors: state.errors.pins,
-})
+const mapStateToProps = (state, ownProps) => {
+
+
+    let id =
+    ownProps.location.pathname.split("/").pop();
+
+  return {
+    pin: state.entities.pins[id],
+
+    // pin: state.entities.pins[ownProps.match.params.pin.id],
+    currentUser: state.entities.users[state.session.currentUserId],
+    errors: state.errors.pins,
+  }``
+}
 
 const mapDispatchToProps = dispatch => ({
   fetchPin: (pinId) => dispatch(fetchPin(pinId)),
@@ -18,4 +28,4 @@ const mapDispatchToProps = dispatch => ({
   closeModal: () => dispatch(closeModal())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(PinEditForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PinEditForm));

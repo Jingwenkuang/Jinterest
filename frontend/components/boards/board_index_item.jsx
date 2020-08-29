@@ -54,10 +54,6 @@ class BoardIndexItem extends React.Component {
     let name = this.props.board.name
     let selectedPins = this.filterPins()
     let boardId = this.props.board.id
-  // console.log('ik')
-  // console.log(name)
-  // console.log(this.props.board.id)
-  // console.log(selectedPins)
     
     let photo;
     // if (selectedPins.length) photo = selectedPins[0].photoUrl
