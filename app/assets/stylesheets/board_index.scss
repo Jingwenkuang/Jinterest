@@ -3,15 +3,6 @@ div#profile-content-container {
   margin-left: 10%;
 }
 
-.board-box,
-.board-cover {
-  display: inline-block;
-  border: 1px solid lightgray;
-  width: 250px;
-  height: 245px;
-  border-radius: 18px;
-}
-
 ul.board-tab{ 
   display: flex;
   justify-content: flex-start;
@@ -32,10 +23,6 @@ ul.board-tab{
 .board-title {
   font-size: 18px;
   margin: 3% 0 1% 4%;
-}
-
-.board-cover:hover {
-  cursor: pointer;
 }
 
 .board-index-item.info {
@@ -99,10 +86,9 @@ i#board-edit-icon {
 
  .board-container {
   width: 300px;
-  // height: 264px;
   text-align: left;
   background-color: white;
-  border-radius: 12px;
+  border-radius: 11px;
 }
 
 .board-container:hover {
@@ -127,7 +113,7 @@ i#board-edit-icon {
   width: 50%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px 0 0 12px;
+  border-radius: 11px 0 0 11px;
   margin-right: 2px;
 }
 
@@ -140,13 +126,13 @@ i#board-edit-icon {
 
 .board-index-img-right1,
 .board-index-img-empty-r1 {
-  border-radius: 0 12px 0 0;
+  border-radius: 0 11px 0 0;
   margin-bottom: 2px;
 }
 
 .board-index-img-right2,
 .board-index-img-empty-r2 {
-  border-radius: 0 0 12px 0;
+  border-radius: 0 0 11px 0;
 }
 
 .board-index-img-empty-l,

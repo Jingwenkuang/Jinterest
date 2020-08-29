@@ -8,6 +8,7 @@ import ProfileEditFormContainer from '../profile/profile_edit_form_container';
 import BoardCreateFormContainer from '../boards/board_create_form_container';
 import BoardEditFormContainer from '../boards/board_edit_form_container';
 import PinDeleteFormContainer from '../pins/pin_delete_form_container';
+import BoardDeleteFormContainer from '../boards/board_delete_form_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -15,28 +16,32 @@ function Modal({ modal, closeModal }) {
   }
   let component, clickBackground;
   switch (modal.type) {
-    case 'login':
-      component = <LoginFormContainer closeModal={closeModal}/>;
+    case "login":
+      component = <LoginFormContainer closeModal={closeModal} />;
       break;
-    case 'signup':
-      component = <SignupFormContainer closeModal={closeModal}/>;
+    case "signup":
+      component = <SignupFormContainer closeModal={closeModal} />;
       break;
-    case 'edit-pin':
-      component = <PinEditFormContainer closeModal={closeModal}/>;
+    case "edit-pin":
+      component = <PinEditFormContainer closeModal={closeModal} />;
       break;
-    case 'edit-profile':
-      component = <ProfileEditFormContainer closeModal={closeModal}/>;
+    case "edit-profile":
+      component = <ProfileEditFormContainer closeModal={closeModal} />;
       clickBackground = closeModal;
       break;
-    case 'delete-pin':
+    case "delete-pin":
       component = <PinDeleteFormContainer closeModal={closeModal} />;
       break;
-    case 'new-board':
+    case "new-board":
       component = <BoardCreateFormContainer closeModal={closeModal} />;
       clickBackground = closeModal;
       break;
-    case 'edit-board':
+    case "edit-board":
       component = <BoardEditFormContainer closeModal={closeModal} />;
+      clickBackground = closeModal;
+      break;
+    case "delete-board":
+      component = <BoardDeleteFormContainer closeModal={closeModal} />;
       clickBackground = closeModal;
       break;
     default:

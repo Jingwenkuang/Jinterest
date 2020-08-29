@@ -1,0 +1,30 @@
+h1.board-edit-form {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 10px;
+  word-spacing: 0.2px;
+}
+
+.bottom-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+button.bottom-options-delete {
+  box-sizing: border-box;
+  padding: 12px;
+  outline: none;
+  border: 0;
+  font: inherit;
+  display: block;
+  background: lightgray;
+  border-radius: 15px;
+  color: gray;
+  margin: 5px;
+}
+
+.bottom-options-left {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0px;
+}

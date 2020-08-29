@@ -10,9 +10,9 @@ class BoardCreateForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.props.clearErrors();
-  }
+  // componentDidMount() {
+  //   this.props.clearErrors();
+  // }
 
   update(field) {
     return e => {
@@ -38,7 +38,7 @@ class BoardCreateForm extends React.Component {
     const { createBoard, closeModal} = this.props;
     const { name } = this.state;
     let newBoard = { name };
-    closeBoardForm();
+    // closeBoardForm();
     createBoard(newBoard)
   }
 

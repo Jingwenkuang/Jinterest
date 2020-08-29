@@ -54,10 +54,10 @@ class BoardIndexItem extends React.Component {
     let name = this.props.board.name
     let selectedPins = this.filterPins()
     let boardId = this.props.board.id
-  console.log('ik')
+  // console.log('ik')
   // console.log(name)
   // console.log(this.props.board.id)
-  console.log(selectedPins)
+  // console.log(selectedPins)
     
     let photo;
     // if (selectedPins.length) photo = selectedPins[0].photoUrl
@@ -89,9 +89,7 @@ class BoardIndexItem extends React.Component {
     return (
       <div className="board-index">
         <div className="board-container" onClick={this.redirect}>
-          {/* <div className="board-box">
-            <img className="board-cover" src={photo} />
-          </div> */}
+
           <div className="board-index-item-image">
             {photo1}
             <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { openModal } from '../../actions/modal_actions';
+import { openModal, toggleSessionModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 import PinIndexContainer from "../pins/pin_index_container";
 import { fetchAllPins } from "../../actions/pin_actions";
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   openModal: (modal) => dispatch(openModal(modal)),
   fetchAllPins: () => dispatch(fetchAllPins()),
+  toggleSessionModal: () => dispatch(toggleSessionModal()),
 });
 
 

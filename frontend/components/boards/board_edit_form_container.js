@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import BoardEditForm from './board_edit_form';
 import { clearErrors } from '../../actions/session_actions';
-import { closeModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 import { fetchBoard, fetchBoards, updateBoard, deleteBoard } from '../../actions/board_actions';
 import { fetchAllPins } from "../../actions/pin_actions";
 
@@ -19,12 +19,13 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   updateBoard: (board) => dispatch(updateBoard(board)),
-  deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
+  deleteBoard: (boardId) => dispatch(openModal("delete-board", boardId)),
+  // deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
   clearErrors: () => dispatch(clearErrors()),
   closeModal: () => dispatch(closeModal()),
   // openModal: modal => dispatch(openModal(modal)),
-})
+});
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BoardEditForm));
