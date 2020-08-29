@@ -24,6 +24,7 @@ function Modal({ modal, closeModal }) {
       break;
     case "edit-pin":
       component = <PinEditFormContainer closeModal={closeModal} />;
+      clickBackground = closeModal;
       break;
     case "edit-profile":
       component = <ProfileEditFormContainer closeModal={closeModal} />;

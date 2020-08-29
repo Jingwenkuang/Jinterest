@@ -1,0 +1,158 @@
+img.pin-edit {
+  width: 230px;
+  height: 280px;
+  border-radius: 11px;
+}
+
+.pin-editform-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 11px;
+  padding: 30px;
+  width: 750px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background: white;
+}
+
+header.editform-header {
+  display: flex;
+  justify-content: center;
+}
+
+h1.edit-pin-header {
+  font-size: 30px;
+}
+
+.pin-edit-content {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+form.editform {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 430px;
+}
+
+.edit-pin-description, 
+.edit-pin-title {
+  padding-bottom: 20px;
+}
+
+input.pin-edit-name {
+  box-sizing: border-box;
+  border: 2px solid #ddd;
+  border-radius: 11px;
+  margin-bottom: 12px;
+  margin-top: 6px;
+  min-height: 42px;
+  margin-left: 62px;
+  padding: 5px 10px;
+  font-size: 16px;
+  width: 72%; 
+  outline: none;
+}
+
+textarea.pin-edit-description {
+  line-height: 1.5;
+  padding: 6px 12px;
+  resize: none;
+  box-sizing: border-box;
+  min-height: 120px;
+  appearance: none;
+  border-radius: 12px;
+  border-style: solid;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  border: 2px solid #ddd;
+  width: 72%;
+  margin-bottom: -100px;
+  margin-top: 6px;
+  margin-left: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+input.pin-edit-name:hover {
+  border: 2px solid rgb(183, 238, 233);
+}
+
+textarea.pin-edit-description:hover {
+  appearance: none;
+  border: 2px solid rgb(183, 238, 233);
+}
+
+textarea.pin-edit-description:focus {
+  outline: none;
+}
+
+.pin-edit-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+button.pin-delete, 
+button.edit-cancel {
+  box-sizing: border-box;
+  padding: 12px;
+  outline: none;
+  border: 0;
+  font: inherit;
+  display: block;
+  background: #e6e2e2;
+  border-radius: 15px;
+  color: #111111;
+  margin: 5px;
+}
+
+button.edit-save {
+  box-sizing: border-box;
+  padding: 12px;
+  outline: none;
+  border: 0;
+  font: inherit;
+  display: block;
+  background: #e69ea9;
+  border-radius: 15px;
+  color: white;
+  margin: 5px;
+
+}
+
+button.pin-delete:hover, 
+button.edit-cancel:hover {
+  cursor: pointer;
+  background: darkgray;
+}
+
+button.edit-save:hover {
+  cursor: pointer;
+  background:#c3828c;
+}
+
+.save-cancel-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-cancel-button {
+  display: flex;
+  padding-right: 8px;
+  justify-content: flex-end;
+}
+
+label.pin-edit-label,
+label.pin-edit-description-label {
+  font-weight: 500;
+  color: dimgray;
+}
+
+.pin-editform-container:hover {
+  cursor: default;
+}
