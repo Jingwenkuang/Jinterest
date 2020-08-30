@@ -34,7 +34,7 @@ input.profile-input {
 }
 
 input.profile-input:hover {
-  border: 4px solid rgb(183, 238, 233);
+  border: 2px solid rgb(183, 238, 233);
 }
 
 textarea.profile-textarea {
@@ -63,7 +63,7 @@ textarea.profile-textarea {
 
 .profile-textarea:hover {
   appearance: none;
-  border: 4px solid rgb(183, 238, 233);
+  border: 2px solid rgb(183, 238, 233);
 }
 
 textarea.profile-textarea:focus {
@@ -88,17 +88,40 @@ input.profile-input.profile-text-name {
   min-height: 48px;
 }
 
-.cancel-edit, 
+.cancel-edit {
+  box-sizing: border-box;
+  padding: 12px;
+  outline: none;
+  border: 0;
+  font: inherit;
+  display: block;
+  background: #e6e2e2;
+  border-radius: 15px;
+  color: #111111;
+  margin: 5px;
+}
+
+.cancel-edit:hover {
+  cursor: pointer;
+  background: darkgray;
+}
+
 .save-edit {
   box-sizing: border-box;
   padding: 12px;
   outline: none;
   border: 0;
-  font:inherit;
+  font: inherit;
   display: block;
-  background: lightgray;
+  background: #f9778b;
   border-radius: 15px;
-  color: gray;
+  color: white;
+  margin: 5px;
+}
+
+.save-edit:hover {
+  cursor: pointer;
+  background:#c3828c;
 }
 
 .profile-edit-header {
