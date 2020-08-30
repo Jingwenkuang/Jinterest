@@ -132,7 +132,7 @@ class BoardEditForm extends React.Component {
                   Delete
                 </button>
               </div>
-              <div className="save-or-cancel">
+              <div className="board-edit-save-or-cancel">
                 <button className="create-cancle" onClick={closeModal}>
                   Cancel
                 </button>

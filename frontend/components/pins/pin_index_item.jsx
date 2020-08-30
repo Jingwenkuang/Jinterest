@@ -27,8 +27,18 @@ class PinIndexItem extends React.Component {
   }
 
   render() {
-    const {pin} = this.props
+    const { pin, page, openEditPin, user, userId } = this.props;
     const pinId = this.props.pin.id
+
+   const editPinLink =
+    //  page === "profile" && location.hash.includes(user.username) ? (
+       <a
+         className="pin-index-item edit-pin-link"
+         onClick={() => openEditPin(pin.id)}
+       >
+         <i className="fa fa-pencil edit-pin-icon"></i>
+       </a>
+    //  ) : null;
 
     return (
     
@@ -39,6 +49,13 @@ class PinIndexItem extends React.Component {
             <div className="pin-index-item overlay"></div>
             <img src={pin.photoUrl} className='pin-index-item masonry-photo' />
           </Link>
+
+          <div className="pin-index-item links">
+            <div className="pin-index-item edit-pin-link-container">{editPinLink}</div>
+            {/* <div className="save-board-pin-link-container">{openBoardPinLink}</div>
+            <div className="pin-index-item pin-link-container">{pinLink}</div> */}
+          </div>
+
         </div>
           <div className='pin-index-title'>
             {pin.title}

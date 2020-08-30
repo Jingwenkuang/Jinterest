@@ -12,13 +12,15 @@ const mapStateToProps = (state, ownProps)  => {
     pins: pickedPins,
     user: state.entities.users[state.session.currentUserId],
     currentUserId: state.session.currentUserId,
+    page: ownProps.page,
   } 
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchAllPins: () => dispatch(fetchAllPins()),
-  updatePin: pin => dispatch(updatePin(pin)), 
-  deletePin: pinId => dispatch(deletePin(pinId)),
-})
+  updatePin: (pin) => dispatch(updatePin(pin)),
+  deletePin: (pinId) => dispatch(deletePin(pinId)),
+  openEditPin: (pinId) => dispatch(openModal("edit-pin", pinId)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(PinIndex);

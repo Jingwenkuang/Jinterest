@@ -112,3 +112,43 @@
 .pin-index-title {
   visibility: hidden;
 }
+
+.pin-index-item.links {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  // visibility: hidden;
+  &:hover {
+    visibility: visible;
+  }
+}
+
+.pin-index-item.edit-pin-link-container {
+  pointer-events: auto;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+a.pin-index-item.edit-pin-link {
+  height: 32px;
+  width: 32px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  background-color: rgba(255,255,255,0.9);
+  cursor: pointer;
+}
+
+i.fa.fa-pencil.edit-pin-icon {
+  font-size: 15px;
+  color: black;
+}

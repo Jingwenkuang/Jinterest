@@ -10,21 +10,54 @@ h1.board-edit-form {
   justify-content: space-between;
 }
 
-button.bottom-options-delete {
+button.bottom-options-delete,
+button.create-cancle {
   box-sizing: border-box;
   padding: 12px;
   outline: none;
   border: 0;
   font: inherit;
   display: block;
-  background: lightgray;
+  background: #e6e2e2;
   border-radius: 15px;
-  color: gray;
+  color: #111111;
   margin: 5px;
+}
+
+button#save-board {
+  box-sizing: border-box;
+  padding: 12px;
+  outline: none;
+  border: 0;
+  font: inherit;
+  display: block;
+  background: #f9778b;
+  border-radius: 15px;
+  color: white;
+  margin: 5px; 
+}
+
+
+
+button.bottom-options-delete:hover,
+button.create-cancle:hover {
+  cursor: pointer;
+  background: darkgray;
+}
+
+button#save-board:hover {
+  cursor: pointer;
+  background:#c3828c;  
 }
 
 .bottom-options-left {
   display: flex;
   justify-content: flex-start;
+  margin: 10px 0px;
+}
+
+.board-edit-save-or-cancel {
+  display: flex;
+  justify-content: center;
   margin: 10px 0px;
 }

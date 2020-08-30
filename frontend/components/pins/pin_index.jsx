@@ -12,17 +12,18 @@ class PinIndex extends React.Component {
   }
 
   render() { 
-    const { pins, user, currentUserId } = this.props;
+    const { page, pins, user, currentUserId, openEditPin } = this.props;
    
     const pinIndexItems = pins.map((pin, idx) => (
       <PinIndexItem
-        // key = {pin.id}
         key={idx}
-        pin = {pin}
+        page={page}
+        pin={pin}
         userId={currentUserId}
         user={user}
+        openEditPin={openEditPin}
       />
-    ))
+    ));
     return (
       <div className="pin-index container">
         <div className="pin-index" id="grid-container">

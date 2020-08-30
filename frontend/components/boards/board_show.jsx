@@ -34,7 +34,7 @@ class BoardShow extends React.Component {
     let description = this.props.selectedBoard ? this.props.selectedBoard.description : "";
     const pindropDownHidden = this.state.pindropDownHidden ? "hidden" : "";
     let selectPins = this.filterPins(); 
-    const pinIndex = <PinIndexContainer selectedPins={selectPins}/>
+    const pinIndex = <PinIndexContainer selectedPins={selectPins} page ='profile'/>
 
     return (
       <div className="board-show">
