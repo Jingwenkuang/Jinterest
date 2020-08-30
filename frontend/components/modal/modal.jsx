@@ -32,6 +32,7 @@ function Modal({ modal, closeModal }) {
       break;
     case "delete-pin":
       component = <PinDeleteFormContainer closeModal={closeModal} />;
+      clickBackground = closeModal;
       break;
     case "new-board":
       component = <BoardCreateFormContainer closeModal={closeModal} />;

@@ -3,21 +3,26 @@ import { Link, withRouter } from 'react-router-dom';
 
 class PinEditForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       id: this.props.pin.id,
       title: this.props.pin.title,
       description: this.props.pin.description,
-      user_id: this.props.pin.user_id
-    } 
+      user_id: this.props.pin.user_id,
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.openDeletePin = this.openDeletePin.bind(this);
     this.update = this.update.bind(this);
   }
 
+  openDeletePin() {
+    this.props.openDeletePin(this.props.pin.id);
+  }
+
   update(field) {
-    return e => this.setState({[field]: e.currentTarget.value})
+    return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
@@ -26,12 +31,10 @@ class PinEditForm extends React.Component {
   }
 
   handleDelete(e) {
-    this.props.deletePin(this.state.id)
-      .then(() => this.props.closeModal())
+    this.props.deletePin(this.state.id).then(() => this.props.closeModal());
   }
 
   render() {
-
     return (
       <div className="pin-editform-container">
         <div className="pin-editform-box">
@@ -42,7 +45,7 @@ class PinEditForm extends React.Component {
           <div className="pin-edit-content">
             <form className="editform">
               <div className="edit-pin-title">
-                <label htmlFor="title" className='pin-edit-label'>
+                <label htmlFor="title" className="pin-edit-label">
                   Title
                   <input
                     type="text"
@@ -55,7 +58,10 @@ class PinEditForm extends React.Component {
               </div>
 
               <div className="edit-pin-description">
-                <label htmlFor="description" className='pin-edit-description-label'>
+                <label
+                  htmlFor="description"
+                  className="pin-edit-description-label"
+                >
                   Description
                   <textarea
                     className="pin-edit-description"
@@ -74,7 +80,10 @@ class PinEditForm extends React.Component {
 
           <div className="pin-edit-footer">
             <div className="pin-delete-button">
-              <button className="pin-delete" onClick={this.handleDelete}>
+              {/* <button className="pin-delete" onClick={this.handleDelete}>
+                Delete
+              </button> */}
+              <button className="pin-delete" onClick={this.openDeletePin}>
                 Delete
               </button>
             </div>
@@ -92,7 +101,6 @@ class PinEditForm extends React.Component {
       </div>
     );
   }
-
 }
 
 export default PinEditForm;

@@ -1,0 +1,99 @@
+.delete-pin.container {
+    display: block;
+    width: 540px;
+    height: 250px;
+    border-radius: 11px;
+    background: white;
+}
+
+// form.delete-pin.form {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// form.delete-pin.form {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 30px;
+// }
+
+form.delete-pin.form {
+  width: 100%;
+  /* height: 100%; */
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.delete-pin.header {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.delete-pin.form-title {
+  font-size: 24px;
+  padding: 10px;
+}
+
+.delete-pin.confirmation-message {
+  padding: 10px;
+  font-weight: 500;
+  font-size: large;
+}
+
+.delete-pin.footer {
+  margin-top: 26px;
+  display: flex;
+  justify-content: flex-end;
+}
+.delete-pin.buttons {
+  display: flex;
+  padding: 12px;
+}
+
+.delete-pin.link-text.cancel {
+  box-sizing: border-box;
+  padding: 12px;
+  outline: none;
+  border: 0;
+  font: inherit;
+  display: block;
+  background: #e6e2e2;
+  border-radius: 15px;
+  color: #111111;
+  margin: 5px;
+}
+
+.delete-pin.link-text.delete {
+  box-sizing: border-box;
+  padding: 12px;
+  outline: none;
+  border: 0;
+  font: inherit;
+  display: block;
+  background: #e69ea9;
+  border-radius: 15px;
+  color: white;
+  margin: 5px;
+}
+
+.delete-pin.link-text.cancel:hover {
+  cursor: pointer;
+  background: darkgray;
+}
+
+.delete-pin.link-text.delete:hover {
+  cursor: pointer;
+  background:#c3828c;
+}
+
+.delete-pin.container:hover {
+  cursor: default;
+}

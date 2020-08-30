@@ -9,7 +9,8 @@ class PinDeleteForm extends React.Component {
   }
 
   handleDelete() {
-    this.props.processForm(this.props.pinId)
+    this.props
+      .processForm(this.props.pinId)
       .then(this.props.closeModal)
       .then(() => location.reload());
   }
@@ -19,19 +20,16 @@ class PinDeleteForm extends React.Component {
   }
 
   render() {
-
     return (
       <div className="delete-pin container">
         <form className="delete-pin form">
           <div className="delete-pin header">
-            <div className="delete-pin form-title">
-              {this.props.formTitle}
-            </div>
-            <div className="delete-pin cancel-link-container">
+            <div className="delete-pin form-title">Are you sure?</div>
+            {/* <div className="delete-pin cancel-link-container">
               <a className="cancel-link" onClick={this.handleCancel}>
                 <i className="fas fa-times cancel-icon"></i>
               </a>
-            </div>
+            </div> */}
           </div>
           <div className="delete-pin body">
             <div className="delete-pin confirmation-message">
@@ -40,16 +38,10 @@ class PinDeleteForm extends React.Component {
           </div>
           <div className="delete-pin footer">
             <div className="delete-pin buttons">
-              <a
-                className="delete-pin link cancel"
-                onClick={this.handleCancel}
-              >
+              <a className="delete-pin link cancel" onClick={this.handleCancel}>
                 <div className="delete-pin link-text cancel">Cancel</div>
               </a>
-              <a
-                className="delete-pin link delete"
-                onClick={this.handleDelete}
-              >
+              <a className="delete-pin link delete" onClick={this.handleDelete}>
                 <div className="delete-pin link-text delete">Delete Pin</div>
               </a>
             </div>

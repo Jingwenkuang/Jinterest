@@ -7,7 +7,6 @@ import { openModal, closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state) => ({
   pinId: state.ui.objectId,
-  formTitle: "Are you sure?"
 });
 
 const mapDispatchToProps = dispatch => ({
