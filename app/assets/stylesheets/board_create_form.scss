@@ -2,17 +2,18 @@
   display: block;
   border: 1px solid gray;
   border-radius: 20px;
-  padding: 12%;
-  background: whitesmoke;
+  padding: 11%;
+  background: white;
   width: 450px;
   min-width: 500px
 }
 
 h1.board-create-text {
-  font-size: 25px;
+  font-size: 28px;
   text-align: center;
   margin-bottom: 10px;
   word-spacing: 0.2px;
+  letter-spacing: 0.3px;
 }
 
 .board-edit {
@@ -31,13 +32,13 @@ p.create-name,
 p.edit-description {
   margin-bottom: 5px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 13px;
 }
 
 p.create-date {
   margin-top: 12px;
   margin-bottom: 5px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
 }
 
@@ -62,7 +63,7 @@ label.start-date{
   min-height: 48px;
   padding: 6px 12px;
   font-size: 16px;
-  width: 95%;
+  width: 100%;
   outline: none
 }
 
@@ -75,7 +76,7 @@ input.create-input-end:hover{
 p.board-create-opt {
   margin-bottom: 12px;
   margin-top: 6px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
 }
 

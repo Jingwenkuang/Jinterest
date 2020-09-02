@@ -33,7 +33,7 @@ class Profile extends React.Component{
     if (!user) return <div></div>;
     return(
       
-      <div className='profile-container'>
+      <div className='profile-container' onClick={this.handleDropDown}>
         <div className='profile-box'>
 
           <div className="profile-icon">
