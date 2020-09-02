@@ -55,11 +55,12 @@ class PinShow extends React.Component{
               <div className="pin-show-title">{this.props.pin.title}</div>
 
               <div className="pin-show-user">
-                <i
+                {/* <i
                   className="fa fa-user-o"
                   id="user-icon"
                   aria-hidden="true"
-                ></i>
+                ></i> */}
+                <img src={this.props.currentUser.profileUrl} className='currentUser-icon' />
                 <p className="pin-show-username">
                   {this.props.users[this.props.currentUserId].username}
                 </p>

@@ -4,13 +4,17 @@ import { Link } from "react-router-dom";
 class PinCreateForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = Object.assign({}, this.props.pin, {
+    // this.state = Object.assign({}, this.props.pin, {
+      this.state = {
+      title: "",
+      description: "",
+      photoUrl: null,
+      errors: this.props.errors,
       photoPreview: null,
       boardId: null,
       boardList: false
-    });
+    };
 
-    // this.showBoardList = this.showBoardList.bind(this);
     this.hideBoardList = this.hideBoardList.bind(this);
     this.toggleBoardList = this.toggleBoardList.bind(this);
     this.selectBoard = this.selectBoard.bind(this);
@@ -23,9 +27,6 @@ class PinCreateForm extends React.Component {
     this.props.fetchBoards();
   }
 
-  // showBoardList() {
-  //   this.setState({ boardList: true });
-  // }
 
   hideBoardList(e) {
     this.setState({ boardList: false });
@@ -105,7 +106,7 @@ class PinCreateForm extends React.Component {
       );
 
     const boardListItems = (boards.length > 0) ? (
-      boards.map(board => {
+      boards.map((board, idx) => {
         const firstPinImage = (board.firstPin !== undefined) ? (
           <img src={`${board.firstPin.photoUrl}`}
             className="board-li pin-photo" />
@@ -115,7 +116,7 @@ class PinCreateForm extends React.Component {
         const secret = (board.secret) ? 'show ish' : 'hide';
         return (
           <li
-            key={board.id}
+            key={idx}
             className="create-pin board-list-item"
             value={board.id}
             onClick={this.selectBoard}
@@ -139,11 +140,11 @@ class PinCreateForm extends React.Component {
       );
 
     const displayImage = (this.state.photoPreview) ? (
-      <div className="create-pin" id="image-uploaded-container">
-        <img src={this.state.photoPreview} className="create-pin" id="photo" />
-        <div className="create-pin" id="delete-image-button-container">
-          <button className="create-pin" id="delete-image-button" onClick={this.deleteImage}>
-            <div className="create-pin" id="trash-icon-container">
+      <div className="create-image-uploaded-container">
+        <img src={this.state.photoPreview} className="create-pin-photo" />
+        <div className="delete-image-button-container">
+          <button className="delete-image-button" onClick={this.deleteImage}>
+            <div className="trash-icon-container">
               <i className="fa fa-trash create-pin" id="trash-icon"></i>
             </div>
           </button>
@@ -151,16 +152,16 @@ class PinCreateForm extends React.Component {
       </div>
     ) : (
         <div className="create-pin" id="image-upload-container">
-          <div className="create-pin" id="image-upload-area" onClick={this.uploadImage}>
-            <div className="create-pin" id="image-upload-area-border">
-              <div className="create-pin" id="upload-icon-container">
+          <div className="image-upload-area" onClick={this.uploadImage}>
+            <div className="image-upload-area-border">
+              <div className="upload-icon-container">
                 <i className="fa fa-arrow-circle-up" id="upload-icon"></i>
               </div>
-              <div className="create-pin" id="instruction">
+              <div className="create-pin-instruction">
                 Click to upload
             </div>
             </div>
-            <div className="create-pin" id="upload-recommendation">
+            <div className="create-pin-upload-prefer">
               Recommendation: Use high-quality .jpg files less than 2 MB
         </div>
           </div>
@@ -212,37 +213,35 @@ class PinCreateForm extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="create-pin" id="content">
-              <div className="create-pin" id="image-container">
+            <div className="create-pin-content">
+              <div className="create-image-container">
                 {displayImage}
               </div>
-              <div className="create-pin" id="details-container">
-                <div className="create-pin" id="title-container">
+              <div className="create-pin-details-container">
+                <div className="create-pin-title-container">
                   <input
                     type="text"
-                    className="create-pin"
-                    id="pin-title"
+                    className="create-pin-title"
                     placeholder="Add your title"
                     value={this.state.title}
                     onChange={this.changeInput("title")} />
                 </div>
-                <div className="create-pin" id="user-container">
-                  <div className="create-pin" id="user-image-frame">
+                <div className="create-pin-user-container">
+                  <div className="create-pin-user-image-frame">
                     <img
                       src={currentUser.profileUrl}
                       alt="profile-icon"
-                      className="create-pin"
-                      id="user-image" />
+                      className="create-pin-user-image"
+                    />
                   </div>
                   <div className="create-pin-username">
                     {currentUser.username}
                   </div>
                 </div>
-                <div className="create-pin" id="description-container">
+                <div className="create-pin-description-container">
                   <textarea
                     rows="1"
-                    className="create-pin"
-                    id="pin-description"
+                    className="create-pin-description"
                     placeholder="Tell everyone what your Pin is about"
                     value={this.state.description}
                     onChange={this.changeInput("description")} />

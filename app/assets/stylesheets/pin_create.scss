@@ -264,28 +264,28 @@ ul.create-pin.board-list {
   }
 }
 
-.create-pin#content {
+.create-pin-content {
   padding-bottom: 40px;
   box-sizing: border-box;
   flex-direction: row;
   display: flex;
 }
 
-.create-pin#image-container {
+.create-image-container {
   box-sizing: border-box;
   padding: 0px 20px;
 }
 
-.create-pin#image-upload-container {
-  width: 340px;
-  height: 500px;
-  flex: 1 1 auto;
-  box-sizing: border-box;
-  background-color: rgb(239, 239, 239);
-  border-radius: 8px;
-}
+// .create-image-upload-container {
+//   width: 340px;
+//   height: 500px;
+//   flex: 1 1 auto;
+//   box-sizing: border-box;
+//   background-color: rgb(239, 239, 239);
+//   border-radius: 8px;
+// }
 
-.create-pin#image-uploaded-container {
+.create-image-uploaded-container {
   width: 340px;
   height: auto;
   flex: 1 1 auto;
@@ -295,14 +295,14 @@ ul.create-pin.board-list {
   position: relative;
 }
 
-.create-pin#photo {
+.create-pin-photo {
   width: 340px;
   box-sizing: border-box;
   border-radius: 8px;
   position: relative;
 }
 
-.create-pin#delete-image-button-container {
+.delete-image-button-container {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
   height: 48px;
   width: 48px;
@@ -321,7 +321,7 @@ ul.create-pin.board-list {
   align-items: center;
 }
 
-.create-pin#delete-image-button {
+.delete-image-button {
   cursor: pointer;  
   border: 0px;
   height: 48px;
@@ -331,12 +331,12 @@ ul.create-pin.board-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  &:hover > #trash-icon-container {
+  &:hover > .trash-icon-container {
     background-color: #e2e2e2;
   }
 }
 
-.create-pin#trash-icon-container {
+.trash-icon-container {
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -346,13 +346,14 @@ ul.create-pin.board-list {
   background-color: transparent;
 }
 
-.create-pin#trash-icon {
+#trash-icon {
   color: #333;
-  height: 20px;
+  height: 22px;
   width: 20px;
+  font-size: 22px;
 }
 
-.create-pin#image-upload-area {
+.image-upload-area {
   width: 340px;
   height: 500px;
   box-sizing: border-box;
@@ -363,7 +364,7 @@ ul.create-pin.board-list {
   cursor: pointer;
 }
 
-.create-pin#image-upload-area-border {
+.image-upload-area-border {
   height: 100%;
   border: 2px dashed rgb(218, 218, 218);
   border-radius: 6px;
@@ -374,7 +375,7 @@ ul.create-pin.board-list {
   flex-direction: column;
 }
 
-.create-pin#upload-icon-container {
+.upload-icon-container {
   box-sizing: border-box;
   padding: 8px;
 }
@@ -385,20 +386,19 @@ ul.create-pin.board-list {
   width: 32px;
 }
 
-.create-pin#instruction {
+.create-pin-instruction {
   width: 100%;
   box-sizing: border-box;
   padding: 0px 48px;
   margin-top: 16px;
   color: #333;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   font-weight: 400;
-  -webkit-font-smoothing: antialiased;
   letter-spacing: -.4px;
 }
 
-.create-pin#upload-recommendation {
+.create-pin-upload-prefer {
   box-sizing: border-box;
   position: absolute;
   left: 0;
@@ -410,7 +410,6 @@ ul.create-pin.board-list {
   font-size: 14px;
   text-align: center;
   font-weight: 400;
-  -webkit-font-smoothing: antialiased;
   letter-spacing: -.4px;
 }
 
@@ -418,7 +417,7 @@ ul.create-pin.board-list {
   display: none;
 }
 
-.create-pin#details-container {
+.create-pin-details-container {
   min-height: 510px;
   width: 100%;
   flex: 1 1 auto;
@@ -428,13 +427,13 @@ ul.create-pin.board-list {
   flex-direction: column;
 }
 
-.create-pin#title-container {
+.create-pin-title-container {
   width: 100%;
   box-sizing: border-box;
   margin-top: 32px
 }
 
-.create-pin#pin-title {
+.create-pin-title {
   outline: none;
   height: 43px;
   white-space: pre-wrap;
@@ -455,7 +454,7 @@ ul.create-pin.board-list {
   }
 }
 
-.create-pin#user-container {
+.create-pin-user-container {
   width: 100%;
   box-sizing: border-box;
   margin-top: 35px;
@@ -464,7 +463,7 @@ ul.create-pin.board-list {
   flex-direction: row;
 }
 
-.create-pin#user-image-frame {
+.create-pin-user-image-frame {
   padding-right: 4px;
   box-sizing: border-box;
   border-radius: 50%;
@@ -474,7 +473,7 @@ ul.create-pin.board-list {
   position: relative;
 }
 
-.create-pin#user-image {
+.create-pin-user-image {
   color: transparent;
   width: 100%;
   position: absolute;
@@ -491,13 +490,13 @@ ul.create-pin.board-list {
   letter-spacing: -.4px;
 }
 
-.create-pin#description-container {
+.create-pin-description-container {
   width: 100%;
   box-sizing: border-box;
   margin-top: 24px;
 }
 
-.create-pin#pin-description {
+.create-pin-description {
   // height: 220px;
   line-height: 1.5;
   padding: 8px 6px;
