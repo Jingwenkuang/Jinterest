@@ -23,7 +23,7 @@ class NavBar extends React.Component {
     const dropDownHidden = this.state.dropDownHidden ? "hidden" : "";
     return (
 
-      <nav className="navbar-box" onClick={this.handleDropDown}>
+      <nav className="navbar-box">
         <div className='nav-left'>
           <div className='nav-left-logo'>
             <NavLink to='/' className='nav-logo'>

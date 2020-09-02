@@ -8,6 +8,7 @@ class Profile extends React.Component{
       dropDownHidden: true 
     }
     this.handleDropDown = this.handleDropDown.bind(this);
+    this.hideDropDown = this.hideDropDown.bind(this)
   }
 
   handleDropDown(e) {
@@ -18,6 +19,10 @@ class Profile extends React.Component{
   // componentDidMount(){
   //   this.props.fetchUser(this.props.currentUserId)
   // }
+
+  hideDropDown(e) {
+    this.setState({ boardList: !this.state.dropDownHidden });
+  }
 
   componentDidUpdate(prevProps) {
     if (prevProps.currentUserId !== this.props.currentUserId) {
@@ -33,7 +38,7 @@ class Profile extends React.Component{
     if (!user) return <div></div>;
     return(
       
-      <div className='profile-container' onClick={this.handleDropDown}>
+      <div className='profile-container' onClick={this.hideDropDown}>
         <div className='profile-box'>
 
           <div className="profile-icon">

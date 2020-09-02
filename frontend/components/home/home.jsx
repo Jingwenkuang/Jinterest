@@ -20,6 +20,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
   }
+  
   componentDidMount() {
     this.props.openModal('login');
     this.props.fetchAllPins();
