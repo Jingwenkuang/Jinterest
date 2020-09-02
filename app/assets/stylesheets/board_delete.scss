@@ -1,12 +1,12 @@
-.delete-pin.container {
-    display: block;
-    width: 540px;
-    height: 250px;
-    border-radius: 11px;
-    background: white;
-}
+.delete-board-container {
+  display: block;
+  width: 540px;
+  height: 278px;
+  border-radius: 11px;
+  background: white;
+} 
 
-form.delete-pin.form {
+.delete-board-form {
   width: 100%;
   flex: 1 1 auto;
   box-sizing: border-box;
@@ -15,34 +15,33 @@ form.delete-pin.form {
   padding: 30px;
 }
 
-.delete-pin.header {
+.delete-board-header{
   display: flex;
   justify-content: center;
   padding-bottom: 20px;
 }
 
-.delete-pin.form-title {
+.delete-board-form-title{
   font-size: 24px;
-  padding: 10px;
+  padding: 10px;  
 }
 
-.delete-pin.confirmation-message {
+.delete-board-message{
   padding: 10px;
   font-weight: 400;
   font-size: 16px;
 }
 
-.delete-pin.footer {
-  margin-top: 26px;
-  display: flex;
-  justify-content: flex-end;
-}
-.delete-pin.buttons {
-  display: flex;
-  padding: 12px;
+.delete-board-footer{
+  box-sizing: border-box;
+  max-width: 100%
 }
 
-.delete-pin.link-text.cancel {
+.delete-board-buttons{
+  padding: 22px; 
+}
+
+.delete-board-cancel-button{
   box-sizing: border-box;
   padding: 12px;
   outline: none;
@@ -52,10 +51,16 @@ form.delete-pin.form {
   background: #e6e2e2;
   border-radius: 15px;
   color: #111111;
-  margin: 5px;
+  margin: 5px; 
+  width: 90%;
 }
 
-.delete-pin.link-text.delete {
+.delete-board-cancel-button:hover{
+  cursor: pointer;
+  background: darkgray;
+}
+
+.delete-board-delete-button{
   box-sizing: border-box;
   padding: 12px;
   outline: none;
@@ -65,19 +70,11 @@ form.delete-pin.form {
   background: #f9778b;
   border-radius: 15px;
   color: white;
-  margin: 5px;
+  margin: 5px; 
+  width: 90%; 
 }
 
-.delete-pin.link-text.cancel:hover {
-  cursor: pointer;
-  background: darkgray;
-}
-
-.delete-pin.link-text.delete:hover {
+.delete-board-delete-button:hover{
   cursor: pointer;
   background:#c3828c;
-}
-
-.delete-pin.container:hover {
-  cursor: default;
 }
