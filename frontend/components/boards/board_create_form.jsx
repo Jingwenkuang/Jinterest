@@ -39,7 +39,7 @@ class BoardCreateForm extends React.Component {
     const { name } = this.state;
     let newBoard = { name };
     // closeBoardForm();
-    createBoard(newBoard)
+    createBoard(newBoard).then(closeModal)
   }
 
   render() {

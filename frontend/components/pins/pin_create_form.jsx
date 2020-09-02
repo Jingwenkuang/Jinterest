@@ -1,249 +1,259 @@
-import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 class PinCreateForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: "",
-      description: "",
-      user_id: this.props.currentUser.id, 
-      photoUrl: null, 
-      photoFile: null,
-      boardId: "",
-      errors: this.props.errors,
-      dropDownHidden: true,
-    }
+    this.state = Object.assign({}, this.props.pin, {
+      photoPreview: null,
+      boardId: null,
+      boardList: false
+    });
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.showBoardList = this.showBoardList.bind(this);
+    this.hideBoardList = this.hideBoardList.bind(this);
+    this.toggleBoardList = this.toggleBoardList.bind(this);
+    this.selectBoard = this.selectBoard.bind(this);
+    this.handleSave = this.handleSave.bind(this);
     this.handleFile = this.handleFile.bind(this);
-    this.update = this.update.bind(this);
-    this.deleteImagePreview = this.deleteImagePreview.bind(this);
-    this.goBack = this.goBack.bind(this);
-    this.handleBoardName = this.handleBoardName.bind(this);
-    this.makeBoardSelection = this.makeBoardSelection.bind(this);
-    this.toggleMenu = this.toggleMenu.bind(this);
-    this.handleDropDown = this.handleDropDown.bind(this);
+    this.deleteImage = this.deleteImage.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBoards();
-    this.props.clearErrors();
-    window.addEventListener("click", this.toggleMenu);
   }
 
-  goBack(e) {
+  // showBoardList() {
+  //   this.setState({ boardList: true });
+  // }
+
+  hideBoardList(e) {
+    this.setState({ boardList: false });
+  }
+
+  toggleBoardList() {
+    this.setState({ boardList: !this.state.boardList });
+  }
+
+  selectBoard(e) {
+    this.setState({ boardId: e.currentTarget.value, boardList: false });
+  }
+
+  handleSave(e) {
     e.stopPropagation();
-    this.props.history.goBack();
-  }
+    const details = Object.assign({}, this.state);
+    delete details["photoPreview"];
+    delete details["board"];
+    delete details["boardList"];
 
-  handleDropDown(e) {
-    e.preventDefault();
-    this.setState({ dropDownHidden: !this.state.dropDownHidden })
-  }
-
-  update(field){
-    return e => {this.setState({[field]: e.currentTarget.value})}
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
     const formData = new FormData();
-    formData.append("pin[title]", this,state.title);
-    formData.append("pin[description]", this.state.description);
-    formData.append("pin[boardId", this.state.boardId);
-    formData.append("pin[errors]", this.state.errors);
-    if(this.state.photoFile) {
-      formData.append('pin[photo]', this.state.photoFile);
-    }
-    this.props.createPin(formData)
-      .then((action) => {this.props.history.push(`/pins/${action.pin.id}`)},
-      (error) => { this.setState({ errors: this.renderErrors()}) }
-      )
-  } 
+    for (let key in details) {
+      formData.append(`pin[${key}]`, details[key])
+    };
+    const createBoardPin = (boardPin) => this.props.createBoardPin(boardPin);
+    const boardId = this.state.boardId;
+
+    return this.props.createPin(formData)
+      .then(res => (createBoardPin({
+        "board_id": boardId,
+        "pin_id": parseInt(Object.keys(res.pin)[0])
+      })
+      ))
+      .then(() => window.history.go(-1));
+  }
+
+  uploadImage() {
+    document.getElementById("image-upload-input").click();
+  }
+
+  deleteImage() {
+    this.setState({ photoPreview: null });
+  }
 
   handleFile(e) {
-    const reader = new FileReader();
     const file = e.currentTarget.files[0];
-    const previewBackground = document.getElementById('pin-background');
-    reader.onloadend = () => 
-      this.setState({ photoUrl: reader.result, photoFile: file})
-    
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photo: file, photoPreview: fileReader.result });
+    };
+
     if (file) {
-      reader.readAsDataURL(file);
-      previewBackground.style.display = 'none';
+      fileReader.readAsDataURL(file);
     }
-  } 
-
-  boardFromTitle(boardTitle) {
-    let currentUserBoards = this.props.boards;
-    let board = currentUserBoards.filter(board => {
-      return (board).title === boardTitle
-    })
-    return (board[0])[0];
   }
 
-  deleteImagePreview() {
-    const previewBackground = document.getElementById('pin-background');
-    this.setState({photoUrl: null, photoFile: null})
-    previewBackground.style.display = null;
-  }
-
-  makeBoardSelection(e) {
-    document.getElementById("select-board").innerHTML = e.currentTarget.innerHTML;
-    this.toggleMenu(e);
-    this.update("boardId")(e);
-  }
-
-  handleBoardName() {
-    const { boards } = this.props;
-    
-    const dropDownHidden = this.state.dropDownHidden ? "hidden" : "";
-    if (!boards) return null;
+  changeInput(field) {
     return (
-      <div className='handle-board-name'>
-        <div className='drop-down-menu select-board' id='select-board' >
-          <div className='select-board'>Select</div> 
-          <div className='drop-down-select-board' onClick={this.handleDropDown}>
-            <i className='fa fa-chevron-down board' id='chevron-down' aria-hidden="true"></i>
-            <div className='select-box' id='board-names' >
-              <ul className={`drop-down-list ${dropDownHidden}`} onClick={e => e.stopPropagation()}>
-              <div className='board-list-title'>All boards</div>
-                {boards.map((board, idx) => {
-              
-                  const firstPinImage = (board.firstPin !== undefined) ? (
-                    <img src={board.firstPin.photoUrl}
-                         className='board-list-first-pin'
-                    /> 
-                  ) : (
-                    <div className='board-list-first-pin'></div>
-                  );
-                return (
-                  <li key={idx}
-                  onClick={this.makeBoardSelection}
-                  value={board.id}
-                  className='board-name'>
-                    <div className='first-pin'>{firstPinImage}</div>
-                    <div className='board-title'>{board.name}</div> 
-                   </li>
-                  )
-              })}
-              </ul>
-            </div>
-          </div>
-        </div>
-     </div>
-    )
-  }
-
-
-
-  toggleMenu(e) {
-    e.stopPropagation();
-    let menuList = document.getElementById('select-board');
-    let list = document.getElementById("board-names");
-    if (!menuList) return null;
-    if (e.target === menuList && !list.classList.contains('show-menu')) {
-      list.classList.add('show-menu')
-    } else {
-      list.classList.remove('show-menu')
-    }
+      e => this.setState({ [field]: e.currentTarget.value })
+    );
   }
 
   render() {
     const { currentUser, boards } = this.props;
-    const { title, description, photoUrl } = this.state;
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl}/> : null ;
-    const previewClass = this.state.photoUrl ? "show" : "";
 
-   
+    const toggleBoardMenu = (this.state.boardList) ? 'show' : 'hide';
+
+    const dropdownLabel = (this.state.boardId === null) ? (
+      "Select"
+    ) : (
+        boards.find(board => board.id === this.state.boardId).name
+      );
+    const clickSave = (this.state.boardId === null) ? (
+      null
+    ) : (
+        this.handleSave
+      );
+
+    const boardListItems = (boards.length > 0) ? (
+      boards.map(board => {
+        const firstPinImage = (board.firstPin !== undefined) ? (
+          <img src={`${board.firstPin.photoUrl}`}
+            className="board-li pin-photo" />
+        ) : (
+            <div className="board-li pin-photo"></div>
+          );
+        const secret = (board.secret) ? 'show ish' : 'hide';
+        return (
+          <li
+            key={board.id}
+            className="create-pin board-list-item"
+            value={board.id}
+            onClick={this.selectBoard}
+          >
+            <div className="create-pin board-li content">
+              <div className="board-li pin-photo-frame">
+                {firstPinImage}
+                <div></div>
+              </div>
+              <div className="board-li title">{board.name}</div>
+              <div className={`board-li secret-icon-container ${secret}`}>
+                <i className="fa fa-lock board-li secret-icon"></i>
+              </div>
+            </div>
+          </li>
+        )
+      }
+      )
+    ) : (
+        null
+      );
+
+    const displayImage = (this.state.photoPreview) ? (
+      <div className="create-pin" id="image-uploaded-container">
+        <img src={this.state.photoPreview} className="create-pin" id="photo" />
+        <div className="create-pin" id="delete-image-button-container">
+          <button className="create-pin" id="delete-image-button" onClick={this.deleteImage}>
+            <div className="create-pin" id="trash-icon-container">
+              <i className="fa fa-trash create-pin" id="trash-icon"></i>
+            </div>
+          </button>
+        </div>
+      </div>
+    ) : (
+        <div className="create-pin" id="image-upload-container">
+          <div className="create-pin" id="image-upload-area" onClick={this.uploadImage}>
+            <div className="create-pin" id="image-upload-area-border">
+              <div className="create-pin" id="upload-icon-container">
+                <i className="fa fa-arrow-circle-up" id="upload-icon"></i>
+              </div>
+              <div className="create-pin" id="instruction">
+                Click to upload
+            </div>
+            </div>
+            <div className="create-pin" id="upload-recommendation">
+              Recommendation: Use high-quality .jpg files less than 2 MB
+        </div>
+          </div>
+          <input
+            type="file"
+            onChange={this.handleFile}
+            className="create-pin"
+            id="image-upload-input" />
+        </div>
+      );
+
     return (
-      console.log(this.props.boards),
-      <div className="pin-create-container">
-          <div className='pin-goback' onClick={this.goBack}>
-            <i id='show-pin-arrow' className="fa fa-arrow-left"></i>
-          </div>
-        <div className="pin-create-box">
-
-          <div className='show-boards-list'>
-            <div className='show-boards-box'>
-              <div className='show-boards-wrap'>
-                <div className='show-board-names'>{this.handleBoardName()}</div>
-                <div className='save-to-board'>
-                  <button className='pin-save-to-board' id='pin-save' onClick={this.handleSubmit}>
+      <div className="create-pin-background" onClick={this.hideBoardList}>
+        <div className="create-pin-container">
+          <div className="create-pin-box">
+            <div className="create-pin-header"
+              onClick={e => e.stopPropagation()}>
+              <div
+                className="create-pin"
+                id="buttons"
+                onClick={this.toggleBoardList}
+                onBlur={this.hideBoardList}
+              >
+                <div className="create-pin" id="select-board-dropdown">
+                  <div className="create-pin" id="select-board-label">
+                    <div className="create-pin" id="selected-board">
+                      {dropdownLabel}
+                    </div>
+                  </div>
+                  <div className="create-pin" id="dropdown-icon-container">
+                    <i className="fa fa-chevron-down" id="dropdown-icon"></i>
+                  </div>
+                </div>
+                <div className="create-pin" id="save-button" onClick={clickSave}>
+                  <div className="create-pin" id="save-button-label">
                     Save
-                  </button>
+                  </div>
+                </div>
+                <div className={`create-pin board-list container ${toggleBoardMenu}`}>
+
+                  <div className="create-pin board-list header">
+                    <div className="create-pin board-list title">
+                      All boards
+                    </div>
+                  </div>
+                  <ul className="create-pin board-list">
+                    {boardListItems}
+                  </ul>
                 </div>
               </div>
             </div>
-          </div>
-
-
-
-          <div className="pin-create-content">
-
-              <div className='pin-create-dash'>
-                <div className="create-pin-image" id='create-pin-image'>
-                  <div className="pin-image-context" id='pin-image-context'>
-                    
-                      <div className='pin-upload' id='imagePreview'>
-                        <label htmlFor="pin-image-upload">
-                          <div id='pin-background'>
-                            <i className="fa fa-arrow-circle-up" aria-hidden="true" id="pin-upload-arrow"></i>
-                              <div className='pin-upload-text'>Click to upload</div>
-                          </div>
-                            <div className={`pin-image ${previewClass}`} id='upload-pin-photo'>{preview}</div>
-                          
-                        </label>
-                          <input type="file" id="pin-image-upload" className="image-upload" onChange={this.handleFile} />
-                      </div>
-                  </div>
-
-                    <div>
-                      <div className={`delete-photo ${previewClass}`} onClick={this.deleteImagePreview}>
-                        <i className="fa fa-trash-o" aria-hidden="true" id='pin-trash'></i>
-                      </div>
-                    </div>   
-                </div>
+            <div className="create-pin" id="content">
+              <div className="create-pin" id="image-container">
+                {displayImage}
               </div>
-
-            <div className="create-pin-category">
-              <div className="create-pin-input">
-                <div className="pin-info">
-                  <div className="pin-title">
-                    <textarea
-                      value={title} 
-                      onChange={this.update("title")}
-                      className='pin-title-update'
-                      placeholder="Add your title">
-                    </textarea>
+              <div className="create-pin" id="details-container">
+                <div className="create-pin" id="title-container">
+                  <input
+                    type="text"
+                    className="create-pin"
+                    id="pin-title"
+                    placeholder="Add your title"
+                    value={this.state.title}
+                    onChange={this.changeInput("title")} />
+                </div>
+                <div className="create-pin" id="user-container">
+                  <div className="create-pin" id="user-image-frame">
+                    <img
+                      src={currentUser.profileUrl}
+                      alt="profile-icon"
+                      className="create-pin"
+                      id="user-image" />
                   </div>
-
-                  <div className="pin-demo-user">
-                    <i className="fa fa-user-o" id="pin-demouser"></i>
-                    <p className="demo-name">{currentUser.username}</p>
+                  <div className="create-pin-username">
+                    {currentUser.username}
                   </div>
-
-                  <div className="pin-description">
-                    <textarea
-                      rows="1"
-                      value={description}
-                      onChange={this.update("description")}
-                      className='pin-details'
-                      placeholder="Tell everyone what your Pin is about">
-                    </textarea>
-                  </div>
-
+                </div>
+                <div className="create-pin" id="description-container">
+                  <textarea
+                    rows="1"
+                    className="create-pin"
+                    id="pin-description"
+                    placeholder="Tell everyone what your Pin is about"
+                    value={this.state.description}
+                    onChange={this.changeInput("description")} />
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-    )
+    );
   }
-
 }
 
 export default PinCreateForm;

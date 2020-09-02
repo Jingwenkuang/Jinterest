@@ -58,14 +58,9 @@ class Profile extends React.Component{
               <div className='profile-description'>{user.description}</div>
             </div>
               <div className='profile-cat-photo'>
-                <img src={window.catURL} className='cat-photo' />
+              <img src={user.profileUrl} className='cat-photo' />
               </div>
           </div>
-       
-          {/* <div className='profile-nav-button'>
-            <NavLink className="button" to={`/${this.props.user.username}/boards`}>Boards</NavLink>
-            <NavLink className="button" to={`/${this.props.user.username}/pins`}>Pins</NavLink>
-          </div> */}
         </div>
       </div>
     )

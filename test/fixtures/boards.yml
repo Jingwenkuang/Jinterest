@@ -10,6 +10,7 @@
 #  date_end    :datetime
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  secret      :boolean          default(FALSE)
 #
 
 # This model initially had no columns defined. If you add columns to the

@@ -10,9 +10,11 @@
 #  date_end    :datetime
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  secret      :boolean          default(FALSE)
 #
 class Board < ApplicationRecord
   validates :user_id, :name, presence: true
+  validates :secret, :inclusion => { :in => [true, false] }
   validates :name, :uniqueness => {:scope => :user_id}
 
   belongs_to :user 

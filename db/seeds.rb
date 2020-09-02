@@ -26,7 +26,10 @@
 	  location: 'Montana',
     password: '123456'	
   )
-	
+	file = open("https://jinterest-seeds.s3-us-west-1.amazonaws.com/cat.jpg")
+	user1.photo.attach(io: file, filename: 'cat.jpg')
+  user1.save!
+  
 	# user_id: 2
 	user2 = User.create(
 	  email: 'daylight@gmail.com',
