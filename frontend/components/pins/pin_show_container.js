@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
     ownProps.location.pathname.split("/").pop();
 
   return {
+    pinId: id,
     pin: state.entities.pins[id],
     // pin: state.entities.pins[ownProps.match.params.pinId],
     pins: state.entities.pins,

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import BoardDeleteForm from "./board_create_form";
+import BoardDeleteForm from "./board_delete_form";
 
 import { deleteBoard } from "../../actions/board_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";

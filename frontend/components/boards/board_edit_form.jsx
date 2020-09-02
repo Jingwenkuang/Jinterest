@@ -65,8 +65,8 @@ class BoardEditForm extends React.Component {
     const { closeModal, board } = this.props;
 
     return (
-      <div className="board-edit-container" onClick={closeModal}>
-        <div className="board-edit-box" onClick={(e) => e.stopPropagation()}>
+      <div className="board-edit-container">
+        <div className="board-edit-box" >
           <div className="board-form-box">
             <h1 className="board-edit-form">Edit your board</h1>
             <div className="board-edit-content">

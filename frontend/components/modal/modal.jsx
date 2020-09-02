@@ -1,5 +1,5 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal as closeModalAction } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
@@ -39,16 +39,18 @@ function Modal({ modal, closeModal }) {
       clickBackground = closeModal;
       break;
     case "edit-board":
-      component = <BoardEditFormContainer closeModal={closeModal} />;
+      component = <BoardEditFormContainer  />;
       clickBackground = closeModal;
       break;
-    case "delete-board":
-      component = <BoardDeleteFormContainer closeModal={closeModal} />;
+      case "delete-board":
+     
+      component = <BoardDeleteFormContainer  />;
       clickBackground = closeModal;
       break;
     default:
       return null;
   }
+
   return (
     <div className="modal-background" onClick={clickBackground}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
@@ -66,7 +68,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModalAction())
   };
 };
 
