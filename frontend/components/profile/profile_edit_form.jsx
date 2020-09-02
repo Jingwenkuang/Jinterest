@@ -24,7 +24,7 @@ class ProfileEditForm extends React.Component {
     e.preventDefault();
     const { username, first_name, last_name, description } = this.state;
     let user = { username, first_name, last_name, description };
-    this.props.updateDetails(user);
+    this.props.updateUser(user).then(this.props.closeModal);
   }
 
   render() {
