@@ -1,3 +1,13 @@
+.board-edit-container{
+  display: block;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 11%;
+  background: white;
+  width: 450px;
+  min-width: 500px;
+}
+
 h1.board-edit-form {
   font-size: 25px;
   text-align: center;
@@ -5,12 +15,23 @@ h1.board-edit-form {
   word-spacing: 0.2px;
 }
 
-.bottom-options {
+.board-edit-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.board-edit-name{
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-options-list {
   display: flex;
   justify-content: space-between;
 }
 
-button.bottom-options-delete,
+button.bottom-delete,
 button.create-cancle {
   box-sizing: border-box;
   padding: 12px;
@@ -39,7 +60,7 @@ button#save-board {
 
 
 
-button.bottom-options-delete:hover,
+button.bottom-delete:hover,
 button.create-cancle:hover {
   cursor: pointer;
   background: darkgray;

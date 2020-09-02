@@ -45,7 +45,7 @@ class LoginForm extends React.Component {
 
   handleToggle(e) {
     e.preventDefault();
-    this.props.toggleSessionModal()
+    this.props.toggleSessionModal();
   }
 
   errorsFunction() {

@@ -65,12 +65,12 @@ class BoardEditForm extends React.Component {
     const { closeModal, board } = this.props;
 
     return (
-      <div className="board-create-container" onClick={closeModal}>
-        <div className="board-create-box" onClick={(e) => e.stopPropagation()}>
+      <div className="board-edit-container" onClick={closeModal}>
+        <div className="board-edit-box" onClick={(e) => e.stopPropagation()}>
           <div className="board-form-box">
             <h1 className="board-edit-form">Edit your board</h1>
-            <div className="board-edit">
-              <div className="board-create-name">
+            <div className="board-edit-content">
+              <div className="board-edit-name">
                 <p className="create-name">Name</p>
                 <input
                   type="text"
@@ -122,10 +122,10 @@ class BoardEditForm extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="bottom-options">
+            <div className="bottom-options-list">
               <div className="bottom-options-left">
                 <button
-                  className="bottom-options-delete"
+                  className="bottom-delete"
                   onClick={this.openDeleteBoard(this.props.board.id)}
                   // onClick={(e, boardId) => this.openDeleteBoard(e, board.id)}
                 >
