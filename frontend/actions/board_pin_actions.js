@@ -22,10 +22,15 @@ export const removeBoardPin = boardPinId => ({
   boardPinId
 });
 
-export const receiveBoardPinErrors = errors => ({
-  type: RECEIVE_BOARD_PIN_ERRORS,
-  errors 
-});
+export const receiveBoardPinErrors = errors => {
+
+  return (
+  {
+    type: RECEIVE_BOARD_PIN_ERRORS,
+    errors
+  }
+  )
+};
 
 //thunk action creators 
 export const fetchAllBoardsPins = () => dispatch => {
@@ -36,6 +41,7 @@ export const fetchAllBoardsPins = () => dispatch => {
 };
 
 export const createBoardPin = (boardPin) => dispatch => {
+
   return BoardPinAPIUtil.createBoardPin(boardPin)
     .then(boardPin => dispatch(receiveBoardPin(boardPin)),
       error => dispatch(receiveBoardPinErrors(error.responseJSON))

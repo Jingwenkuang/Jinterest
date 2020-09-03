@@ -4,11 +4,11 @@ class BoardDeleteForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleDeleteFOREVER = this.handleDeleteFOREVER.bind(this);
+    this.handleDeleteForever = this.handleDeleteForever.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
   }
 
-  handleDeleteFOREVER(e) {
+  handleDeleteForever(e) {
     e.preventDefault();
     this.props
       .deleteBoard(this.props.boardId)
@@ -45,7 +45,7 @@ class BoardDeleteForm extends React.Component {
               </button>
               <button
                 className="delete-board-delete-button"
-                onClick={this.handleDeleteFOREVER}
+                onClick={this.handleDeleteForever}
               >
                 Delete forever
               </button>

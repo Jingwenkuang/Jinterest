@@ -6,6 +6,7 @@ export const fetchAllBoardsPins = () => {
 };
 
 export const createBoardPin = (boardPin) => {
+
   return $.ajax({
     url: `/api/boards_pins`,
     method: "POST",

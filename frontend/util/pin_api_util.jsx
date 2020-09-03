@@ -30,9 +30,10 @@ export const updatePin = (pin) => (
   })
 )
 
-export const deletePin = (pinId) => (
-  $.ajax({
+export const deletePin = (pinId) => {
+
+ return $.ajax({
     method: 'DELETE',
     url: `/api/pins/${pinId}`
   })
-)
+}

@@ -5,9 +5,12 @@ import PinDeleteForm from "./pin_delete_form";
 import { deletePin } from "../../actions/pin_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 
-const mapStateToProps = (state) => ({
-  pinId: state.ui.objectId,
-});
+const mapStateToProps = (state) => {
+
+  return ({
+    pinId: state.ui.modal.modalId,
+  })
+};
 
 const mapDispatchToProps = dispatch => ({
   processForm: (pinId) => dispatch(deletePin(pinId)),

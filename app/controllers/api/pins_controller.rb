@@ -22,7 +22,7 @@ class Api::PinsController < ApplicationController
   end
 
   def update 
-    @pin = Pin.find_by(:id, params[:id])
+    @pin = Pin.find_by(id: params[:id])
     if @pin.user_id === current_user.id && @pin.update(pin_params)
       render "api/pins/show"
     else 
@@ -31,10 +31,11 @@ class Api::PinsController < ApplicationController
   end
 
   def destroy 
-    @pin = current_user.pins.find_by(id: params[:id])
+    #@pin = current_user.pins.find_by(id: params[:id])
+    @pin = current_user.pins.find(params[:id])
 
     if @pin 
-      @pin.destry 
+      @pin.destroy 
       render "api/pins/show"
     else  
       render json: @pin.errors.full_messages, status: 422 

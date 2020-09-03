@@ -5,7 +5,8 @@ const boardsPinsErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_BOARD_PIN_ERRORS:
-      return action.errors;
+    let errors = action.errors ? action.errors : null;
+      return errors;
     case CLEAR_ERRORS:
       return [];
     default:

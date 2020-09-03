@@ -9,6 +9,7 @@ class PinDeleteForm extends React.Component {
   }
 
   handleDelete() {
+    
     this.props
       .processForm(this.props.pinId)
       .then(this.props.closeModal)

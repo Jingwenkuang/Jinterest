@@ -8,7 +8,9 @@ class Api::BoardsPinsController < ApplicationController
   end
 
   def create 
+
    @boardPin = BoardsPin.new(boardPin_params)
+
     if @boardPin.save 
       render '/api/boards_pins/show'
     else
