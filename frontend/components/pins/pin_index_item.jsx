@@ -30,18 +30,18 @@ class PinIndexItem extends React.Component {
     const { pin, page, openEditPin, user, userId } = this.props;
     const pinId = this.props.pin.id
 
-   const editPinLink =
-    //  page === "profile" && location.hash.includes(user.username) ? (
-       <a
-         className="pin-index-item edit-pin-link"
-         onClick={() => openEditPin(pin.id)}
-       >
-         <i className="fa fa-pencil edit-pin-icon"></i>
-       </a>
-    //  ) : null;
+  //  const editPinLink =
+  //    (location.hash.includes(user.username)) ? (
+  //      <a
+  //        className="pin-index-item edit-pin-link"
+  //        onClick={() => openEditPin(pin.id)}
+  //      >
+  //        <i className="fa fa-pencil edit-pin-icon"></i>
+  //      </a>
+  //    ) : null;
 
     return (
-    
+
       <div id={`${this.state.id}`} className="pin-index-item container">
         <div className='pin-index-main'>
         <div className="pin-index-item masonry-item">
@@ -51,7 +51,7 @@ class PinIndexItem extends React.Component {
           </Link>
 
           <div className="pin-index-item links">
-            <div className="pin-index-item edit-pin-link-container">{editPinLink}</div>
+            {/* <div className="pin-index-item edit-pin-link-container">{editPinLink}</div> */}
             {/* <div className="save-board-pin-link-container">{openBoardPinLink}</div>
             <div className="pin-index-item pin-link-container">{pinLink}</div> */}
           </div>

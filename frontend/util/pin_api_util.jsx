@@ -37,3 +37,11 @@ export const deletePin = (pinId) => {
     url: `/api/pins/${pinId}`
   })
 }
+
+export const saveToBoard = (boardPin) => {
+  return $.ajax({
+    url: `/api/boards_pins`,
+    method: "POST",
+    data: { boardPin }
+  })
+}

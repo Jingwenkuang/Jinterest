@@ -13,6 +13,7 @@ class Api::BoardsPinsController < ApplicationController
 
     if @boardPin.save 
       render '/api/boards_pins/show'
+      #render json: @boardPin.pin_id
     else
       render json:@boardPin.errors.full_messages, status: 422
     end

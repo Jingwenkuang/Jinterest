@@ -11,10 +11,9 @@ class PinDeleteForm extends React.Component {
   handleDelete() {
     console.log(this.props.match)
     this.props
-      .processForm(this.props.pinId)
+      .deletePin(this.props.pinId)
       .then(this.props.closeModal)
       .then(() => window.history.go(-1))
-      // .then(() => location.reload());
   }
 
   handleCancel() {
@@ -27,11 +26,6 @@ class PinDeleteForm extends React.Component {
         <form className="delete-pin form">
           <div className="delete-pin header">
             <div className="delete-pin form-title">Are you sure?</div>
-            {/* <div className="delete-pin cancel-link-container">
-              <a className="cancel-link" onClick={this.handleCancel}>
-                <i className="fas fa-times cancel-icon"></i>
-              </a>
-            </div> */}
           </div>
           <div className="delete-pin body">
             <div className="delete-pin confirmation-message">

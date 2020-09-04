@@ -56,3 +56,9 @@ export const deletePin = (pinId) => dispatch => {
     .then((pinId) => dispatch(removePin(pinId)),
       error => dispatch(receivePinErrors(error.responseJSON)))
 }
+
+export const saveToBoard = (boardPin) => dispatch => {
+  return PinAPIUtil.saveToBoard(boardPin)
+    .then(pinId => dispatch(fetchPin(pinId)),
+      error => dispatch(receivePinErrors(error.responseJSON)))
+}
