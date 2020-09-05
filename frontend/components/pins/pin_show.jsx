@@ -212,20 +212,19 @@ console.log('chek')
               </div>
             </div>
 
-
+        
             <div className="pin-show-box-right">
+    
+              <div className="create-pin-header" onClick={e => e.stopPropagation()}>
               <div className="top-right-edit">
                 {this.openToEdit()}
               </div>
-    
-            <div className="create-pin-header"
-              onClick={e => e.stopPropagation()}>
-              <div
-                className="create-pin"
-                id="buttons"
-                onClick={this.toggleBoardList}
-                onBlur={this.hideBoardList}
-              >
+                <div
+                  className="create-pin"
+                  id="buttons"
+                  onClick={this.toggleBoardList}
+                  onBlur={this.hideBoardList}
+                >
                 <div className="create-pin" id="select-board-dropdown">
                   <div className="create-pin" id="select-board-label">
                     <div className="create-pin" id="selected-board">
