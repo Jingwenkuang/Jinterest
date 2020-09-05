@@ -215,7 +215,7 @@ console.log('chek')
         
             <div className="pin-show-box-right">
     
-              <div className="create-pin-header" onClick={e => e.stopPropagation()}>
+              <div className="pin-show-header" onClick={e => e.stopPropagation()}>
               <div className="top-right-edit">
                 {this.openToEdit()}
               </div>
