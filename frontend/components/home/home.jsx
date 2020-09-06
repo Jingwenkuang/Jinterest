@@ -27,8 +27,8 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log('yea')
-    console.log(this.props.pins)
+    // console.log('yea')
+    // console.log(this.props.pins)
 
     // const PinIndex = this.props.pins.map((pin) => {
     //   return (

@@ -24,7 +24,6 @@ class PinShow extends React.Component{
     this.hideBoardList = this.hideBoardList.bind(this);
     this.toggleBoardList = this.toggleBoardList.bind(this);
     this.selectBoard = this.selectBoard.bind(this);
-    // this.update = this.update.bind(this);
   }
 
   componentDidMount() {
