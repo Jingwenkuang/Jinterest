@@ -51,16 +51,9 @@ class PinShow extends React.Component{
   }
 
   selectBoard(e) {
-    // this.update("boardId")(e)
     this.setState({ boardId: e.currentTarget.value, boardList: false });
   }
 
-  // update(field) {
-  //   return e => {
-  //     this.setState({[field]: e.target.value})
-  //   }
-  // }
- 
   handleSaveToBoard(e) {
     e.preventDefault();
     let boardPin ={ 
@@ -102,7 +95,6 @@ class PinShow extends React.Component{
   }
 
   boardList() {
-    // const { boards } = this.props;
     if (!boards) return null;
     return(
       <div className='pin-board-list'> 
@@ -137,8 +129,7 @@ class PinShow extends React.Component{
 
   render() {
     const { currentUser, boards } = this.props;
-console.log(boards)
-console.log('chek')
+
     const toggleBoardMenu = (this.state.boardList) ? 'show' : 'hide';
 
     const dropdownLabel = (this.state.boardId === null) ? (
