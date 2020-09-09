@@ -6,8 +6,6 @@ import PinEditForm from './pin_edit_form';
 import { clearErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
-
     let id =
     ownProps.location.pathname.split("/").pop();
 

@@ -19,33 +19,52 @@ import BoardShowContainer from './boards/board_show_container';
 
 const App = () => (
   <div>
-    <Modal/>
-
+    <Modal />
 
     <header>
-      <NavBarContainer/>
+      <ProtectedRoute path="/" component={NavBarContainer} />
+      {/* <NavBarContainer /> */}
     </header>
 
     <Switch>
-     {/* <AuthRoute exact path="/login" component={loginFormContainer}/> 
+      {/* <AuthRoute exact path="/login" component={loginFormContainer}/> 
       <AuthRoute exact path="/signup" component={signupFormContainer}/>  */}
-    {/* <Route path="/" component={loginFormContainer} />  */}
+      {/* <Route path="/" component={loginFormContainer} />  */}
 
-     {/* <Route exact path='/' component={PinIndexContainer} /> */}
-     {/* <Route exact path='/' component={HomeComponent} /> */}
-      <ProtectedRoute exact path='/:username/pins' component={ProfileShowContainer}/>
-      <ProtectedRoute exact path='/users/:userId' component={ProfileContainer}/>
-      <ProtectedRoute exact path='/pins/:pinId' component={PinShowContainer}/>
-      <ProtectedRoute exact path='/pin-builder' component={PinCreateFormContainer}/>
-      <ProtectedRoute exact path='/pins' component={PinIndexContainer}/>
-      <ProtectedRoute exact path='/settings' component={ProfileEditContainer} />
-      <ProtectedRoute exact path='/:username/boards' component={ProfileShowContainer} />
+      {/* <Route exact path='/' component={PinIndexContainer} /> */}
+      {/* <Route exact path='/' component={HomeComponent} /> */}
+      <ProtectedRoute
+        exact
+        path="/:username/pins"
+        component={ProfileShowContainer}
+      />
+      <ProtectedRoute
+        exact
+        path="/users/:userId"
+        component={ProfileContainer}
+      />
+      <ProtectedRoute exact path="/pins/:pinId" component={PinShowContainer} />
+      <ProtectedRoute
+        exact
+        path="/pin-builder"
+        component={PinCreateFormContainer}
+      />
+      <ProtectedRoute exact path="/pins" component={PinIndexContainer} />
+      <ProtectedRoute exact path="/settings" component={ProfileEditContainer} />
+      <ProtectedRoute
+        exact
+        path="/:username/boards"
+        component={ProfileShowContainer}
+      />
       {/* <ProtectedRoute exact path="/:username/:boardName" component={BoardShowContainer} /> */}
-      <ProtectedRoute exact path="/boards/:boardId" component={BoardShowContainer} />
-      <AuthRoute exact path='/' component={HomeComponent}/>
-     <Redirect to='/'/>
+      <ProtectedRoute
+        exact
+        path="/boards/:boardId"
+        component={BoardShowContainer}
+      />
+      <AuthRoute exact path="/" component={HomeComponent} />
+      <Redirect to="/" />
     </Switch>
-     
   </div>
 );
 

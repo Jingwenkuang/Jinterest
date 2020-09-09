@@ -7,6 +7,7 @@ import ProfileShow from "./profile_show";
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.currentUserId],
+  currentUserId: state.session.currentUserId,
   users: Object.values(state.entities.users),
   username: ownProps.match.params.username,
   boards: Object.values(state.entities.boards),

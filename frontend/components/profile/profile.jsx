@@ -11,20 +11,22 @@ class Profile extends React.Component{
     this.hideDropDown = this.hideDropDown.bind(this)
   }
 
+  // componentDidMount(){
+  //   this.props.fetchUser(this.props.currentUserId)
+  // }
+
   handleDropDown(e) {
     e.preventDefault();
     this.setState({ dropDownHidden: !this.state.dropDownHidden })
   }
 
-  // componentDidMount(){
-  //   this.props.fetchUser(this.props.currentUserId)
-  // }
 
   hideDropDown(e) {
     this.setState({ boardList: !this.state.dropDownHidden });
   }
 
   componentDidUpdate(prevProps) {
+ 
     if (prevProps.currentUserId !== this.props.currentUserId) {
       this.props.fetchUser(this.props.match.params.currentUserId)
     }
@@ -33,7 +35,12 @@ class Profile extends React.Component{
   render() {
     const dropDownHidden = this.state.dropDownHidden ? "hidden" : "";
 
-    const { user } = this.props;
+    const { user } = this.props;    
+    const profilePhoto = user.profileUrl ? (
+      <img src={user.profileUrl} className="cat-photo" />
+    ) : (
+      <i className="fa fa-user-circle" id="profile-demo-icon"></i>
+    );
  
     if (!user) return <div></div>;
     return(
@@ -63,7 +70,8 @@ class Profile extends React.Component{
               <div className='profile-description'>{user.description}</div>
             </div>
               <div className='profile-cat-photo'>
-              <img src={user.profileUrl} className='cat-photo' />
+                {profilePhoto}
+              {/* <img src={user.profileUrl} className='cat-photo' /> */}
               </div>
           </div>
         </div>

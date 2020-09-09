@@ -15,14 +15,16 @@ class ProfileShow extends React.Component {
 
     this.props.fetchAllUsers()
       .then(res => {
-        const user = Object.values(res.users).find(user => user.username === username);
+        // const user = Object.values(res.users).find(user => user.username === username);
+        const user = Object.values(res.users).find(user => user.id === this.props.currentUserId)
         return fetchUser(user.id);
       });
   }
 
   render() {
-    const { currentUser, users, username, boards, pins, openModal, closeModal } = this.props;
-    const user = users.find(user => user.username === username);
+    const { currentUser, currentUserId, users, username, boards, pins, openModal, closeModal } = this.props;
+    // const user = users.find(user => user.username === username);
+    const user = users.find(user => user.id === currentUserId);
 
     return (
       <div id="profile-background">

@@ -91,6 +91,14 @@ class PinCreateForm extends React.Component {
 
   render() {
     const { currentUser, boards } = this.props;
+    const profilePhoto = currentUser.profileUrl ? (
+      <img
+        src={this.props.currentUser.profileUrl}
+        className="currentUser-icon"
+      />
+    ) : (
+      <i className="fa fa-user-circle" id="pin-create-demo-icon"></i>
+    );
 
     const toggleBoardMenu = (this.state.boardList) ? 'show' : 'hide';
 
@@ -177,8 +185,10 @@ class PinCreateForm extends React.Component {
       <div className="create-pin-background" onClick={this.hideBoardList}>
         <div className="create-pin-container">
           <div className="create-pin-box">
-            <div className="create-pin-header"
-              onClick={e => e.stopPropagation()}>
+            <div
+              className="create-pin-header"
+              onClick={(e) => e.stopPropagation()}
+            >
               <div
                 className="create-pin"
                 id="buttons"
@@ -195,28 +205,29 @@ class PinCreateForm extends React.Component {
                     <i className="fa fa-chevron-down" id="dropdown-icon"></i>
                   </div>
                 </div>
-                <div className="create-pin" id="save-button" onClick={clickSave}>
+                <div
+                  className="create-pin"
+                  id="save-button"
+                  onClick={clickSave}
+                >
                   <div className="create-pin" id="save-button-label">
                     Save
                   </div>
                 </div>
-                <div className={`create-pin board-list container ${toggleBoardMenu}`}>
-
+                <div
+                  className={`create-pin board-list container ${toggleBoardMenu}`}
+                >
                   <div className="create-pin board-list header">
                     <div className="create-pin board-list title">
                       All boards
                     </div>
                   </div>
-                  <ul className="create-pin board-list">
-                    {boardListItems}
-                  </ul>
+                  <ul className="create-pin board-list">{boardListItems}</ul>
                 </div>
               </div>
             </div>
             <div className="create-pin-content">
-              <div className="create-image-container">
-                {displayImage}
-              </div>
+              <div className="create-image-container">{displayImage}</div>
               <div className="create-pin-details-container">
                 <div className="create-pin-title-container">
                   <input
@@ -224,18 +235,21 @@ class PinCreateForm extends React.Component {
                     className="create-pin-title"
                     placeholder="Add your title"
                     value={this.state.title}
-                    onChange={this.changeInput("title")} />
+                    onChange={this.changeInput("title")}
+                  />
                 </div>
                 <div className="create-pin-user-container">
                   <div className="create-pin-user-image-frame">
-                    <img
+                    {/* <img
                       src={currentUser.profileUrl}
                       alt="profile-icon"
                       className="create-pin-user-image"
-                    />
+                    /> */}
+                    {profilePhoto}
                   </div>
                   <div className="create-pin-username">
-                    {currentUser.username}
+                    {/* {currentUser.username} */}
+                    {currentUser.email.slice(0, currentUser.email.indexOf("@"))}
                   </div>
                 </div>
                 <div className="create-pin-description-container">
@@ -244,7 +258,8 @@ class PinCreateForm extends React.Component {
                     className="create-pin-description"
                     placeholder="Tell everyone what your Pin is about"
                     value={this.state.description}
-                    onChange={this.changeInput("description")} />
+                    onChange={this.changeInput("description")}
+                  />
                 </div>
               </div>
             </div>

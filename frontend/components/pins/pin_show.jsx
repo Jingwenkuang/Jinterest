@@ -129,6 +129,15 @@ class PinShow extends React.Component{
 
   render() {
     const { currentUser, boards } = this.props;
+    const profilePhoto = currentUser.profileUrl ? (
+      <img
+        src={this.props.currentUser.profileUrl}
+        className="currentUser-icon"
+      />
+    ) : (
+      <i className="fa fa-user-circle" id="pin-show-demo-icon"></i>
+    );
+    
 
     const toggleBoardMenu = (this.state.boardList) ? 'show' : 'hide';
 
@@ -182,39 +191,33 @@ class PinShow extends React.Component{
       return null;
     }
     return (
-    
-        <div className="pin-show-outside-container" onClick={this.goBack}>
-  
-          <div className="pin-goback" onClick={this.goBack}>
-            <i id="show-pin-arrow" className="fa fa-arrow-left"></i>
-          </div>
-          
-          <div
-            className="pin-show-container"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="pin-show-box-left">
-              <div className="pin-show-photo">
-                <img
-                  src={pin.photoUrl}
-                  className="pin-show-item-photo"
-                />
-              </div>
-            </div>
+      <div className="pin-show-outside-container" onClick={this.goBack}>
+        <div className="pin-goback" onClick={this.goBack}>
+          <i id="show-pin-arrow" className="fa fa-arrow-left"></i>
+        </div>
 
-        
-            <div className="pin-show-box-right">
-    
-              <div className="pin-show-header" onClick={e => e.stopPropagation()}>
-              <div className="top-right-edit">
-                {this.openToEdit()}
-              </div>
-                <div
-                  className="create-pin"
-                  id="buttons"
-                  onClick={this.toggleBoardList}
-                  onBlur={this.hideBoardList}
-                >
+        <div
+          className="pin-show-container"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="pin-show-box-left">
+            <div className="pin-show-photo">
+              <img src={pin.photoUrl} className="pin-show-item-photo" />
+            </div>
+          </div>
+
+          <div className="pin-show-box-right">
+            <div
+              className="pin-show-header"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="top-right-edit">{this.openToEdit()}</div>
+              <div
+                className="create-pin"
+                id="buttons"
+                onClick={this.toggleBoardList}
+                onBlur={this.hideBoardList}
+              >
                 <div className="create-pin" id="select-board-dropdown">
                   <div className="create-pin" id="select-board-label">
                     <div className="create-pin" id="selected-board">
@@ -225,44 +228,51 @@ class PinShow extends React.Component{
                     <i className="fa fa-chevron-down" id="dropdown-icon"></i>
                   </div>
                 </div>
-                <div className="create-pin" id="save-button" onClick={clickSave}>
+                <div
+                  className="create-pin"
+                  id="save-button"
+                  onClick={clickSave}
+                >
                   <div className="create-pin" id="save-button-label">
                     Save
                   </div>
                 </div>
-                <div className={`create-pin board-list container ${toggleBoardMenu}`}>
-
+                <div
+                  className={`create-pin board-list container ${toggleBoardMenu}`}
+                >
                   <div className="create-pin board-list header">
                     <div className="create-pin board-list title">
                       All boards
                     </div>
                   </div>
-                  <ul className="create-pin board-list">
-                    {boardListItems}
-                  </ul>
+                  <ul className="create-pin board-list">{boardListItems}</ul>
                 </div>
               </div>
             </div>
 
-           
-              <div className="pin-show-title">{this.props.pin.title}</div>
+            <div className="pin-show-title">{this.props.pin.title}</div>
 
-              <div className="pin-show-user">
-                <img src={this.props.currentUser.profileUrl} className='currentUser-icon' />
-                <p className="pin-show-username">
-                  {this.props.users[this.props.currentUserId].username}
-                </p>
-              </div>
-
-              <footer className="pin-show-footer">
-                <div className="pin-show-description">
-                  {this.props.pin.description}
-                </div>
-              </footer>
+            <div className="pin-show-user">
+              {profilePhoto}
+              {/* <img src={this.props.currentUser.profileUrl} className='currentUser-icon' /> */}
+              <p className="pin-show-username">
+                {/* {this.props.users[this.props.currentUserId].username} */}
+                {this.props.users[this.props.currentUserId].email.slice(
+                  0,
+                  this.props.users[this.props.currentUserId].email.indexOf('@')
+                )}
+              </p>
             </div>
+
+            <footer className="pin-show-footer">
+              <div className="pin-show-description">
+                {this.props.pin.description}
+              </div>
+            </footer>
           </div>
         </div>
-      )
+      </div>
+    );
   
   }
 }
