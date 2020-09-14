@@ -128,6 +128,7 @@ class PinShow extends React.Component{
 
 
   render() {
+    
     const { currentUser, boards } = this.props;
     const profilePhoto = currentUser.profileUrl ? (
       <img

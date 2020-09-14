@@ -14,7 +14,6 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleToggle = this.handleToggle.bind(this);
   }
 
   componentWillUnmount() {
@@ -32,11 +31,6 @@ class SignupForm extends React.Component {
     this.props.signup(this.state).then(null, error => {
       this.setState(this.errorsFunction())
     })
-  }
-
-  handleToggle(e) {
-    e.preventDefault();
-    this.props.toggleSessionModal()
   }
 
   errorsFunction() {
@@ -86,65 +80,73 @@ class SignupForm extends React.Component {
   render() {
    
     return (
-    <div className='form-container'>
-      <div className="to-login-button">
-       <button className='form-side-button' onClick={this.handleToggle}>Log in</button>
-        
-       <div className='form-pops'>
-        <form className='form'>
-          <header>
-              <div className='app-logo'>
-                <img src={window.jinterestURL} className='jinterest-logo'/>
+      <div className="form-container">
+        <div className="to-login-button">
+          <button
+            className="form-side-button"
+            onClick={() => this.props.openModal("login")}
+          >
+            Log in
+          </button>
+
+          <div className="form-pops">
+            <form className="form">
+              <header>
+                <div className="app-logo">
+                  <img src={window.jinterestURL} className="jinterest-logo" />
+                </div>
+
+                <div className="form-header">
+                  <h1>Welcome to Jinterest</h1>
+                  <h3>Find new ideas to try</h3>
+                </div>
+              </header>
+
+              <input
+                className="input"
+                required
+                type="email"
+                placeholder="Email"
+                value={this.state.email}
+                onChange={this.handleInput("email")}
+              />
+              <div className="errors">{this.emailErrors()}</div>
+
+              <input
+                className="input"
+                required
+                minLength="6"
+                type="password"
+                placeholder="Create a password"
+                value={this.state.password}
+                onChange={this.handleInput("password")}
+              />
+              <div className="errors">{this.passwordErrors()}</div>
+
+              <input
+                className="input"
+                required
+                type="text"
+                placeholder="Age"
+                value={this.state.age}
+                onChange={this.handleInput("age")}
+              />
+              <div className="errors">{this.ageErrors()}</div>
+
+              <button className="form-button" onClick={this.handleSubmit}>
+                Sign up
+              </button>
+
+              <div
+                className="form-link"
+                onClick={() => this.props.openModal("login")}
+              >
+                <div className="to-other-form">Already a member? Log in</div>
               </div>
-
-              <div className='form-header'>
-                <h1>Welcome to Jinterest</h1>
-                <h3>Find new ideas to try</h3>
-              </div>
-          </header>
-
-
-            <input
-              className='input'
-              required 
-              type="email"
-              placeholder="Email"
-              value={this.state.email}
-              onChange={this.handleInput("email")}
-            />
-            <div className='errors'>{this.emailErrors()}</div>
-      
-            <input
-             className='input'
-              required 
-              minLength='6'
-              type="password"
-              placeholder='Create a password'
-              value={this.state.password}
-              onChange={this.handleInput("password")}
-            />
-            <div className='errors'>{this.passwordErrors()}</div>
-
-            <input
-              className='input'
-              required
-              type="text"
-              placeholder='Age'
-              value={this.state.age}
-              onChange={this.handleInput("age")}
-            />
-            <div className='errors'>{this.ageErrors()}</div>
-
-          
-            <button className="form-button" onClick={this.handleSubmit}>Sign up</button>
-
-            <div className="form-link" onClick={() => this.props.openModal("login")}>
-              <div className="to-other-form">Already a member? Log in</div>
-            </div>
-        </form>
-        </div> 
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
     );
   }
 }
