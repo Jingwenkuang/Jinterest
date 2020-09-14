@@ -12,6 +12,7 @@ class PinIndex extends React.Component {
   }
 
   render() { 
+    console.log(this.props)
     const { page, pins, user, currentUserId, openEditPin } = this.props;
    
     const pinIndexItems = pins.map((pin, idx) => (

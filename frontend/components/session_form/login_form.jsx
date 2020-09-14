@@ -13,7 +13,6 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
-    this.handleToggle = this.handleToggle.bind(this);
   }
 
   componentWillUnmount() {
@@ -43,11 +42,6 @@ class LoginForm extends React.Component {
       .then(this.props.closeModal);
   }
 
-  handleToggle(e) {
-    e.preventDefault();
-    this.props.toggleSessionModal();
-  }
-
   errorsFunction() {
     let error = [];
     if (this.props.errors.includes("Invalid email or password")) {
@@ -70,7 +64,7 @@ class LoginForm extends React.Component {
     
     <div className='form-container'>
 
-        <button className='form-side-button' onClick={this.handleToggle}>Sign up</button>
+        <button className='form-side-button' onClick={() => this.props.openModal('signup')}>Sign up</button>
 
       <div className="to-signup-button">
         
