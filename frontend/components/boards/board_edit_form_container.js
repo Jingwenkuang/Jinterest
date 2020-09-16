@@ -22,10 +22,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
   updateBoard: (board) => dispatch(updateBoard(board)),
   deleteBoard: (boardId) => dispatch(openModal("delete-board", boardId)),
-  // deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
   clearErrors: () => dispatch(clearErrors()),
   closeModal: () => dispatch(closeModal()),
-  // openModal: modal => dispatch(openModal(modal)),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BoardEditForm));

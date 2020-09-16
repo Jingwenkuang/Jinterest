@@ -14,10 +14,6 @@ class NavBar extends React.Component {
     this.props.fetchAllUsers();
   }
 
-  // componentWillUnmount() {
-  //   location.reload(true);
-  // }
-
   handleDropDown(e) {
     e.preventDefault();
     this.setState({ dropDownHidden: !this.state.dropDownHidden });
