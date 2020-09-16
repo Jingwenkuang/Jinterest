@@ -1,5 +1,5 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom';
+
 
 class BoardEditForm extends React.Component {
   constructor(props) {
@@ -27,10 +27,7 @@ class BoardEditForm extends React.Component {
     };
   }
 
-  // openDeleteBoard(e, id) {
-  //   e.preventDefault();
-  //   this.props.deleteBoard(id);
-  // }
+
   openDeleteBoard(id) {
     return (e) => {
       this.props.deleteBoard(id);
@@ -42,19 +39,16 @@ class BoardEditForm extends React.Component {
     const saveBtn = document.getElementById("save-board");
     if (!saveBtn) return;
     if (name === "") {
-      //lock button
+    
       saveBtn.disabled = true;
       saveBtn.classList.add("no-button");
     } else {
-      //unlock
+    
       saveBtn.disabled = false;
       saveBtn.classList.remove("no-button");
     }
   }
 
-  // update(field) {
-  //   return (e) => this.setState({ [field]: e.currentTarget.value });
-  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -127,7 +121,6 @@ class BoardEditForm extends React.Component {
                 <button
                   className="bottom-delete"
                   onClick={this.openDeleteBoard(this.props.board.id)}
-                  // onClick={(e, boardId) => this.openDeleteBoard(e, board.id)}
                 >
                   Delete
                 </button>

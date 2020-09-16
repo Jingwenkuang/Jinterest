@@ -16,7 +16,6 @@ const mapDispatchToProps = dispatch => {
     openModal: (modal) => dispatch(openModal(modal)),
     editBoard: (id) => dispatch(openModal('edit-board', id)),
     deleteBoard: (boardId) => dispatch(deleteBoard(boardId)),
-    // openEditBoard: (boardId) => dispatch(openModal("edit-board", boardId)),
   };
 };
 
@@ -54,9 +53,7 @@ class BoardIndexItem extends React.Component {
     let name = this.props.board.name
     let selectedPins = this.filterPins()
     let boardId = this.props.board.id
-    
-    let photo;
-    // if (selectedPins.length) photo = selectedPins[0].photoUrl
+
     const photo1 = selectedPins[0] ? (
       <img className="board-index-img-left" src={selectedPins[0].photoUrl} />
     ) : (

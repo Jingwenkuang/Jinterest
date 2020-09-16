@@ -13,8 +13,6 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchBoards: () => dispatch(fetchBoards()),
   fetchAllPins: () => dispatch(fetchAllPins()),
-  // openModal: (boardId) => dispatch(openModal("edit-board", boardId)),
-  //  createBoard: (board) => dispatch(createBoard(board)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BoardIndex)

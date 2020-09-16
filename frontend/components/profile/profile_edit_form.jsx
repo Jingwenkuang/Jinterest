@@ -38,9 +38,6 @@ class ProfileEditForm extends React.Component {
     const { username, first_name, last_name, description } = this.state;
     let user = { username, first_name, last_name, description };
     this.props.updateUser(user).then(this.props.closeModal);
-        // this.props
-        //   .updateUser(formData, this.state.id)
-        //   .then(() => location.reload(false));
   }
 
   handleFile(e) {
