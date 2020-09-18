@@ -13,6 +13,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
   }
 
   componentWillUnmount() {
@@ -29,7 +30,6 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.login(user)
-      .then(null, (error) => {this.setState(this.errorsFunction())})
   }
 
   handleDemoUser(e) {
@@ -42,20 +42,18 @@ class LoginForm extends React.Component {
       .then(this.props.closeModal);
   }
 
-  errorsFunction() {
-    let error = [];
-    if (this.props.errors.includes("Invalid email or password")) {
-      error.push("Invalid email or password");
-    }
-    this.setState({ errors: error })
-  }
+  handleErrors() {
+    if (this.props.errors.includes('Invalid email or password')) {
+    return (
+      <div className='render-errors'>
+        <div className="errors">You missed a spot! Try again.</div>
+      </div>
+    )}
 
-  emailErrors() {
-    if ((this.state.errors[0]) === ("Invalid email or password")) {
-      return this.state.errors;
-    } else {
-      return "";
-    }
+    return (
+      <div className="render-errors">
+      </div>
+    )
   }
 
   render() {
@@ -87,7 +85,7 @@ class LoginForm extends React.Component {
               value={this.state.email}
               onChange={this.handleInput("email")}
             />
-          
+           
             <input
               className='input'
               required
@@ -96,8 +94,8 @@ class LoginForm extends React.Component {
               value={this.state.password}
               onChange={this.handleInput("password")}
             />
-              <div className='errors'>{this.emailErrors()}</div>
-
+                {this.handleErrors()}
+           
             <button className='form-button' onClick={this.handleSubmit}>Log in</button>
             <button className='demo-login' onClick={this.handleDemoUser} >Demo Login</button>
 

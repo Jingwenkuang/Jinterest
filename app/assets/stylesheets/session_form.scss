@@ -128,8 +128,12 @@ header h3 {
   font-size: 14px;
 }
 
+.render-errors {
+  min-height: 1.3em;
+}
+
 .errors {
-  font-size: 11px; 
+  font-size: 12px; 
   color: red;
   font-weight: lighter;
   min-height: 1.3em;
