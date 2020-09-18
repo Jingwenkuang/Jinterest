@@ -85,7 +85,7 @@ class LoginForm extends React.Component {
               value={this.state.email}
               onChange={this.handleInput("email")}
             />
-           
+                <div className="render-error"></div>
             <input
               className='input'
               required
