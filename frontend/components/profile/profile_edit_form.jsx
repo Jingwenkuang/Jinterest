@@ -98,8 +98,6 @@ class ProfileEditForm extends React.Component {
                   <div className="content">
                     <div className="image">
                       <p className="profile-text">Photo</p>
-                      {/* <img className="profile-pic" src="https://jinterest-seeds.s3-us-west-1.amazonaws.com/cat.jpg"></img> */}
-                      {/* <img className="profile-pic" src={this.props.user.profileUrl}/> */}
                       {profilePhoto}
                     </div>
 

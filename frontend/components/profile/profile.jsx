@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Profile extends React.Component{
   constructor(props) {
@@ -71,7 +71,6 @@ class Profile extends React.Component{
             </div>
               <div className='profile-cat-photo'>
                 {profilePhoto}
-              {/* <img src={user.profileUrl} className='cat-photo' /> */}
               </div>
           </div>
         </div>
