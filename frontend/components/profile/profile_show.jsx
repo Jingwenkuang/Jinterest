@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
 import ProfileContent from "./profile_content";
 import Profile from "./profile";
 

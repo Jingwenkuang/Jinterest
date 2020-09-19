@@ -1,6 +1,4 @@
 import { connect } from "react-redux";
-import React from "react";
-
 import { fetchAllUsers, fetchUser } from "../../actions/user_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import ProfileShow from "./profile_show";
