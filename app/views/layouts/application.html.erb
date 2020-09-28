@@ -8,7 +8,6 @@
   
   <script type="text/javascript">
     window.jinterestURL = "<%= image_url('jinterest.png') %>";
-    //window.homepagePhoto = "<%= image_url('local_food_in_rome.jpg')%>";
     window.homepagePhoto = "<%= image_url('home_background.png')%>";
     window.catURL = "<%= image_url('cat.jpg')%>";
   </script>> 
@@ -16,9 +15,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+    <%= favicon_link_tag asset_path('logo.png') %>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <link rel='icon' href="<%= image_url('logo.png') %>" type='image/x-icon'/>
 
 
   
