@@ -27,7 +27,7 @@ class PinIndexItem extends React.Component {
   }
 
   render() {
-    const { pin, page, openEditPin, user, userId } = this.props;
+    const { pin } = this.props;
     const pinId = this.props.pin.id
 
   //  const editPinLink =

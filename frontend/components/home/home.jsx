@@ -27,17 +27,10 @@ class Home extends React.Component {
   }
 
   render() {
-    // console.log('yea')
-    // console.log(this.props.pins)
 
-    // const PinIndex = this.props.pins.map((pin) => {
-    //   return (
-    //     <PinIndexContainer key={pin.id} pin={pin}/>
-    //   )
-    // })
              return (
                <div className="homepage">
-                 {/* {PinIndex} */}
+                
                  <img src={window.homepagePhoto} className="homepage-photo" />
                </div>
              );

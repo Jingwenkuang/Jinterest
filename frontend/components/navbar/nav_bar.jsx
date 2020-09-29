@@ -80,11 +80,9 @@ class NavBar extends React.Component {
           </div>
 
           <div className="nav-demouser">
-            {/* <Link to={`/${this.props.user.username}/boards`}> */}
             <Link to={`${displayName}/boards`}>
               <div className="nav-cat-photo">
                 {profilePhoto}
-                {/* <img src={this.props.user.profileUrl} className='nav-cat-photo' /> */}
               </div>
             </Link>
           </div>
