@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import PinShow from './pin_show';
 import { clearErrors } from '../../actions/session_actions';
-import { fetchPin, updatePin, deletePin, saveToBoard } from '../../actions/pin_actions';
+import { fetchPin } from '../../actions/pin_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { fetchBoards, createBorad } from'../../actions/board_actions';
 import { fetchUser, fetchAllUsers } from '../../actions/user_actions';
