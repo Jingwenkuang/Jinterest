@@ -9,6 +9,8 @@ Jinterest, a Pinterest clone, is a social media application allow users to pin n
 * React 
 * Redux
 * Ruby on Rails
+* PostgreSQL
+* HTML
 * SCSS
 * AWS S3
 * Heroku deployment 
