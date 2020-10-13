@@ -30,7 +30,7 @@ User can create account and login. Using BCrypt gem and SecureRandom module to c
 </p>
 
 ### Discover feed 
-Masonry layout
+Implemented masonry style layout.
 
 <p align="center">
   <img style="max-width: 60%;" height="350" src="https://media.giphy.com/media/W5THDzDCDtVvOroQHQ/giphy.gif">
